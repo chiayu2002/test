@@ -1,0 +1,17 @@
+expname: 4column_1110
+data:
+  imsize: 128
+  datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
+  type: RS307_0_i2
+  radius: 3.
+  near: 1.5
+  far: 4.5
+  fov: 84
+  umin: 0.
+  umax: 1.
+  vmin: 0      #0.139  43.78
+  vmax: 0.5  #0.447735768   4 deg 0.030153689    #0.1464466094 45   7 #0.030153689  20   8    #0.278  63.64 9
+  v: 0.5, 0.3333333333, 0.1666666666 #0  19.47  41.8
+
+
+  #arccos(1 - 2 * v) * 180. / pi
