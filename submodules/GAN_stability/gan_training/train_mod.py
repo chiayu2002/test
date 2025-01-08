@@ -7,16 +7,12 @@ from torch import autograd
 
 
 class Trainer(object):
-    def __init__(self, generator, discriminator, g_optimizer, d_optimizer,
-                 gan_type, reg_type, reg_param):
+    def __init__(self, generator, discriminator, g_optimizer, d_optimizer):
         self.generator = generator
         self.discriminator = discriminator
         self.g_optimizer = g_optimizer
         self.d_optimizer = d_optimizer
 
-        self.gan_type = gan_type
-        self.reg_type = reg_type
-        self.reg_param = reg_param
 
     def generator_trainstep(self, y, z):
         assert(y.size(0) == z.size(0))

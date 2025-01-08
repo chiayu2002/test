@@ -115,14 +115,13 @@ if __name__ == '__main__':
     # input transform
     img_to_patch = ImgToPatch(generator.ray_sampler, hwfr[:3])
 
-    # config.update({
-    #     "discriminator": discriminator.__class__.__name__,  # 紀錄模型名稱
-    #     "g_optimizer": g_optimizer.__class__.__name__,
-    #     "d_optimizer": d_optimizer.__class__.__name__,
-    #     **{f"generator_{key}": val.__class__.__name__ for key, val in generator.module_dict.items()}  # 特別處理 generator
-    # })
+    config.update({
+        "g_optimizer": g_optimizer.__class__.__name__,
+        "d_optimizer": d_optimizer.__class__.__name__,
+    })
 
     wandb.init(project="graftest", entity="vicky20020808", allow_val_change=True, config=config)
+
 
     model_checkpoint = "model_checkpoint.pth"
     checkpoint_data = {
@@ -220,7 +219,7 @@ if __name__ == '__main__':
     # Learning rate anneling
     d_lr = d_optimizer.param_groups[0]['lr']
     g_lr = g_optimizer.param_groups[0]['lr']
-    g_scheduler = build_lr_scheduler(g_optimizer, config, last_epoch=it)
+    g_scheduler = build_lr_scheduler(g_optimizer, config, last_epoch=it)  #控制優化器的學習率
     d_scheduler = build_lr_scheduler(d_optimizer, config, last_epoch=it)
     # ensure lr is not decreased again
     d_optimizer.param_groups[0]['lr'] = d_lr
@@ -229,17 +228,28 @@ if __name__ == '__main__':
     # Trainer
     trainer = Trainer(
         generator, discriminator, g_optimizer, d_optimizer,
-        use_amp=config['training']['use_amp'],
-        gan_type=config['training']['gan_type'],
-        reg_type=config['training']['reg_type'],
-        reg_param=config['training']['reg_param']
-    )
+        use_amp=config['training']['use_amp'])
 
     print('it {}: start with LR:\n\td_lr: {}\tg_lr: {}'.format(it, d_optimizer.param_groups[0]['lr'], g_optimizer.param_groups[0]['lr']))
 
     wandb.watch(discriminator, log="all")
     print(generator.module_dict)
     wandb.watch(generator.module_dict['generator'], log="all")
+
+    def save_best_model(metric, metric_best, metric_name, model_name):
+        if metric < metric_best:
+            metric_best = metric
+            print(f'Saving best model based on {metric_name}...')
+            wandb.save(model_name)
+            wandb.log({
+                "iteration": it,
+                "epoch_idx": epoch_idx,
+                f"{metric_name}_best": metric_best,
+                "fid_best": fid_best,
+                "kid_best": kid_best
+            })
+            torch.cuda.empty_cache()
+        return metric_best
 
     # Training loop
     print('Start training...')
@@ -293,7 +303,6 @@ if __name__ == '__main__':
             "Discriminator LR": d_lr
             })
 
-
             dt = time.time() - t_it
             # Print stats
             if ((it + 1) % config['training']['print_every']) == 0:
@@ -311,41 +320,20 @@ if __name__ == '__main__':
                 "iteration": it
                 })
 
-
             # (v) Compute fid if necessary
             if fid_every > 0 and ((it + 1) % fid_every) == 0:
                 fid, kid = evaluator.compute_fid_kid(real_label)
                 wandb.log({
-                "validation/fid": fid,
-                "validation/kid": kid,
-                "iteration": it
+                 "validation/fid": fid,
+                    "validation/kid": kid,
+                    "iteration": it
                 })
                 torch.cuda.empty_cache()
-                # save best model
-                if save_best=='fid' and fid < fid_best:
-                    fid_best = fid
-                    print('Saving best model...')
-                    wandb.save('model_best.pth')
-                    wandb.log({
-                    "iteration": it,
-                    "epoch_idx": epoch_idx,
-                    "fid_best": fid_best,
-                    "kid_best": kid_best
-                    })
-                    torch.cuda.empty_cache()
-                elif save_best=='kid' and kid < kid_best:
-                    kid_best = kid
-                    print('Saving best model...')
-                    wandb.save('model_best.pth')
-                    wandb.log({
-                    "iteration": it,
-                    "epoch_idx": epoch_idx,
-                    "fid_best": fid_best,
-                    "kid_best": kid_best
-                    })
-                    torch.cuda.empty_cache()
-                    generator.save('0813_for_cGAN_{}epochs.h5'.format(it+1))
-
+                if save_best == 'fid':
+                    fid_best = save_best_model(fid, fid_best, "fid", 'model_best.pth')
+                elif save_best == 'kid':
+                    kid_best = save_best_model(kid, kid_best, "kid", 'model_best.pth')
+                    generator.save(f'0108_for_graf_{it + 1}epochs.h5')
 
             # (vi) Create video if necessary
             if ((it+1) % config['training']['video_every']) == 0:
