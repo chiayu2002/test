@@ -129,9 +129,6 @@ if __name__ == '__main__':
         "discriminator_state_dict": discriminator.state_dict(),
         "g_optimizer_state_dict": g_optimizer.state_dict(),
         "d_optimizer_state_dict": d_optimizer.state_dict(),
-        "discriminator_ndf": discriminator.ndf,  # 記錄 discriminator 的 ndf
-        "discriminator_num_classes": discriminator.num_classes,
-        "discriminator_hflip": discriminator.hflip,  # 記錄 discriminator 的 ndf
         **{f"generator_{key}": val.state_dict() for key, val in generator.module_dict.items()}  # 特別處理 generator
     }
 
