@@ -14,16 +14,13 @@ import sys
 sys.path.append('submodules')        # needed to make imports work in GAN_stability
 
 from graf.gan_training import Trainer, Evaluator
-from graf.config import get_data, build_models, save_config, update_config, build_lr_scheduler
+from graf.config import get_data, build_models, save_config, update_config, build_lr_scheduler, build_optimizers, load_config
 from graf.utils import count_trainable_parameters, get_nsamples
 from graf.transforms import ImgToPatch
 
 from GAN_stability.gan_training import utils
-from GAN_stability.gan_training.train import update_average
+from GAN_stability.gan_training.train_mod import update_average
 from GAN_stability.gan_training.distributions import get_ydist, get_zdist
-from GAN_stability.gan_training.config import (
-    load_config, build_optimizers,
-)
 
 import wandb
 
@@ -33,12 +30,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Train a GAN with different regularization strategies.'
     )
-    parser.add_argument('--config', default='/Data/home/vicky/test/configs/RS307_0_i2.yaml', type=str, help='Path to config file.')
-
-    args, unknown = parser.parse_known_args() 
-    config = load_config(args.config, 'configs/default.yaml')
+    parser.add_argument('--config', default='/Data/home/vicky/test/configs/default.yaml', type=str, help='Path to config file.')
+    args = parser.parse_args()
+    config = load_config(args.config)
     config['data']['fov'] = float(config['data']['fov'])
-    config = update_config(config, unknown)
         
     # Short hands
     batch_size = config['training']['batch_size']
@@ -132,6 +127,7 @@ if __name__ == '__main__':
     }
 
     torch.save(checkpoint_data, model_checkpoint)
+    wandb.save(model_checkpoint)
 
     # 上傳 checkpoint 到 W&B
     artifact = wandb.Artifact(name="model_checkpoint", type="checkpoint")

@@ -1,22 +1,23 @@
+expname: RS307_0_i2
 data:
-  datadir: /Data/home/vicky/graf-main/data/RS307_0_i2
-  far: 10
-  fov: 10.0
+  datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
+  far: 4.5
+  fov: 32.4
   imsize: 128  
-  near: 5
+  near: 1.5
   orthographic: Faqalse
-  radius: 9.0
+  radius: 2.5
   type: RS307_0_i2
-  umax: 0.19444444444444445
+  umax: 1
   umin: 0
-  vmax: 0.5435778713738291
-  vmin: 0.32898992833716556
+  vmax: 0.5
+  vmin: 0
+  v: 0.4, 0.3, 0.1
   white_bkgd: true
 discriminator:
   num_classes: 4   
   hflip: false
   ndf: 64 #64 #128
-expname: RS307_0_i2
 nerf:
   N_importance: 0
   N_samples: 64
@@ -50,8 +51,6 @@ training:
   model_average_beta: 0.999
   model_average_reinit: false
   model_file: model.pt
-  monitoring: tensorboard
-  n_test_samples_with_same_shape_code: 1
   netchunk: 65536 #262144
   nworkers: 0
   optimizer: rmsprop
