@@ -13,38 +13,6 @@ from GAN_stability.gan_training.train import toggle_grad
 from torch import optim
 import yaml
 
-
-def save_config(outpath, config):
-    from yaml import safe_dump
-    with open(outpath, 'w') as f:
-        safe_dump(config, f)
-
-
-def update_config(config, unknown):
-    # update config given args
-    for idx,arg in enumerate(unknown):
-        if arg.startswith("--"):
-            if (':') in arg:
-                k1,k2 = arg.replace("--","").split(':')
-                argtype = type(config[k1][k2])
-                if argtype == bool:
-                    v = unknown[idx+1].lower() == 'true'
-                else:
-                    if config[k1][k2] is not None:
-                        v = type(config[k1][k2])(unknown[idx+1])
-                    else:
-                        v = unknown[idx+1]
-                print(f'Changing {k1}:{k2} ---- {config[k1][k2]} to {v}')
-                config[k1][k2] = v
-            else:
-                k = arg.replace('--','')
-                v = unknown[idx+1]
-                argtype = type(config[k])
-                print(f'Changing {k} ---- {config[k]} to {v}')
-                config[k] = v
-
-    return config
-
 def to_tensor_and_normalize(x):
         return x * 2 - 1
 

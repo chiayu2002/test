@@ -2,7 +2,27 @@ import numpy as np
 import torch
 import imageio
 import os
+import torchvision
+from torch import distributions
 
+
+def get_zdist(dist_name, dim, device=None):
+    # Get distribution
+    if dist_name == 'uniform':
+        low = -torch.ones(dim, device=device)
+        high = torch.ones(dim, device=device)
+        zdist = distributions.Uniform(low, high)
+    elif dist_name == 'gauss':
+        mu = torch.zeros(dim, device=device)
+        scale = torch.ones(dim, device=device)
+        zdist = distributions.Normal(mu, scale)
+    else:
+        raise NotImplementedError
+
+    # Add dim attribute
+    zdist.dim = dim
+
+    return zdist
 
 def get_nsamples(data_loader, N):
     x = []
@@ -24,6 +44,9 @@ def count_trainable_parameters(model):
   model_parameters = filter(lambda p: p.requires_grad, model.parameters())
   return sum([np.prod(p.size()) for p in model_parameters])
 
+def save_images(imgs, outfile, nrow=8):
+    imgs = imgs / 2 + 0.5     # unnormalize
+    torchvision.utils.save_image(imgs, outfile, nrow=nrow)
 
 def save_video(imgs, fname, as_gif=False, fps=24, quality=8):
     # convert to np.uint8

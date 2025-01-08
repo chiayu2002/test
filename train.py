@@ -14,13 +14,12 @@ import sys
 sys.path.append('submodules')        # needed to make imports work in GAN_stability
 
 from graf.gan_training import Trainer, Evaluator
-from graf.config import get_data, build_models, save_config, update_config, build_lr_scheduler, build_optimizers, load_config
-from graf.utils import count_trainable_parameters, get_nsamples
+from graf.config import get_data, build_models, build_lr_scheduler, build_optimizers, load_config
+from graf.utils import count_trainable_parameters, get_nsamples, save_images, get_zdist
 from graf.transforms import ImgToPatch
 
-from GAN_stability.gan_training import utils
+# from GAN_stability.gan_training import utils
 from GAN_stability.gan_training.train_mod import update_average
-from GAN_stability.gan_training.distributions import get_ydist, get_zdist
 
 import wandb
 
@@ -45,18 +44,8 @@ if __name__ == '__main__':
     assert save_best=='fid' or save_best=='kid', 'Invalid save best metric!'
 
     out_dir = os.path.join(config['training']['outdir'], config['expname'])
-    checkpoint_dir = path.join(out_dir, 'chkpts')
-
-    # network_query_fn missing directories
     if not path.exists(out_dir):
         os.makedirs(out_dir)
-    if not path.exists(checkpoint_dir):
-        os.makedirs(checkpoint_dir)
-
-    # Save config file
-    save_config(os.path.join(out_dir, 'config.yaml'), config)
-
-
     device = torch.device("cuda:0")
 
     # Dataset
@@ -68,7 +57,6 @@ if __name__ == '__main__':
 
     config['data']['hwfr'] = hwfr         # add for building generator
     print(train_dataset, hwfr, render_poses.shape)
-
     print(f"Dataset size: {len(train_dataset)}")
     
     if len(train_dataset) == 0:
@@ -87,10 +75,7 @@ if __name__ == '__main__':
     #     for file_path, label in train_loader.dataset.labels.items():
     #         f.write(f"文件路徑: {file_path}, label: {label}\n")
     
-
-    val_dataset = train_dataset
     val_loader = train_loader
-    hwfr_val = hwfr
 
     # Create models
     generator, discriminator = build_models(config)
@@ -139,8 +124,6 @@ if __name__ == '__main__':
     stats_file = 'stats.p'
 
     # Distributions
-    ydist = get_ydist(1, device=device)         # Dummy to keep GAN training structure in tact
-    y = torch.zeros(batch_size)                 # Dummy to keep GAN training structure in tact
     zdist = get_zdist(config['z_dist']['type'], config['z_dist']['dim'],
                       device=device)
 
@@ -168,7 +151,7 @@ if __name__ == '__main__':
     label_test = torch.tensor(label_list)
     print(f"labeltest:{label_test}")
 
-    utils.save_images(x_real, path.join(out_dir, 'real.png'))
+    save_images(x_real, path.join(out_dir, 'real.png'))
 
     # Test generator
     if config['training']['take_model_average']:
@@ -181,7 +164,7 @@ if __name__ == '__main__':
         generator_test = generator
 
     # Evaluator
-    evaluator = Evaluator(fid_every > 0, generator_test, zdist, ydist,
+    evaluator = Evaluator(fid_every > 0, generator_test, None, None,
                           batch_size=batch_size, device=device, inception_nsamples=33)
 
     # Initialize fid+kid evaluator
