@@ -56,7 +56,7 @@ if __name__ == '__main__':
         hwfr[2] = hw_ortho
 
     config['data']['hwfr'] = hwfr         # add for building generator
-    print(train_dataset, hwfr, render_poses.shape)
+    print(train_dataset, hwfr)
     print(f"Dataset size: {len(train_dataset)}")
     
     if len(train_dataset) == 0:
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         train_dataset,
         batch_size=batch_size,
         num_workers=config['training']['nworkers'],
-        shuffle=True,
+        shuffle=True, pin_memory=True, sampler=None, drop_last=True, 
         generator=torch.Generator(device='cuda:0')
     )
 
@@ -75,8 +75,6 @@ if __name__ == '__main__':
     #     for file_path, label in train_loader.dataset.labels.items():
     #         f.write(f"文件路徑: {file_path}, label: {label}\n")
     
-    val_loader = train_loader
-
     # Create models
     generator, discriminator = build_models(config)
     print('Generator params: %d' % count_trainable_parameters(generator))
@@ -171,7 +169,7 @@ if __name__ == '__main__':
     if fid_every > 0:
         fid_cache_file = os.path.join(out_dir, 'fid_cache_train.npz')
         kid_cache_file = os.path.join(out_dir, 'kid_cache_train.npz')
-        evaluator.inception_eval.initialize_target(val_loader, cache_file=fid_cache_file, act_cache_file=kid_cache_file)
+        evaluator.inception_eval.initialize_target(train_loader, cache_file=fid_cache_file, act_cache_file=kid_cache_file)
 
     # Train
     tstart = t0 = time.time()
@@ -319,7 +317,7 @@ if __name__ == '__main__':
                 N_samples = 4
                 zvid = zdist.sample((N_samples,))
                 basename = os.path.join(out_dir, '{}_{:06d}_'.format(os.path.basename(config['expname']), it))
-                evaluator.make_video(basename, zvid, real_label, render_poses, as_gif=False)
+                evaluator.make_video(basename, zvid, real_label, ptest, as_gif=False)
 
             # (i) Backup if necessary
             if ((it + 1) % backup_every) == 0:
