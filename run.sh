@@ -1,8 +1,8 @@
 #!/bin/bash
-#PBS -l select=1:ncpus=1:gpu_id=1
+#PBS -l select=1:ncpus=1:gpu_id=2
 #PBS -l place=shared
-#PBS -o car1112output.txt				
-#PBS -e car1112error.txt				
+#PBS -o coutput1.txt				
+#PBS -e error1.txt				
 #PBS -N frames				
 
 cd ~/test												

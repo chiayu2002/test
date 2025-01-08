@@ -20,12 +20,12 @@ from graf.transforms import ImgToPatch
 
 from GAN_stability.gan_training import utils
 from GAN_stability.gan_training.train import update_average
-from GAN_stability.gan_training.logger import Logger
-from GAN_stability.gan_training.checkpoints import CheckpointIO
 from GAN_stability.gan_training.distributions import get_ydist, get_zdist
 from GAN_stability.gan_training.config import (
     load_config, build_optimizers,
 )
+
+import wandb
 
 
 if __name__ == '__main__':
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     config = load_config(args.config, 'configs/default.yaml')
     config['data']['fov'] = float(config['data']['fov'])
     config = update_config(config, unknown)
-
+        
     # Short hands
     batch_size = config['training']['batch_size']
     restart_every = config['training']['restart_every']
@@ -61,10 +61,6 @@ if __name__ == '__main__':
     # Save config file
     save_config(os.path.join(out_dir, 'config.yaml'), config)
 
-    # Logger
-    checkpoint_io = CheckpointIO(
-        checkpoint_dir=checkpoint_dir
-    )
 
     device = torch.device("cuda:0")
 
@@ -92,10 +88,6 @@ if __name__ == '__main__':
         generator=torch.Generator(device='cuda:0')
     )
 
-    # first_data = train_dataset[0]
-    # fe, label = first_data
-    # print(fe, label)
-    #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     # with open('label_value0106.txt', 'w') as f:
     #     for file_path, label in train_loader.dataset.labels.items():
     #         f.write(f"文件路徑: {file_path}, label: {label}\n")
@@ -123,25 +115,36 @@ if __name__ == '__main__':
     # input transform
     img_to_patch = ImgToPatch(generator.ray_sampler, hwfr[:3])
 
-    # Register modules to checkpoint
-    checkpoint_io.register_modules(
-        discriminator=discriminator,
-        g_optimizer=g_optimizer,
-        d_optimizer=d_optimizer,
-        **generator.module_dict     # treat NeRF specially
-    )
-    
+    # config.update({
+    #     "discriminator": discriminator.__class__.__name__,  # 紀錄模型名稱
+    #     "g_optimizer": g_optimizer.__class__.__name__,
+    #     "d_optimizer": d_optimizer.__class__.__name__,
+    #     **{f"generator_{key}": val.__class__.__name__ for key, val in generator.module_dict.items()}  # 特別處理 generator
+    # })
+
+    wandb.init(project="graftest", entity="vicky20020808", allow_val_change=True, config=config)
+
+    model_checkpoint = "model_checkpoint.pth"
+    checkpoint_data = {
+        "discriminator_state_dict": discriminator.state_dict(),
+        "g_optimizer_state_dict": g_optimizer.state_dict(),
+        "d_optimizer_state_dict": d_optimizer.state_dict(),
+        "discriminator_ndf": discriminator.ndf,  # 記錄 discriminator 的 ndf
+        "discriminator_num_classes": discriminator.num_classes,
+        "discriminator_hflip": discriminator.hflip,  # 記錄 discriminator 的 ndf
+        **{f"generator_{key}": val.state_dict() for key, val in generator.module_dict.items()}  # 特別處理 generator
+    }
+
+    torch.save(checkpoint_data, model_checkpoint)
+
+    # 上傳 checkpoint 到 W&B
+    artifact = wandb.Artifact(name="model_checkpoint", type="checkpoint")
+    artifact.add_file(model_checkpoint)
+    wandb.log_artifact(artifact)
+
     # Get model file
     model_file = config['training']['model_file']
     stats_file = 'stats.p'
-
-    # Logger
-    logger = Logger(
-        log_dir=path.join(out_dir, 'logs'),
-        img_dir=path.join(out_dir, 'imgs'),
-        monitoring=config['training']['monitoring'],
-        monitoring_dir=path.join(out_dir, 'monitoring')
-    )
 
     # Distributions
     ydist = get_ydist(1, device=device)         # Dummy to keep GAN training structure in tact
@@ -150,7 +153,6 @@ if __name__ == '__main__':
                       device=device)
 
     # Save for tests
-    #n_test_samples_with_same_shape_code = config['training']['n_test_samples_with_same_shape_code']
     ntest = batch_size
     x_real, x_label = get_nsamples(train_loader, ntest)
     #ytest = torch.zeros(ntest)
@@ -173,20 +175,6 @@ if __name__ == '__main__':
     print(f"posetest:{ptest}")
     label_test = torch.tensor(label_list)
     print(f"labeltest:{label_test}")
-    #ptest = torch.stack([generator.sample_test_pose(0.25*(i%4), 0.0285954792//4) for i in range(ntest)])
-    # ptest1 = torch.stack([generator.sample_pose() for i in range(ntest)]) #generate pose
-    # print(f"pose1:{ptest}, pose2:{ptest1}")
-    # if n_test_samples_with_same_shape_code > 0:
-    #     ntest *= n_test_samples_with_same_shape_code #生成圖片的數量
-    #     #ytest = ytest.repeat(n_test_samples_with_same_shape_code)
-    #     #ytest = ytest.repeat(n_test_samples_with_same_shape_code)
-    #     ptest = ptest.unsqueeze_(1).expand(-1, n_test_samples_with_same_shape_code, -1, -1).flatten(0, 1)       # (ntest x n_same_shape) x 3 x 4
-
-    #     zdim_shape = config['z_dist']['dim'] - config['z_dist']['dim_appearance']
-    #     # repeat shape code
-    #     zshape = ztest[:, :zdim_shape].unsqueeze(1).expand(-1, n_test_samples_with_same_shape_code, -1).flatten(0, 1)
-    #     zappearance = zdist.sample((ntest,))[:, zdim_shape:]
-    #     ztest = torch.cat([zshape, zappearance], dim=1)
 
     utils.save_images(x_real, path.join(out_dir, 'real.png'))
 
@@ -196,7 +184,7 @@ if __name__ == '__main__':
         # we have to change the pointers of the parameter function in nerf manually
         generator_test.parameters = lambda: generator_test._parameters
         generator_test.named_parameters = lambda: generator_test._named_parameters
-        checkpoint_io.register_modules(**{k+'_test': v for k, v in generator_test.module_dict.items()})
+        # checkpoint_io.register_modules(**{k+'_test': v for k, v in generator_test.module_dict.items()})
     else:
         generator_test = generator
 
@@ -213,9 +201,9 @@ if __name__ == '__main__':
     # Train
     tstart = t0 = time.time()
 
-    # Load checkpoint if it exists
+    # # Load checkpoint if it exists
     try:
-        load_dict = checkpoint_io.load(model_file)
+        load_dict = torch.load(model_file)
     except FileNotFoundError:
         it = epoch_idx = -1
         fid_best = float('inf')
@@ -225,7 +213,7 @@ if __name__ == '__main__':
         epoch_idx = load_dict.get('epoch_idx', -1)
         fid_best = load_dict.get('fid_best', float('inf'))
         kid_best = load_dict.get('kid_best', float('inf'))
-        logger.load_stats(stats_file)
+        torch.load_stats(stats_file)
 
     # Reinitialize model average if needed
     if (config['training']['take_model_average']
@@ -252,6 +240,10 @@ if __name__ == '__main__':
 
     print('it {}: start with LR:\n\td_lr: {}\tg_lr: {}'.format(it, d_optimizer.param_groups[0]['lr'], g_optimizer.param_groups[0]['lr']))
 
+    wandb.watch(discriminator, log="all")
+    print(generator.module_dict)
+    wandb.watch(generator.module_dict['generator'], log="all")
+
     # Training loop
     print('Start training...')
     while True:
@@ -265,15 +257,16 @@ if __name__ == '__main__':
 
             # Sample patches for real data
             rgbs = img_to_patch(x_real.to(device))          # N_samples x C
-            #print(f"rgbs shape: {rgbs.shape}")
 
             # Discriminator updates
             z = zdist.sample((batch_size,)) #torch.Size([8, 256])
-            #print(f"z shape: {z.shape}")
-            #y=torch.randn(8, 10)
             dloss, reg = trainer.discriminator_trainstep(rgbs, real_label, z=z)
-            logger.add('losses', 'discriminator', dloss, it=it)
-            logger.add('losses', 'regularizer', reg, it=it)  #正則化損失
+
+            wandb.log({
+            "loss/discriminator": dloss,
+            "loss/regularizer": reg,
+            "iteration": it
+            })
 
             # Generators updates
             if config['nerf']['decrease_noise']:
@@ -281,7 +274,11 @@ if __name__ == '__main__':
 
             z = zdist.sample((batch_size,))
             gloss = trainer.generator_trainstep(real_label, z)
-            logger.add('losses', 'generator', gloss, it=it)
+
+            wandb.log({
+            "loss/generator": gloss,
+            "iteration": it
+            })
 
             if config['training']['take_model_average']:
                 update_average(generator_test, generator,
@@ -294,48 +291,61 @@ if __name__ == '__main__':
             d_lr = d_optimizer.param_groups[0]['lr']
             g_lr = g_optimizer.param_groups[0]['lr']
 
-            logger.add('learning_rates', 'discriminator', d_lr, it=it)
-            logger.add('learning_rates', 'generator', g_lr, it=it)
+            wandb.log({
+            "Generator LR": g_lr,
+            "Discriminator LR": d_lr
+            })
+
 
             dt = time.time() - t_it
             # Print stats
             if ((it + 1) % config['training']['print_every']) == 0:
-                g_loss_last = logger.get_last('losses', 'generator')
-                d_loss_last = logger.get_last('losses', 'discriminator')
-                d_reg_last = logger.get_last('losses', 'regularizer')
                 print('[%s epoch %0d, it %4d, t %0.3f] g_loss = %.4f, d_loss = %.4f, reg=%.4f'
-                      % (config['expname'], epoch_idx, it + 1, dt, g_loss_last, d_loss_last, d_reg_last))
+                  % (config['expname'], epoch_idx, it + 1, dt, dloss, gloss, reg))
 
             # (ii) Sample if necessary
             if ((it % config['training']['sample_every']) == 0) or ((it < 500) and (it % 100 == 0)):
             # if it >1:
                 rgb, depth, acc = evaluator.create_samples(ztest.to(device), label_test, poses=ptest)
-                logger.add_imgs(rgb, 'rgb', it)
-                logger.add_imgs(depth, 'depth', it)
+                wandb.log({
+                "sample/rgb": [wandb.Image(rgb)],
+                "sample/depth": [wandb.Image(depth)],
+                "sample/acc": [wandb.Image(acc)],
+                "iteration": it
+                })
 
-                # rgb1, depth1, acc1 = evaluator.create_samples(ztest.to(device), real_label, poses=ptest1)
-                # logger.add_imgs(rgb1, 'rgb1', it)
-                # logger.add_imgs(depth1, 'depth1', it)
-                #logger.add_imgs(acc, 'acc', it)
 
             # (v) Compute fid if necessary
             if fid_every > 0 and ((it + 1) % fid_every) == 0:
                 fid, kid = evaluator.compute_fid_kid(real_label)
-                logger.add('validation', 'fid', fid, it=it)
-                logger.add('validation', 'kid', kid, it=it)
+                wandb.log({
+                "validation/fid": fid,
+                "validation/kid": kid,
+                "iteration": it
+                })
                 torch.cuda.empty_cache()
                 # save best model
                 if save_best=='fid' and fid < fid_best:
                     fid_best = fid
                     print('Saving best model...')
-                    checkpoint_io.save('model_best.pt', it=it, epoch_idx=epoch_idx, fid_best=fid_best, kid_best=kid_best)
-                    logger.save_stats('stats_best.p')
+                    wandb.save('model_best.pth')
+                    wandb.log({
+                    "iteration": it,
+                    "epoch_idx": epoch_idx,
+                    "fid_best": fid_best,
+                    "kid_best": kid_best
+                    })
                     torch.cuda.empty_cache()
                 elif save_best=='kid' and kid < kid_best:
                     kid_best = kid
                     print('Saving best model...')
-                    checkpoint_io.save('model_best.pt', it=it, epoch_idx=epoch_idx, fid_best=fid_best, kid_best=kid_best)
-                    logger.save_stats('stats_best.p')
+                    wandb.save('model_best.pth')
+                    wandb.log({
+                    "iteration": it,
+                    "epoch_idx": epoch_idx,
+                    "fid_best": fid_best,
+                    "kid_best": kid_best
+                    })
                     torch.cuda.empty_cache()
                     generator.save('0813_for_cGAN_{}epochs.h5'.format(it+1))
 
@@ -344,21 +354,30 @@ if __name__ == '__main__':
             if ((it+1) % config['training']['video_every']) == 0:
                 N_samples = 4
                 zvid = zdist.sample((N_samples,))
-
                 basename = os.path.join(out_dir, '{}_{:06d}_'.format(os.path.basename(config['expname']), it))
                 evaluator.make_video(basename, zvid, real_label, render_poses, as_gif=False)
 
             # (i) Backup if necessary
             if ((it + 1) % backup_every) == 0:
                 print('Saving backup...')
-                checkpoint_io.save('model_%08d.pt' % it, it=it, epoch_idx=epoch_idx, fid_best=fid_best, kid_best=kid_best)
-                logger.save_stats('stats_%08d.p' % it)
+                wandb.save(f'model_{it:08d}.pth')
+                wandb.log({
+                    "iteration": it,
+                    "epoch_idx": epoch_idx,
+                    "fid_best": fid_best,
+                    "kid_best": kid_best
+                    })
 
             # (vi) Save checkpoint if necessary
             if time.time() - t0 > save_every:
                 print('Saving checkpoint...')
-                checkpoint_io.save(model_file, it=it, epoch_idx=epoch_idx, fid_best=fid_best, kid_best=kid_best)
-                logger.save_stats('stats.p')
+                wandb.save(f'model_checkpoint_{it}.pth')
+                wandb.log({
+                    "iteration": it,
+                    "epoch_idx": epoch_idx,
+                    "fid_best": fid_best,
+                    "kid_best": kid_best
+                    })
                 t0 = time.time()
 
                 if (restart_every > 0 and t0 - tstart > restart_every):

@@ -5,3 +5,4 @@ model_params.txt
 /output
 .history
 .txt
+/wandb

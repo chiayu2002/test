@@ -1,4 +1,4 @@
-expname: 4column_1110
+expname: 4column_2501081
 data:
   imsize: 128
   datadir: [data/RS307, data/RS315, data/RS330, data/RS615]

@@ -91,7 +91,7 @@ class Evaluator(EvaluatorBase):
 
         return rgb, depth, acc
 
-    def make_video(self, basename, z, poses, as_gif=True):
+    def make_video(self, basename, z, label, poses, as_gif=True):
         """ Generate images and save them as video.
         z (N_samples, zdim): latent codes
         poses (N_frames, 3 x 4): camera poses for all frames of video
@@ -103,7 +103,7 @@ class Evaluator(EvaluatorBase):
         poses = poses.unsqueeze(0) \
             .expand(N_samples, -1, -1, -1).flatten(0, 1)  # (N_samples x N_frames) x 3 x 4
 
-        rgbs, depths, accs = self.create_samples(z, poses=poses)
+        rgbs, depths, accs = self.create_samples(z, label, poses=poses)
 
         reshape = lambda x: x.view(N_samples, N_frames, *x.shape[1:])
         rgbs = reshape(rgbs)

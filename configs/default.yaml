@@ -42,7 +42,7 @@ training:
   chunk: 32768 #131072
   equalize_lr: false
   fid_every: 5000
-  gan_type: wgan
+  gan_type: standard
   lr_anneal: 0.5
   lr_anneal_every: 50000,100000,200000
   lr_d: 0.0001
