@@ -70,9 +70,9 @@ class Discriminator(nn.Module):
         blocks = [x for x in blocks if x]
         self.main = nn.Sequential(*blocks)
         if cond:
-            self.cond_encoder = SN(nn.Linear(4, self.n_feat))
-            nn.init.normal_(self.cond_encoder.weight, 0.0, 0.05)
-            nn.init.constant_(self.cond_encoder.bias, 0.)
+            self.embedding = nn.Embedding(num_classes, self.n_feat)
+            nn.init.normal_(self.embedding.weight, 0.0, 0.05)
+
 
     def forward(self, input, label):
         input = input[:, :self.nc]
@@ -81,17 +81,15 @@ class Discriminator(nn.Module):
         #print(f"Input shape after view: {input.shape}")
 
         first_label = label[:,0]
-        first_label =first_label.long()
-        one_hot_label = torch.nn.functional.one_hot(first_label, self.num_classes)
-        device = torch.device("cuda:0")
-        label_value = one_hot_label.to(device).float()
+        first_label = first_label.long().to(input.device)
+        label_embedding = self.embedding(first_label)
 
         if self.hflip:      # Randomly flip input horizontally
             input_flipped = input.flip(3)
             mask = torch.randint(0, 2, (len(input),1, 1, 1)).bool().expand(-1, *input.shape[1:])
             input = torch.where(mask, input, input_flipped)
         a = self.main(input)
-        b = self.cond_encoder(label_value).view([8, self.n_feat, 1, 1])
+        b = label_embedding.view(label_embedding.size(0), label_embedding.size(1), 1, 1)  # (B, n_feat, 1, 1)
         out = a * b
         out = self.conv_out(out)
 

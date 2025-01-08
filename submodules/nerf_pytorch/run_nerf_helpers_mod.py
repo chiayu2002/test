@@ -87,8 +87,9 @@ class NeRF(nn.Module):
         # self.views_linears = nn.ModuleList(
         #     [nn.Linear(input_ch_views + W, W//2)] + [nn.Linear(W//2, W//2) for i in range(D//2)])
         if cond:
-            self.cond = nn.Linear(numclasses, W)
-            torch.nn.init.xavier_uniform_(self.cond.weight)
+            # self.cond = nn.Linear(numclasses, W)
+            # torch.nn.init.xavier_uniform_(self.cond.weight)
+             self.embedding = nn.Embedding(numclasses, W)
         if use_viewdirs:
             self.feature_linear = nn.Linear(W, W)
             self.alpha_linear = nn.Linear(W, 1)
@@ -99,8 +100,9 @@ class NeRF(nn.Module):
     def forward(self, x, label):
         input_pts, input_views = torch.split(x, [self.input_ch, self.input_ch_views], dim=-1) #torch.Size([65536, 191]),torch.Size([65536, 155])
         h = input_pts
-        label = label.long()
-        one_hot_label = torch.nn.functional.one_hot(label, self.numclasses).float()
+        label = label.long().to(h.device)
+        # one_hot_label = torch.nn.functional.one_hot(label, self.numclasses).float()
+        label_embedding = self.embedding(label)
         for i, l in enumerate(self.pts_linears):
             h = self.pts_linears[i](h)
             h = relu(h)
@@ -111,14 +113,12 @@ class NeRF(nn.Module):
             alpha = self.alpha_linear(h)
             feature = self.feature_linear(h)
 
-            device = feature.device
-            one_hot_label = one_hot_label.to(device=device)
-            repeat_times = feature.shape[0] // 8
-            label_repeat = one_hot_label.repeat(repeat_times, 1)
-            
-            a = self.cond(label_repeat)
-            b = a * feature
-            h = torch.cat([b, input_views], -1)
+            label_embedding = label_embedding.to(feature.device)
+            repeat_times = feature.shape[0] // label_embedding.shape[0]
+            label_embedding_repeated = label_embedding.repeat(repeat_times, 1)
+
+            conditioned_feature = feature * label_embedding_repeated
+            h = torch.cat([conditioned_feature, input_views], -1)
         
             for i, l in enumerate(self.views_linears):
                 h = self.views_linears[i](h)
