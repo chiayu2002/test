@@ -81,11 +81,11 @@ class NeRF(nn.Module):
             [nn.Linear(input_ch, W)] + [nn.Linear(W, W) if i not in self.skips else nn.Linear(W + input_ch, W) for i in range(D-1)])
         
         ### Implementation according to the official code release (https://github.com/bmild/nerf/blob/master/run_nerf_helpers.py#L104-L105)
-        # self.views_linears = nn.ModuleList([nn.Linear(input_ch_views + W, W//2)])
+        self.views_linears = nn.ModuleList([nn.Linear(input_ch_views + W, W//2)])
 
         ### Implementation according to the paper
-        self.views_linears = nn.ModuleList(
-            [nn.Linear(input_ch_views + W, W//2)] + [nn.Linear(W//2, W//2) for i in range(D//2)])
+        # self.views_linears = nn.ModuleList(
+        #     [nn.Linear(input_ch_views + W, W//2)] + [nn.Linear(W//2, W//2) for i in range(D//2)])
         if cond:
             # self.cond = nn.Linear(numclasses, W)
             # torch.nn.init.xavier_uniform_(self.cond.weight)
@@ -98,26 +98,29 @@ class NeRF(nn.Module):
             self.output_linear = nn.Linear(W, output_ch)
 
     def forward(self, x, label):
-        input_pts, input_views = torch.split(x, [self.input_ch, self.input_ch_views], dim=-1) #torch.Size([65536, 191]),torch.Size([65536, 155])
+        input_pts, input_views = torch.split(x, [self.input_ch, self.input_ch_views], dim=-1) #torch.Size([65536, 319]),torch.Size([65536, 27])
         h = input_pts
+
         label = label.long().to(h.device)
         label_embedding = self.embedding(label)
+        label_embedding = label_embedding.to(h.device)
+        repeat_times = h.shape[0] // label_embedding.shape[0]
+        label_embedding_repeated = label_embedding.repeat(repeat_times, 1)
+
+        input_o, input_shape = torch.split(input_pts, [63, 256], dim=-1)
+        zs = input_shape * label_embedding_repeated
         for i, l in enumerate(self.pts_linears):
             h = self.pts_linears[i](h)
             h = relu(h)
             if i in self.skips:
-                h = torch.cat([input_pts, h], -1)
+                h = torch.cat([input_o, zs, h], -1)
 
         if self.use_viewdirs:
             alpha = self.alpha_linear(h)
             feature = self.feature_linear(h)
 
-            label_embedding = label_embedding.to(feature.device)
-            repeat_times = feature.shape[0] // label_embedding.shape[0]
-            label_embedding_repeated = label_embedding.repeat(repeat_times, 1)
-
-            conditioned_feature = feature * label_embedding_repeated
-            h = torch.cat([conditioned_feature, input_views], -1)
+            # conditioned_feature = feature * label_embedding_repeated
+            h = torch.cat([feature, input_views], -1)
         
             for i, l in enumerate(self.views_linears):
                 h = self.views_linears[i](h)
