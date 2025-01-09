@@ -176,15 +176,13 @@ def create_nerf(args):
     if args.use_viewdirs:
         embeddirs_fn, input_ch_views = get_embedder(args.multires_views, args.i_embed)
 
-    output_ch = 5 if args.N_importance > 0 else 4
+    output_ch = 4
     skips = [4]
     model = NeRF(D=args.netdepth, W=args.netwidth,
                  input_ch=input_ch, output_ch=output_ch, skips=skips,
                  input_ch_views=input_ch_views, use_viewdirs=(args.use_viewdirs > 0))
     grad_vars = list(model.parameters())
     named_params = list(model.named_parameters())
-
-    model_fine = None
 
     network_query_fn = lambda inputs, viewdirs, network_fn, label, features: run_network(inputs, viewdirs, network_fn, label,
                                                                                   features=features,
@@ -196,8 +194,6 @@ def create_nerf(args):
     render_kwargs_train = {             
         'network_query_fn' : network_query_fn,
         'perturb' : args.perturb,
-        'N_importance' : args.N_importance,
-        'network_fine' : model_fine,
         'N_samples' : args.N_samples,
         'network_fn' : model,
         'use_viewdirs' : args.use_viewdirs,
@@ -259,8 +255,6 @@ def render_rays(ray_batch,
                 retraw=False,
                 lindisp=False,
                 perturb=0.,
-                N_importance=0,
-                network_fine=None,
                 white_bkgd=False,
                 raw_noise_std=0.,
                 verbose=False,
