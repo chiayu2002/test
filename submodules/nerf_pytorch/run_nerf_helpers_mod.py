@@ -176,7 +176,7 @@ def get_rays(H, W, focal, c2w):
     rays_o = c2w[:3,-1].expand(rays_d.shape) #torch.Size([128, 128, 3])
     return rays_o, rays_d
 
-def ndc_rays(H, W, focal, near, rays_o, rays_d):
+def ndc_rays(H, W, focal, near, rays_o, rays_d):   #把射線原點移到near平面
     # Shift ray origins to near plane
     t = -(near + rays_o[...,2]) / rays_d[...,2]
     rays_o = rays_o + t[...,None] * rays_d

@@ -54,7 +54,7 @@ def run_network(inputs, viewdirs, fn, label, embed_fn, embeddirs_fn, features=No
     return outputs
 
 
-def batchify_rays(rays_flat, label, chunk=1024*32, **kwargs):
+def batchify_rays(rays_flat, label, chunk=1024*32, **kwargs):  #批次render rays
 
     all_ret = {}
     features = kwargs.get('features')
