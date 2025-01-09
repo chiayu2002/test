@@ -86,7 +86,7 @@ class Generator(object):
             noise_std = self.initial_raw_noise_std - self.initial_raw_noise_std/end_it * it
             self.render_kwargs_train['raw_noise_std'] = noise_std
 
-    def sample_pose(self, u, v):   #計算旋轉矩陣(相機姿勢)
+    def sample_pose(self, u, v):   #計算旋轉矩陣(相機姿勢)  train
         # sample location on unit sphere
         #print("Type of self.v:", type(self.v))
         loc = to_sphere(u, v)
@@ -118,9 +118,9 @@ class Generator(object):
         RT = torch.Tensor(RT.astype(np.float32))
         return RT
     
-    def sample_rays(self, u, v):
+    def sample_rays(self, u, v):   #設train用的rays
         pose = self.sample_pose(u, v)
-        # print(f"trainpose:{pose}")
+        # print(f"`trainpose`:{pose}")
         sampler = self.val_ray_sampler if self.use_test_kwargs else self.ray_sampler 
         batch_rays, _, _ = sampler(self.H, self.W, self.focal, pose)
         return batch_rays #torch.Size([2, 1024, 3])

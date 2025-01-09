@@ -38,7 +38,6 @@ def get_data(config):
     elif dset_type == 'RS307_0_i2':
         dset = RS307_0_i2(**kwargs)
 
-
     dset.H = dset.W = imsize
     dset.focal = W/2 * 1 / np.tan((.5 * fov * np.pi/180.))
     radius = config['data']['radius']
@@ -58,7 +57,7 @@ def get_data(config):
     return dset, [H,W,dset.focal,dset.radius], render_poses
 
 
-def get_render_poses(radius, angle_range=(0, 360), theta=0, N=40, swap_angles=False):
+def get_render_poses(radius, angle_range=(0, 360), theta=0, N=40, swap_angles=False):   #用在eval的時候
     poses = []
     theta = max(0.1, theta)
     for angle in np.linspace(angle_range[0],angle_range[1],N+1)[:-1]:
@@ -115,7 +114,7 @@ def build_models(config, disc=True):
     if disc:
         disc_kwargs = {'nc': 3,       # channels for patch discriminator
                        'ndf': config['discriminator']['ndf'],
-                       'imsize': int(np.sqrt(config['ray_sampler']['N_samples'])),  #int(np.sqrt(config['ray_sampler']['N_samples'])),
+                       'imsize': int(np.sqrt(config['ray_sampler']['N_samples'])),  
                        'hflip': config['discriminator']['hflip'],
                         'num_classes':config['discriminator']['num_classes']
                         }
@@ -125,7 +124,7 @@ def build_models(config, disc=True):
     return generator, discriminator
 
 
-def build_lr_scheduler(optimizer, config, last_epoch=-1):
+def build_lr_scheduler(optimizer, config, last_epoch=-1):   #調整學習率
     import torch.optim as optim
     step_size = config['training']['lr_anneal_every']
     if isinstance(step_size, str):

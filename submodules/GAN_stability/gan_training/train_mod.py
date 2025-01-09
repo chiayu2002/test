@@ -76,19 +76,6 @@ class Trainer(object):
             loss += F.binary_cross_entropy_with_logits(d_out, targets)
         return loss / len(d_outs)
 
-    def wgan_gp_reg(self, x_real, x_fake, y, center=1.):
-        batch_size = y.size(0)
-        eps = torch.rand(batch_size, device=y.device).view(batch_size, 1, 1, 1)
-        x_interp = (1 - eps) * x_real + eps * x_fake
-        x_interp = x_interp.detach()
-        x_interp.requires_grad_()
-        d_out = self.discriminator(x_interp, y)
-
-        reg = (compute_grad2(d_out, x_interp).sqrt() - center).pow(2).mean()
-
-        return reg
-
-
 # Utility functions
 def toggle_grad(model, requires_grad):
     for p in model.parameters():

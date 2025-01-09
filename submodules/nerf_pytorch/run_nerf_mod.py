@@ -31,26 +31,26 @@ def batchify(fn, chunk):
     return ret
 
 
-def run_network(inputs, viewdirs, fn, label, embed_fn, embeddirs_fn, features=None, netchunk=1024*64):
-    inputs_flat = torch.reshape(inputs, [-1, inputs.shape[-1]])
+def run_network(inputs, viewdirs, fn, label, embed_fn, embeddirs_fn, features=None, netchunk=1024*64):   #輸出rgb and sigma
+    inputs_flat = torch.reshape(inputs, [-1, inputs.shape[-1]]) #524288 3
     embedded = embed_fn(inputs_flat)
-    #print(f"0embedded.shape: {embedded.shape}")
+    #print(f"0embedded.shape: {embedded.shape}") 524288 63
     if features is not None:
-        # expand features to shape of flattened inputs
+        # expand features to shape of flattened inputs  524288 256
         features = features.unsqueeze(1).expand(-1, inputs.shape[1], -1).flatten(0, 1)
         features_shape = features
 
         embedded = torch.cat([embedded, features_shape], -1)
-        #print(f"features: {features_shape}")
+        #print(f"features: {features_shape}")  319
 
     if viewdirs is not None:
-        input_dirs = viewdirs[:,None].expand(inputs.shape)
-        input_dirs_flat = torch.reshape(input_dirs, [-1, input_dirs.shape[-1]])
-        embedded_dirs = embeddirs_fn(input_dirs_flat)
-        embedded = torch.cat([embedded, embedded_dirs], -1)
+        input_dirs = viewdirs[:,None].expand(inputs.shape) #8192 64 3
+        input_dirs_flat = torch.reshape(input_dirs, [-1, input_dirs.shape[-1]])  #524288 3
+        embedded_dirs = embeddirs_fn(input_dirs_flat) #524288 27
+        embedded = torch.cat([embedded, embedded_dirs], -1)  #524288 346
 
     outputs_flat = batchify(fn, netchunk)(embedded, label)
-    outputs = torch.reshape(outputs_flat, list(inputs.shape[:-1]) + [outputs_flat.shape[-1]])
+    outputs = torch.reshape(outputs_flat, list(inputs.shape[:-1]) + [outputs_flat.shape[-1]])  #8192 64 4
     return outputs
 
 
