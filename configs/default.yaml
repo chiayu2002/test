@@ -64,5 +64,4 @@ training:
   video_every: 10000
 z_dist:
   dim: 256
-  num_class: 4
   type: gauss

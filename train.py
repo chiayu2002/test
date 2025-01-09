@@ -132,6 +132,7 @@ if __name__ == '__main__':
     ztest = zdist.sample((ntest,))
     ptest_list = []
     label_list = []
+    label_vedio = []
     third_value_map = {0: 359, 0.25: 89, 0.5: 179, 0.75: 269}
     for i in range(ntest):
         if i < 4:
@@ -148,6 +149,12 @@ if __name__ == '__main__':
     print(f"posetest:{ptest}")
     label_test = torch.tensor(label_list)
     print(f"labeltest:{label_test}")
+
+    u_map = {0: 359, 0.125: 44, 0.25: 89, 0.375: 134, 0.5: 179, 0.625: 224, 0.75: 269, 0.875: 314}
+    for i in range(ntest):
+        u_value = 0.125*(i%8)
+        third_value = u_map[u_value]
+        label_vedio.append([0, 0, third_value])
 
     # save_images(x_real, path.join(out_dir, 'real.png'))
 
@@ -317,7 +324,7 @@ if __name__ == '__main__':
                 N_samples = 4
                 zvid = zdist.sample((N_samples,))
                 basename = os.path.join(out_dir, '{}_{:06d}_'.format(os.path.basename(config['expname']), it))
-                evaluator.make_video(basename, zvid, real_label, ptest, as_gif=False)
+                evaluator.make_video(basename, zvid, label_vedio, ptest, as_gif=False)
 
             # (i) Backup if necessary
             if ((it + 1) % backup_every) == 0:

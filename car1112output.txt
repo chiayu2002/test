@@ -1,0 +1,1320 @@
+Loaded RS307_0_i2 128 4320 torch.Size([40, 3, 4]) [128, 128, 71.07920094906835, 3.0] ['data/RS307', 'data/RS315', 'data/RS330', 'data/RS615']
+Dataset RS307_0_i2
+    Number of datapoints: 4320
+    Root location: ['data/RS307', 'data/RS315', 'data/RS330', 'data/RS615']
+    StandardTransform
+Transform: Compose(
+               Resize(size=128, interpolation=bilinear, max_size=None, antialias=None)
+               ToTensor()
+               Lambda()
+           ) [128, 128, (3.0, 3.0), 3.0] torch.Size([40, 3, 4])
+Dataset size: 4320
+Generator params: 728196
+Discriminator params: 2638336, channels: 3
+NeRF(
+  (pts_linears): ModuleList(
+    (0): Linear(in_features=319, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=256, bias=True)
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): Linear(in_features=256, out_features=256, bias=True)
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): Linear(in_features=575, out_features=256, bias=True)
+    (6): Linear(in_features=256, out_features=256, bias=True)
+    (7): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (views_linears): ModuleList(
+    (0): Linear(in_features=283, out_features=128, bias=True)
+  )
+  (cond): Linear(in_features=4, out_features=256, bias=True)
+  (feature_linear): Linear(in_features=256, out_features=256, bias=True)
+  (alpha_linear): Linear(in_features=256, out_features=1, bias=True)
+  (rgb_linear): Linear(in_features=128, out_features=3, bias=True)
+)
+Discriminator(
+  (conv_out): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+  (main): Sequential(
+    (0): Conv2d(3, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (5): LeakyReLU(negative_slope=0.2, inplace=True)
+    (6): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (8): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (cond_encoder): Linear(in_features=4, out_features=512, bias=True)
+)
+posetest:tensor([[[ 0.0000e+00, -2.0000e-01,  9.7980e-01,  2.9394e+00],
+         [ 1.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00],
+         [ 0.0000e+00,  9.7980e-01,  2.0000e-01,  6.0000e-01]],
+
+        [[-1.0000e+00, -1.2246e-17,  5.9995e-17,  1.7999e-16],
+         [ 6.1232e-17, -2.0000e-01,  9.7980e-01,  2.9394e+00],
+         [ 0.0000e+00,  9.7980e-01,  2.0000e-01,  6.0000e-01]],
+
+        [[-1.2246e-16,  2.0000e-01, -9.7980e-01, -2.9394e+00],
+         [-1.0000e+00, -2.4493e-17,  1.1999e-16,  3.5997e-16],
+         [ 0.0000e+00,  9.7980e-01,  2.0000e-01,  6.0000e-01]],
+
+        [[ 1.0000e+00,  3.6739e-17, -1.7999e-16, -5.3996e-16],
+         [-1.8370e-16,  2.0000e-01, -9.7980e-01, -2.9394e+00],
+         [ 0.0000e+00,  9.7980e-01,  2.0000e-01,  6.0000e-01]],
+
+        [[ 0.0000e+00, -4.0000e-01,  9.1652e-01,  2.7495e+00],
+         [ 1.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00],
+         [ 0.0000e+00,  9.1652e-01,  4.0000e-01,  1.2000e+00]],
+
+        [[-1.0000e+00, -2.4493e-17,  5.6120e-17,  1.6836e-16],
+         [ 6.1232e-17, -4.0000e-01,  9.1652e-01,  2.7495e+00],
+         [ 0.0000e+00,  9.1652e-01,  4.0000e-01,  1.2000e+00]],
+
+        [[-1.2246e-16,  4.0000e-01, -9.1652e-01, -2.7495e+00],
+         [-1.0000e+00, -4.8986e-17,  1.1224e-16,  3.3672e-16],
+         [ 0.0000e+00,  9.1652e-01,  4.0000e-01,  1.2000e+00]],
+
+        [[ 1.0000e+00,  7.3479e-17, -1.6836e-16, -5.0508e-16],
+         [-1.8370e-16,  4.0000e-01, -9.1652e-01, -2.7495e+00],
+         [ 0.0000e+00,  9.1652e-01,  4.0000e-01,  1.2000e+00]]])
+labeltest:tensor([[  0,   0, 359],
+        [  0,   0,  89],
+        [  0,   0, 179],
+        [  0,   0, 269],
+        [  0,   1, 359],
+        [  0,   1,  89],
+        [  0,   1, 179],
+        [  0,   1, 269]])
+WARNING: Total number of images smaller than 20000, changing n_samples to 4320!
+it -1: start with LR:
+	d_lr: 0.0001	g_lr: 0.0007
+Start training...
+Start epoch 0...
+[4column_1110 epoch 0, it   10, t 0.449] g_loss = 0.8601, d_loss = 1.0587, reg=0.0002
+[4column_1110 epoch 0, it   20, t 0.440] g_loss = 1.0047, d_loss = 0.9026, reg=0.0006
+[4column_1110 epoch 0, it   30, t 0.482] g_loss = 1.2370, d_loss = 0.7322, reg=0.0006
+[4column_1110 epoch 0, it   40, t 0.448] g_loss = 1.4050, d_loss = 0.6228, reg=0.0013
+[4column_1110 epoch 0, it   50, t 0.445] g_loss = 1.3664, d_loss = 0.6441, reg=0.0007
+[4column_1110 epoch 0, it   60, t 0.446] g_loss = 1.8589, d_loss = 0.5288, reg=0.0011
+[4column_1110 epoch 0, it   70, t 0.443] g_loss = 1.5522, d_loss = 0.5659, reg=0.0023
+[4column_1110 epoch 0, it   80, t 0.479] g_loss = 1.6443, d_loss = 0.8279, reg=0.0023
+[4column_1110 epoch 0, it   90, t 0.660] g_loss = 1.5422, d_loss = 0.4900, reg=0.0026
+[4column_1110 epoch 0, it  100, t 0.449] g_loss = 1.7664, d_loss = 0.4303, reg=0.0028
+[4column_1110 epoch 0, it  110, t 0.457] g_loss = 1.2741, d_loss = 0.5639, reg=0.0063
+[4column_1110 epoch 0, it  120, t 0.442] g_loss = 1.5295, d_loss = 0.4964, reg=0.0070
+[4column_1110 epoch 0, it  130, t 0.479] g_loss = 1.5022, d_loss = 0.3225, reg=0.0035
+[4column_1110 epoch 0, it  140, t 0.447] g_loss = 1.1836, d_loss = 0.5668, reg=0.0114
+[4column_1110 epoch 0, it  150, t 0.444] g_loss = 1.6678, d_loss = 0.5174, reg=0.0082
+[4column_1110 epoch 0, it  160, t 0.479] g_loss = 1.5079, d_loss = 0.5025, reg=0.0046
+[4column_1110 epoch 0, it  170, t 0.452] g_loss = 1.3758, d_loss = 0.4399, reg=0.0091
+[4column_1110 epoch 0, it  180, t 0.444] g_loss = 1.4956, d_loss = 0.6007, reg=0.0106
+[4column_1110 epoch 0, it  190, t 0.479] g_loss = 2.0147, d_loss = 0.4478, reg=0.0078
+[4column_1110 epoch 0, it  200, t 0.451] g_loss = 1.5701, d_loss = 0.5246, reg=0.0174
+[4column_1110 epoch 0, it  210, t 0.455] g_loss = 1.8777, d_loss = 0.6854, reg=0.0063
+[4column_1110 epoch 0, it  220, t 0.445] g_loss = 1.8859, d_loss = 0.4517, reg=0.0102
+[4column_1110 epoch 0, it  230, t 0.481] g_loss = 1.4313, d_loss = 0.4786, reg=0.0179
+[4column_1110 epoch 0, it  240, t 0.444] g_loss = 2.0397, d_loss = 0.4077, reg=0.0063
+[4column_1110 epoch 0, it  250, t 0.446] g_loss = 1.9696, d_loss = 0.4163, reg=0.0105
+[4column_1110 epoch 0, it  260, t 0.478] g_loss = 2.2746, d_loss = 0.3957, reg=0.0203
+[4column_1110 epoch 0, it  270, t 0.452] g_loss = 1.5631, d_loss = 0.6095, reg=0.0267
+[4column_1110 epoch 0, it  280, t 0.438] g_loss = 1.7755, d_loss = 0.3747, reg=0.0247
+[4column_1110 epoch 0, it  290, t 0.477] g_loss = 1.6000, d_loss = 0.3115, reg=0.0233
+[4column_1110 epoch 0, it  300, t 0.446] g_loss = 2.2006, d_loss = 0.4117, reg=0.0093
+[4column_1110 epoch 0, it  310, t 0.444] g_loss = 2.1247, d_loss = 0.3425, reg=0.0173
+[4column_1110 epoch 0, it  320, t 0.445] g_loss = 2.5701, d_loss = 0.2504, reg=0.0161
+[4column_1110 epoch 0, it  330, t 0.446] g_loss = 2.1900, d_loss = 0.3054, reg=0.0192
+[4column_1110 epoch 0, it  340, t 0.479] g_loss = 1.9497, d_loss = 0.2729, reg=0.0073
+[4column_1110 epoch 0, it  350, t 0.445] g_loss = 2.1297, d_loss = 0.2819, reg=0.0227
+[4column_1110 epoch 0, it  360, t 0.445] g_loss = 2.4026, d_loss = 0.4299, reg=0.0127
+[4column_1110 epoch 0, it  370, t 0.479] g_loss = 2.4381, d_loss = 0.4360, reg=0.0108
+[4column_1110 epoch 0, it  380, t 0.449] g_loss = 2.1504, d_loss = 0.3279, reg=0.0341
+[4column_1110 epoch 0, it  390, t 0.669] g_loss = 2.1752, d_loss = 0.2072, reg=0.0161
+[4column_1110 epoch 0, it  400, t 0.519] g_loss = 2.0662, d_loss = 0.3933, reg=0.0375
+[4column_1110 epoch 0, it  410, t 0.664] g_loss = 2.6945, d_loss = 0.3612, reg=0.0218
+[4column_1110 epoch 0, it  420, t 0.672] g_loss = 2.6756, d_loss = 0.2834, reg=0.0226
+[4column_1110 epoch 0, it  430, t 0.543] g_loss = 2.6833, d_loss = 0.6686, reg=0.0141
+[4column_1110 epoch 0, it  440, t 0.658] g_loss = 2.5014, d_loss = 0.2282, reg=0.0180
+[4column_1110 epoch 0, it  450, t 0.660] g_loss = 2.0763, d_loss = 0.2654, reg=0.0210
+[4column_1110 epoch 0, it  460, t 0.666] g_loss = 2.6144, d_loss = 0.2492, reg=0.0225
+[4column_1110 epoch 0, it  470, t 0.665] g_loss = 2.9343, d_loss = 0.4134, reg=0.0189
+[4column_1110 epoch 0, it  480, t 0.511] g_loss = 1.9859, d_loss = 0.2847, reg=0.0356
+[4column_1110 epoch 0, it  490, t 0.652] g_loss = 2.8215, d_loss = 0.3675, reg=0.0385
+[4column_1110 epoch 0, it  500, t 0.647] g_loss = 2.4517, d_loss = 0.2329, reg=0.0336
+[4column_1110 epoch 0, it  510, t 0.659] g_loss = 3.0089, d_loss = 0.3601, reg=0.0145
+[4column_1110 epoch 0, it  520, t 0.660] g_loss = 2.8429, d_loss = 0.1453, reg=0.0128
+[4column_1110 epoch 0, it  530, t 0.669] g_loss = 2.6988, d_loss = 0.3338, reg=0.0300
+[4column_1110 epoch 0, it  540, t 0.543] g_loss = 2.5780, d_loss = 0.4155, reg=0.0371
+Start epoch 1...
+[4column_1110 epoch 1, it  550, t 0.661] g_loss = 3.2587, d_loss = 0.4036, reg=0.0293
+[4column_1110 epoch 1, it  560, t 0.662] g_loss = 2.3705, d_loss = 0.2459, reg=0.0315
+[4column_1110 epoch 1, it  570, t 0.540] g_loss = 3.1960, d_loss = 0.3374, reg=0.0207
+[4column_1110 epoch 1, it  580, t 0.661] g_loss = 2.7879, d_loss = 0.2352, reg=0.0286
+[4column_1110 epoch 1, it  590, t 0.663] g_loss = 1.8814, d_loss = 0.5185, reg=0.0316
+[4column_1110 epoch 1, it  600, t 0.669] g_loss = 2.5756, d_loss = 0.2107, reg=0.0362
+[4column_1110 epoch 1, it  610, t 0.658] g_loss = 2.4444, d_loss = 0.2384, reg=0.0478
+[4column_1110 epoch 1, it  620, t 0.513] g_loss = 2.5493, d_loss = 0.1890, reg=0.0379
+[4column_1110 epoch 1, it  630, t 0.661] g_loss = 2.4983, d_loss = 0.1308, reg=0.0319
+[4column_1110 epoch 1, it  640, t 0.650] g_loss = 2.4769, d_loss = 0.1311, reg=0.0277
+[4column_1110 epoch 1, it  650, t 0.605] g_loss = 1.9571, d_loss = 0.4108, reg=0.0467
+[4column_1110 epoch 1, it  660, t 0.267] g_loss = 2.7199, d_loss = 0.1068, reg=0.0242
+[4column_1110 epoch 1, it  670, t 0.267] g_loss = 2.3882, d_loss = 0.1310, reg=0.0355
+[4column_1110 epoch 1, it  680, t 0.267] g_loss = 2.3793, d_loss = 0.2501, reg=0.0588
+[4column_1110 epoch 1, it  690, t 0.266] g_loss = 2.2415, d_loss = 0.3475, reg=0.0517
+[4column_1110 epoch 1, it  700, t 0.668] g_loss = 2.7299, d_loss = 0.1443, reg=0.0431
+[4column_1110 epoch 1, it  710, t 0.477] g_loss = 3.5997, d_loss = 0.2803, reg=0.0205
+[4column_1110 epoch 1, it  720, t 0.457] g_loss = 3.3779, d_loss = 0.2666, reg=0.0435
+[4column_1110 epoch 1, it  730, t 0.448] g_loss = 3.8634, d_loss = 0.1984, reg=0.0206
+[4column_1110 epoch 1, it  740, t 0.479] g_loss = 2.3258, d_loss = 0.4195, reg=0.0541
+[4column_1110 epoch 1, it  750, t 0.444] g_loss = 2.8066, d_loss = 0.2188, reg=0.0318
+[4column_1110 epoch 1, it  760, t 0.444] g_loss = 2.6114, d_loss = 0.2145, reg=0.0391
+[4column_1110 epoch 1, it  770, t 0.476] g_loss = 2.9358, d_loss = 0.2095, reg=0.0513
+[4column_1110 epoch 1, it  780, t 0.444] g_loss = 3.2748, d_loss = 0.1583, reg=0.0446
+[4column_1110 epoch 1, it  790, t 0.440] g_loss = 2.8011, d_loss = 0.1044, reg=0.0426
+[4column_1110 epoch 1, it  800, t 0.479] g_loss = 2.6994, d_loss = 0.1903, reg=0.0446
+[4column_1110 epoch 1, it  810, t 0.446] g_loss = 3.3917, d_loss = 0.1837, reg=0.0223
+[4column_1110 epoch 1, it  820, t 0.445] g_loss = 3.2981, d_loss = 0.1946, reg=0.0296
+[4column_1110 epoch 1, it  830, t 0.469] g_loss = 2.9893, d_loss = 0.2360, reg=0.0320
+[4column_1110 epoch 1, it  840, t 0.445] g_loss = 2.6509, d_loss = 0.2510, reg=0.0493
+[4column_1110 epoch 1, it  850, t 0.445] g_loss = 4.2082, d_loss = 0.3711, reg=0.0180
+[4column_1110 epoch 1, it  860, t 0.480] g_loss = 3.3423, d_loss = 0.2928, reg=0.0371
+[4column_1110 epoch 1, it  870, t 0.444] g_loss = 3.4106, d_loss = 0.2925, reg=0.0622
+[4column_1110 epoch 1, it  880, t 0.447] g_loss = 1.9899, d_loss = 0.3468, reg=0.0385
+[4column_1110 epoch 1, it  890, t 0.482] g_loss = 4.0786, d_loss = 0.2935, reg=0.0521
+[4column_1110 epoch 1, it  900, t 0.447] g_loss = 3.2945, d_loss = 0.1442, reg=0.0253
+[4column_1110 epoch 1, it  910, t 0.444] g_loss = 3.5505, d_loss = 0.2948, reg=0.0308
+[4column_1110 epoch 1, it  920, t 0.478] g_loss = 3.6911, d_loss = 0.3098, reg=0.0469
+[4column_1110 epoch 1, it  930, t 0.443] g_loss = 3.1828, d_loss = 0.2868, reg=0.0283
+[4column_1110 epoch 1, it  940, t 0.452] g_loss = 3.7555, d_loss = 0.2371, reg=0.0399
+[4column_1110 epoch 1, it  950, t 0.479] g_loss = 2.0273, d_loss = 0.5150, reg=0.0593
+[4column_1110 epoch 1, it  960, t 0.457] g_loss = 2.5161, d_loss = 0.2125, reg=0.0387
+[4column_1110 epoch 1, it  970, t 0.444] g_loss = 3.1404, d_loss = 0.2531, reg=0.0775
+[4column_1110 epoch 1, it  980, t 0.479] g_loss = 3.4555, d_loss = 0.2157, reg=0.0568
+[4column_1110 epoch 1, it  990, t 0.457] g_loss = 3.1641, d_loss = 0.2445, reg=0.0439
+[4column_1110 epoch 1, it 1000, t 0.446] g_loss = 3.2282, d_loss = 0.1124, reg=0.0602
+[4column_1110 epoch 1, it 1010, t 0.445] g_loss = 3.2785, d_loss = 0.1228, reg=0.0361
+[4column_1110 epoch 1, it 1020, t 0.479] g_loss = 2.6898, d_loss = 0.2706, reg=0.0578
+[4column_1110 epoch 1, it 1030, t 0.446] g_loss = 3.7833, d_loss = 0.2744, reg=0.0426
+[4column_1110 epoch 1, it 1040, t 0.448] g_loss = 4.1375, d_loss = 0.2485, reg=0.0499
+[4column_1110 epoch 1, it 1050, t 0.482] g_loss = 3.9014, d_loss = 0.3901, reg=0.0208
+[4column_1110 epoch 1, it 1060, t 0.449] g_loss = 3.8147, d_loss = 0.2251, reg=0.0385
+[4column_1110 epoch 1, it 1070, t 0.446] g_loss = 3.6345, d_loss = 0.1479, reg=0.0472
+[4column_1110 epoch 1, it 1080, t 0.482] g_loss = 3.7712, d_loss = 0.3771, reg=0.0529
+Start epoch 2...
+[4column_1110 epoch 2, it 1090, t 0.449] g_loss = 3.6726, d_loss = 0.1534, reg=0.0418
+[4column_1110 epoch 2, it 1100, t 0.447] g_loss = 3.2372, d_loss = 0.1854, reg=0.0497
+[4column_1110 epoch 2, it 1110, t 0.477] g_loss = 1.9274, d_loss = 0.4775, reg=0.0717
+[4column_1110 epoch 2, it 1120, t 0.444] g_loss = 3.3159, d_loss = 0.0969, reg=0.0487
+[4column_1110 epoch 2, it 1130, t 0.451] g_loss = 2.7650, d_loss = 0.1711, reg=0.0246
+[4column_1110 epoch 2, it 1140, t 0.478] g_loss = 3.5305, d_loss = 0.1283, reg=0.0552
+[4column_1110 epoch 2, it 1150, t 0.444] g_loss = 3.7110, d_loss = 0.1405, reg=0.0564
+[4column_1110 epoch 2, it 1160, t 0.442] g_loss = 3.8298, d_loss = 0.0878, reg=0.0458
+[4column_1110 epoch 2, it 1170, t 0.472] g_loss = 3.4758, d_loss = 0.3510, reg=0.0669
+[4column_1110 epoch 2, it 1180, t 0.444] g_loss = 3.1854, d_loss = 0.1398, reg=0.0666
+[4column_1110 epoch 2, it 1190, t 0.449] g_loss = 3.2604, d_loss = 0.1755, reg=0.0678
+[4column_1110 epoch 2, it 1200, t 0.479] g_loss = 3.7645, d_loss = 0.2914, reg=0.0443
+[4column_1110 epoch 2, it 1210, t 0.444] g_loss = 5.0902, d_loss = 0.2886, reg=0.0301
+[4column_1110 epoch 2, it 1220, t 0.445] g_loss = 2.0209, d_loss = 0.3442, reg=0.0830
+[4column_1110 epoch 2, it 1230, t 0.478] g_loss = 4.3010, d_loss = 0.1793, reg=0.0403
+[4column_1110 epoch 2, it 1240, t 0.445] g_loss = 3.5015, d_loss = 0.1539, reg=0.0660
+[4column_1110 epoch 2, it 1250, t 0.448] g_loss = 4.9958, d_loss = 0.3029, reg=0.0365
+[4column_1110 epoch 2, it 1260, t 0.477] g_loss = 3.7137, d_loss = 0.1473, reg=0.0589
+[4column_1110 epoch 2, it 1270, t 0.451] g_loss = 4.4890, d_loss = 0.1164, reg=0.0471
+[4column_1110 epoch 2, it 1280, t 0.449] g_loss = 3.3657, d_loss = 0.1550, reg=0.0391
+[4column_1110 epoch 2, it 1290, t 0.479] g_loss = 3.1022, d_loss = 0.1172, reg=0.0382
+[4column_1110 epoch 2, it 1300, t 0.444] g_loss = 3.2132, d_loss = 0.1460, reg=0.0592
+[4column_1110 epoch 2, it 1310, t 0.668] g_loss = 3.6183, d_loss = 0.1013, reg=0.0538
+[4column_1110 epoch 2, it 1320, t 0.446] g_loss = 3.7094, d_loss = 0.1925, reg=0.0532
+[4column_1110 epoch 2, it 1330, t 0.481] g_loss = 4.3333, d_loss = 0.1458, reg=0.0639
+[4column_1110 epoch 2, it 1340, t 0.451] g_loss = 3.5655, d_loss = 0.1397, reg=0.0450
+[4column_1110 epoch 2, it 1350, t 0.442] g_loss = 2.7306, d_loss = 0.0566, reg=0.0283
+[4column_1110 epoch 2, it 1360, t 0.478] g_loss = 4.2642, d_loss = 0.0547, reg=0.0391
+[4column_1110 epoch 2, it 1370, t 0.452] g_loss = 3.4158, d_loss = 0.0878, reg=0.0356
+[4column_1110 epoch 2, it 1380, t 0.449] g_loss = 3.5540, d_loss = 0.1290, reg=0.0536
+[4column_1110 epoch 2, it 1390, t 0.478] g_loss = 3.7744, d_loss = 0.1325, reg=0.0389
+[4column_1110 epoch 2, it 1400, t 0.480] g_loss = 3.1636, d_loss = 0.1041, reg=0.0349
+[4column_1110 epoch 2, it 1410, t 0.448] g_loss = 3.7862, d_loss = 0.1332, reg=0.0553
+[4column_1110 epoch 2, it 1420, t 0.446] g_loss = 4.6041, d_loss = 0.2281, reg=0.0402
+[4column_1110 epoch 2, it 1430, t 0.482] g_loss = 3.0547, d_loss = 0.1110, reg=0.0234
+[4column_1110 epoch 2, it 1440, t 0.451] g_loss = 3.0386, d_loss = 0.1711, reg=0.0520
+[4column_1110 epoch 2, it 1450, t 0.442] g_loss = 3.7684, d_loss = 0.0908, reg=0.0546
+[4column_1110 epoch 2, it 1460, t 0.479] g_loss = 3.0745, d_loss = 0.1363, reg=0.0566
+[4column_1110 epoch 2, it 1470, t 0.479] g_loss = 4.0880, d_loss = 0.1472, reg=0.0656
+[4column_1110 epoch 2, it 1480, t 0.457] g_loss = 3.9361, d_loss = 0.1091, reg=0.0471
+[4column_1110 epoch 2, it 1490, t 0.446] g_loss = 4.1359, d_loss = 0.1431, reg=0.0671
+Saving checkpoint...
+[4column_1110 epoch 2, it 1500, t 0.482] g_loss = 2.7648, d_loss = 0.2675, reg=0.0554
+[4column_1110 epoch 2, it 1510, t 0.481] g_loss = 4.3580, d_loss = 0.3281, reg=0.0433
+[4column_1110 epoch 2, it 1520, t 0.452] g_loss = 3.3461, d_loss = 0.3102, reg=0.0399
+[4column_1110 epoch 2, it 1530, t 0.448] g_loss = 4.8886, d_loss = 0.5665, reg=0.0323
+[4column_1110 epoch 2, it 1540, t 0.479] g_loss = 4.1285, d_loss = 0.1591, reg=0.0601
+[4column_1110 epoch 2, it 1550, t 0.446] g_loss = 4.0111, d_loss = 0.0795, reg=0.0557
+[4column_1110 epoch 2, it 1560, t 0.446] g_loss = 3.4042, d_loss = 0.1479, reg=0.0507
+[4column_1110 epoch 2, it 1570, t 0.478] g_loss = 3.0701, d_loss = 0.0808, reg=0.0558
+[4column_1110 epoch 2, it 1580, t 0.448] g_loss = 4.4645, d_loss = 0.0715, reg=0.0327
+[4column_1110 epoch 2, it 1590, t 0.442] g_loss = 4.6884, d_loss = 0.2042, reg=0.0428
+[4column_1110 epoch 2, it 1600, t 0.478] g_loss = 4.3319, d_loss = 0.2788, reg=0.0337
+[4column_1110 epoch 2, it 1610, t 0.447] g_loss = 3.7974, d_loss = 0.1398, reg=0.0528
+[4column_1110 epoch 2, it 1620, t 0.664] g_loss = 3.7999, d_loss = 0.5323, reg=0.0356
+Start epoch 3...
+[4column_1110 epoch 3, it 1630, t 0.478] g_loss = 2.9292, d_loss = 0.2521, reg=0.0667
+[4column_1110 epoch 3, it 1640, t 0.458] g_loss = 2.9243, d_loss = 0.5550, reg=0.1122
+[4column_1110 epoch 3, it 1650, t 0.442] g_loss = 3.5860, d_loss = 0.1171, reg=0.0416
+[4column_1110 epoch 3, it 1660, t 0.477] g_loss = 3.5976, d_loss = 0.1062, reg=0.0371
+[4column_1110 epoch 3, it 1670, t 0.458] g_loss = 5.2062, d_loss = 0.2230, reg=0.0571
+[4column_1110 epoch 3, it 1680, t 0.442] g_loss = 3.4244, d_loss = 0.1317, reg=0.0633
+[4column_1110 epoch 3, it 1690, t 0.474] g_loss = 3.5988, d_loss = 0.1176, reg=0.0526
+[4column_1110 epoch 3, it 1700, t 0.446] g_loss = 3.6661, d_loss = 0.1457, reg=0.0457
+[4column_1110 epoch 3, it 1710, t 0.448] g_loss = 4.3308, d_loss = 0.5741, reg=0.0378
+[4column_1110 epoch 3, it 1720, t 0.477] g_loss = 3.8543, d_loss = 0.1624, reg=0.0485
+[4column_1110 epoch 3, it 1730, t 0.446] g_loss = 3.7387, d_loss = 0.1370, reg=0.0728
+[4column_1110 epoch 3, it 1740, t 0.444] g_loss = 4.5872, d_loss = 0.1686, reg=0.0294
+[4column_1110 epoch 3, it 1750, t 0.478] g_loss = 3.9213, d_loss = 0.0892, reg=0.0627
+[4column_1110 epoch 3, it 1760, t 0.447] g_loss = 3.1106, d_loss = 0.1425, reg=0.0634
+[4column_1110 epoch 3, it 1770, t 0.444] g_loss = 4.6428, d_loss = 0.4939, reg=0.0411
+[4column_1110 epoch 3, it 1780, t 0.479] g_loss = 4.0107, d_loss = 0.3585, reg=0.0550
+[4column_1110 epoch 3, it 1790, t 0.448] g_loss = 2.7843, d_loss = 0.1067, reg=0.0532
+[4column_1110 epoch 3, it 1800, t 0.447] g_loss = 5.2883, d_loss = 0.6206, reg=0.0571
+[4column_1110 epoch 3, it 1810, t 0.479] g_loss = 4.0587, d_loss = 0.0950, reg=0.0612
+[4column_1110 epoch 3, it 1820, t 0.450] g_loss = 4.3242, d_loss = 0.1919, reg=0.0537
+[4column_1110 epoch 3, it 1830, t 0.444] g_loss = 3.8923, d_loss = 0.0755, reg=0.0549
+[4column_1110 epoch 3, it 1840, t 0.479] g_loss = 4.6055, d_loss = 0.1239, reg=0.0697
+[4column_1110 epoch 3, it 1850, t 0.446] g_loss = 3.7334, d_loss = 0.0806, reg=0.0595
+[4column_1110 epoch 3, it 1860, t 0.445] g_loss = 3.6823, d_loss = 0.1381, reg=0.0627
+[4column_1110 epoch 3, it 1870, t 0.481] g_loss = 3.1359, d_loss = 0.1026, reg=0.0466
+[4column_1110 epoch 3, it 1880, t 0.449] g_loss = 4.3161, d_loss = 0.0568, reg=0.0504
+[4column_1110 epoch 3, it 1890, t 0.446] g_loss = 4.0673, d_loss = 0.0515, reg=0.0373
+[4column_1110 epoch 3, it 1900, t 0.478] g_loss = 4.5155, d_loss = 0.1567, reg=0.0517
+[4column_1110 epoch 3, it 1910, t 0.444] g_loss = 4.0136, d_loss = 0.0986, reg=0.0627
+[4column_1110 epoch 3, it 1920, t 0.442] g_loss = 3.6920, d_loss = 0.0918, reg=0.0287
+[4column_1110 epoch 3, it 1930, t 0.666] g_loss = 4.5449, d_loss = 0.1476, reg=0.0433
+[4column_1110 epoch 3, it 1940, t 0.451] g_loss = 4.2844, d_loss = 0.1849, reg=0.0542
+[4column_1110 epoch 3, it 1950, t 0.445] g_loss = 3.7304, d_loss = 0.0648, reg=0.0266
+[4column_1110 epoch 3, it 1960, t 0.481] g_loss = 4.2907, d_loss = 0.0551, reg=0.0489
+[4column_1110 epoch 3, it 1970, t 0.444] g_loss = 2.9434, d_loss = 0.1176, reg=0.0378
+[4column_1110 epoch 3, it 1980, t 0.443] g_loss = 4.8460, d_loss = 0.1092, reg=0.0563
+[4column_1110 epoch 3, it 1990, t 0.477] g_loss = 3.8922, d_loss = 0.1069, reg=0.0245
+[4column_1110 epoch 3, it 2000, t 0.447] g_loss = 4.2647, d_loss = 0.1917, reg=0.0325
+[4column_1110 epoch 3, it 2010, t 0.453] g_loss = 4.1228, d_loss = 0.0891, reg=0.0440
+[4column_1110 epoch 3, it 2020, t 0.481] g_loss = 4.6033, d_loss = 0.0539, reg=0.0383
+[4column_1110 epoch 3, it 2030, t 0.447] g_loss = 4.9200, d_loss = 0.2152, reg=0.0583
+[4column_1110 epoch 3, it 2040, t 0.442] g_loss = 3.5270, d_loss = 0.0990, reg=0.0623
+[4column_1110 epoch 3, it 2050, t 0.479] g_loss = 4.2872, d_loss = 0.0358, reg=0.0277
+[4column_1110 epoch 3, it 2060, t 0.457] g_loss = 3.4067, d_loss = 0.2912, reg=0.0740
+[4column_1110 epoch 3, it 2070, t 0.431] g_loss = 4.2566, d_loss = 0.1789, reg=0.0315
+[4column_1110 epoch 3, it 2080, t 0.481] g_loss = 4.2921, d_loss = 0.1503, reg=0.0497
+[4column_1110 epoch 3, it 2090, t 0.448] g_loss = 4.4074, d_loss = 0.0469, reg=0.0472
+[4column_1110 epoch 3, it 2100, t 0.440] g_loss = 4.4365, d_loss = 0.0983, reg=0.0532
+[4column_1110 epoch 3, it 2110, t 0.477] g_loss = 4.1733, d_loss = 0.1626, reg=0.0389
+[4column_1110 epoch 3, it 2120, t 0.447] g_loss = 4.6769, d_loss = 0.0665, reg=0.0421
+[4column_1110 epoch 3, it 2130, t 0.446] g_loss = 3.0910, d_loss = 0.0424, reg=0.0389
+[4column_1110 epoch 3, it 2140, t 0.475] g_loss = 4.1302, d_loss = 0.2075, reg=0.0313
+[4column_1110 epoch 3, it 2150, t 0.454] g_loss = 3.1558, d_loss = 0.0631, reg=0.0654
+[4column_1110 epoch 3, it 2160, t 0.442] g_loss = 3.9581, d_loss = 0.0987, reg=0.0285
+Start epoch 4...
+[4column_1110 epoch 4, it 2170, t 0.482] g_loss = 5.1490, d_loss = 0.2088, reg=0.0554
+[4column_1110 epoch 4, it 2180, t 0.447] g_loss = 4.5656, d_loss = 0.5982, reg=0.0199
+[4column_1110 epoch 4, it 2190, t 0.451] g_loss = 4.3468, d_loss = 0.1883, reg=0.0434
+[4column_1110 epoch 4, it 2200, t 0.479] g_loss = 3.6403, d_loss = 0.1501, reg=0.0451
+[4column_1110 epoch 4, it 2210, t 0.444] g_loss = 5.0266, d_loss = 0.1453, reg=0.0432
+[4column_1110 epoch 4, it 2220, t 0.441] g_loss = 3.0792, d_loss = 0.2649, reg=0.0545
+[4column_1110 epoch 4, it 2230, t 0.477] g_loss = 3.9017, d_loss = 0.2250, reg=0.0182
+[4column_1110 epoch 4, it 2240, t 0.662] g_loss = 3.5878, d_loss = 0.2074, reg=0.0741
+[4column_1110 epoch 4, it 2250, t 0.477] g_loss = 2.1738, d_loss = 0.3116, reg=0.0805
+[4column_1110 epoch 4, it 2260, t 0.451] g_loss = 4.2618, d_loss = 0.1480, reg=0.0380
+[4column_1110 epoch 4, it 2270, t 0.444] g_loss = 4.3681, d_loss = 0.1551, reg=0.0772
+[4column_1110 epoch 4, it 2280, t 0.478] g_loss = 3.2943, d_loss = 0.0541, reg=0.0445
+[4column_1110 epoch 4, it 2290, t 0.452] g_loss = 4.2165, d_loss = 0.0569, reg=0.0473
+[4column_1110 epoch 4, it 2300, t 0.446] g_loss = 3.6143, d_loss = 0.0685, reg=0.0523
+[4column_1110 epoch 4, it 2310, t 0.476] g_loss = 3.6351, d_loss = 0.4220, reg=0.0938
+[4column_1110 epoch 4, it 2320, t 0.449] g_loss = 4.6722, d_loss = 0.0632, reg=0.0422
+[4column_1110 epoch 4, it 2330, t 0.445] g_loss = 3.2766, d_loss = 0.0655, reg=0.0681
+[4column_1110 epoch 4, it 2340, t 0.482] g_loss = 5.1845, d_loss = 0.0748, reg=0.0327
+[4column_1110 epoch 4, it 2350, t 0.445] g_loss = 4.7979, d_loss = 0.0371, reg=0.0399
+[4column_1110 epoch 4, it 2360, t 0.445] g_loss = 3.7076, d_loss = 0.1400, reg=0.0595
+[4column_1110 epoch 4, it 2370, t 0.475] g_loss = 3.2671, d_loss = 0.1735, reg=0.0853
+[4column_1110 epoch 4, it 2380, t 0.451] g_loss = 3.5923, d_loss = 0.1055, reg=0.0511
+[4column_1110 epoch 4, it 2390, t 0.449] g_loss = 5.1142, d_loss = 0.1946, reg=0.0320
+[4column_1110 epoch 4, it 2400, t 0.478] g_loss = 4.6067, d_loss = 0.0598, reg=0.0456
+[4column_1110 epoch 4, it 2410, t 0.446] g_loss = 3.9525, d_loss = 0.2134, reg=0.0777
+[4column_1110 epoch 4, it 2420, t 0.442] g_loss = 4.3278, d_loss = 0.1938, reg=0.0675
+[4column_1110 epoch 4, it 2430, t 0.481] g_loss = 3.2004, d_loss = 0.0845, reg=0.0662
+[4column_1110 epoch 4, it 2440, t 0.456] g_loss = 3.2595, d_loss = 0.0792, reg=0.0580
+[4column_1110 epoch 4, it 2450, t 0.445] g_loss = 4.2920, d_loss = 0.0545, reg=0.0496
+[4column_1110 epoch 4, it 2460, t 0.479] g_loss = 3.0465, d_loss = 0.0391, reg=0.0415
+[4column_1110 epoch 4, it 2470, t 0.449] g_loss = 4.7865, d_loss = 0.1286, reg=0.0346
+[4column_1110 epoch 4, it 2480, t 0.443] g_loss = 3.7538, d_loss = 0.3692, reg=0.0558
+[4column_1110 epoch 4, it 2490, t 0.482] g_loss = 4.4694, d_loss = 0.2637, reg=0.0344
+[4column_1110 epoch 4, it 2500, t 0.444] g_loss = 5.1890, d_loss = 0.6051, reg=0.0347
+[4column_1110 epoch 4, it 2510, t 0.450] g_loss = 2.3739, d_loss = 0.3902, reg=0.0656
+[4column_1110 epoch 4, it 2520, t 0.482] g_loss = 4.1265, d_loss = 0.1089, reg=0.0476
+[4column_1110 epoch 4, it 2530, t 0.447] g_loss = 4.5262, d_loss = 0.0690, reg=0.0481
+[4column_1110 epoch 4, it 2540, t 0.647] g_loss = 3.8326, d_loss = 0.0510, reg=0.0519
+[4column_1110 epoch 4, it 2550, t 0.468] g_loss = 4.8160, d_loss = 0.1749, reg=0.0415
+[4column_1110 epoch 4, it 2560, t 0.452] g_loss = 4.0083, d_loss = 0.0695, reg=0.0459
+[4column_1110 epoch 4, it 2570, t 0.447] g_loss = 4.3616, d_loss = 0.0534, reg=0.0424
+[4column_1110 epoch 4, it 2580, t 0.478] g_loss = 2.2439, d_loss = 0.3971, reg=0.0755
+[4column_1110 epoch 4, it 2590, t 0.451] g_loss = 3.7128, d_loss = 0.0886, reg=0.0520
+[4column_1110 epoch 4, it 2600, t 0.445] g_loss = 2.9800, d_loss = 0.0768, reg=0.0406
+[4column_1110 epoch 4, it 2610, t 0.479] g_loss = 3.5022, d_loss = 0.0899, reg=0.0526
+[4column_1110 epoch 4, it 2620, t 0.444] g_loss = 3.9477, d_loss = 0.1495, reg=0.0695
+[4column_1110 epoch 4, it 2630, t 0.442] g_loss = 3.3140, d_loss = 0.1773, reg=0.0551
+[4column_1110 epoch 4, it 2640, t 0.475] g_loss = 5.2684, d_loss = 0.1383, reg=0.0479
+[4column_1110 epoch 4, it 2650, t 0.457] g_loss = 3.3529, d_loss = 0.2632, reg=0.0744
+[4column_1110 epoch 4, it 2660, t 0.446] g_loss = 3.6831, d_loss = 0.1910, reg=0.0488
+[4column_1110 epoch 4, it 2670, t 0.481] g_loss = 3.3948, d_loss = 0.1189, reg=0.0404
+[4column_1110 epoch 4, it 2680, t 0.458] g_loss = 2.7995, d_loss = 0.1554, reg=0.0770
+[4column_1110 epoch 4, it 2690, t 0.444] g_loss = 3.5195, d_loss = 0.2445, reg=0.0821
+[4column_1110 epoch 4, it 2700, t 0.468] g_loss = 3.3503, d_loss = 0.2621, reg=0.0545
+Start epoch 5...
+[4column_1110 epoch 5, it 2710, t 0.462] g_loss = 3.3843, d_loss = 0.1313, reg=0.0437
+[4column_1110 epoch 5, it 2720, t 0.444] g_loss = 3.8959, d_loss = 0.1146, reg=0.0504
+[4column_1110 epoch 5, it 2730, t 0.480] g_loss = 4.5754, d_loss = 0.0921, reg=0.0417
+[4column_1110 epoch 5, it 2740, t 0.459] g_loss = 4.1216, d_loss = 0.1103, reg=0.0412
+[4column_1110 epoch 5, it 2750, t 0.444] g_loss = 3.9958, d_loss = 0.2537, reg=0.0559
+[4column_1110 epoch 5, it 2760, t 0.477] g_loss = 3.6290, d_loss = 0.0501, reg=0.0430
+[4column_1110 epoch 5, it 2770, t 0.469] g_loss = 4.1067, d_loss = 0.0905, reg=0.0381
+[4column_1110 epoch 5, it 2780, t 0.445] g_loss = 3.9076, d_loss = 0.1473, reg=0.0464
+[4column_1110 epoch 5, it 2790, t 0.476] g_loss = 3.4812, d_loss = 0.3189, reg=0.0870
+[4column_1110 epoch 5, it 2800, t 0.443] g_loss = 2.8605, d_loss = 0.3290, reg=0.0771
+[4column_1110 epoch 5, it 2810, t 0.446] g_loss = 4.7758, d_loss = 0.1232, reg=0.0569
+[4column_1110 epoch 5, it 2820, t 0.444] g_loss = 3.4308, d_loss = 0.0831, reg=0.0513
+[4column_1110 epoch 5, it 2830, t 0.479] g_loss = 1.9425, d_loss = 0.4439, reg=0.0846
+[4column_1110 epoch 5, it 2840, t 0.449] g_loss = 3.2922, d_loss = 0.2444, reg=0.0592
+[4column_1110 epoch 5, it 2850, t 0.667] g_loss = 4.4835, d_loss = 0.0601, reg=0.0465
+[4column_1110 epoch 5, it 2860, t 0.479] g_loss = 2.2226, d_loss = 0.2751, reg=0.0794
+[4column_1110 epoch 5, it 2870, t 0.446] g_loss = 4.4067, d_loss = 0.4579, reg=0.0709
+[4column_1110 epoch 5, it 2880, t 0.443] g_loss = 3.9297, d_loss = 0.1709, reg=0.0332
+[4column_1110 epoch 5, it 2890, t 0.478] g_loss = 3.9650, d_loss = 0.1551, reg=0.0489
+[4column_1110 epoch 5, it 2900, t 0.447] g_loss = 4.3150, d_loss = 0.1352, reg=0.0421
+[4column_1110 epoch 5, it 2910, t 0.445] g_loss = 2.2088, d_loss = 0.4561, reg=0.0948
+[4column_1110 epoch 5, it 2920, t 0.481] g_loss = 4.1823, d_loss = 0.1334, reg=0.0544
+[4column_1110 epoch 5, it 2930, t 0.460] g_loss = 3.8009, d_loss = 0.1158, reg=0.0522
+[4column_1110 epoch 5, it 2940, t 0.441] g_loss = 4.5423, d_loss = 0.5118, reg=0.0483
+[4column_1110 epoch 5, it 2950, t 0.475] g_loss = 4.5500, d_loss = 0.0838, reg=0.0549
+[4column_1110 epoch 5, it 2960, t 0.454] g_loss = 4.0105, d_loss = 0.2344, reg=0.0680
+[4column_1110 epoch 5, it 2970, t 0.439] g_loss = 4.7291, d_loss = 0.2950, reg=0.0260
+[4column_1110 epoch 5, it 2980, t 0.474] g_loss = 3.2721, d_loss = 0.3417, reg=0.0835
+[4column_1110 epoch 5, it 2990, t 0.444] g_loss = 3.4325, d_loss = 0.2304, reg=0.0842
+[4column_1110 epoch 5, it 3000, t 0.449] g_loss = 4.2966, d_loss = 0.2066, reg=0.0766
+[4column_1110 epoch 5, it 3010, t 0.441] g_loss = 3.5584, d_loss = 0.3102, reg=0.0482
+[4column_1110 epoch 5, it 3020, t 0.477] g_loss = 3.5123, d_loss = 0.1344, reg=0.0658
+[4column_1110 epoch 5, it 3030, t 0.455] g_loss = 2.4077, d_loss = 0.2339, reg=0.0738
+[4column_1110 epoch 5, it 3040, t 0.445] g_loss = 3.8253, d_loss = 0.1932, reg=0.0688
+[4column_1110 epoch 5, it 3050, t 0.476] g_loss = 3.7222, d_loss = 0.1261, reg=0.0373
+[4column_1110 epoch 5, it 3060, t 0.449] g_loss = 4.0373, d_loss = 0.0968, reg=0.0556
+Saving checkpoint...
+[4column_1110 epoch 5, it 3070, t 0.448] g_loss = 2.9691, d_loss = 0.0720, reg=0.0375
+[4column_1110 epoch 5, it 3080, t 0.442] g_loss = 4.0486, d_loss = 0.1041, reg=0.0311
+[4column_1110 epoch 5, it 3090, t 0.481] g_loss = 3.8065, d_loss = 0.4450, reg=0.0560
+[4column_1110 epoch 5, it 3100, t 0.449] g_loss = 4.2885, d_loss = 0.1976, reg=0.0535
+[4column_1110 epoch 5, it 3110, t 0.442] g_loss = 2.8127, d_loss = 0.2526, reg=0.0737
+[4column_1110 epoch 5, it 3120, t 0.478] g_loss = 2.9240, d_loss = 0.2057, reg=0.0885
+[4column_1110 epoch 5, it 3130, t 0.449] g_loss = 3.9746, d_loss = 0.0761, reg=0.0598
+[4column_1110 epoch 5, it 3140, t 0.444] g_loss = 2.2261, d_loss = 0.1686, reg=0.0802
+[4column_1110 epoch 5, it 3150, t 0.478] g_loss = 4.0881, d_loss = 0.0995, reg=0.0754
+[4column_1110 epoch 5, it 3160, t 0.653] g_loss = 1.4755, d_loss = 0.3603, reg=0.0821
+[4column_1110 epoch 5, it 3170, t 0.446] g_loss = 3.8377, d_loss = 0.1415, reg=0.0439
+[4column_1110 epoch 5, it 3180, t 0.481] g_loss = 3.6510, d_loss = 0.1723, reg=0.0446
+[4column_1110 epoch 5, it 3190, t 0.446] g_loss = 3.1176, d_loss = 0.3011, reg=0.0751
+[4column_1110 epoch 5, it 3200, t 0.446] g_loss = 3.7452, d_loss = 0.1818, reg=0.0457
+[4column_1110 epoch 5, it 3210, t 0.477] g_loss = 2.5866, d_loss = 0.2731, reg=0.0786
+[4column_1110 epoch 5, it 3220, t 0.444] g_loss = 3.3452, d_loss = 0.1109, reg=0.0398
+[4column_1110 epoch 5, it 3230, t 0.444] g_loss = 4.4553, d_loss = 0.0818, reg=0.0487
+[4column_1110 epoch 5, it 3240, t 0.481] g_loss = 2.1291, d_loss = 0.1946, reg=0.0624
+Start epoch 6...
+[4column_1110 epoch 6, it 3250, t 0.449] g_loss = 3.5714, d_loss = 0.0856, reg=0.0529
+[4column_1110 epoch 6, it 3260, t 0.446] g_loss = 4.1722, d_loss = 0.1311, reg=0.0503
+[4column_1110 epoch 6, it 3270, t 0.481] g_loss = 5.1938, d_loss = 0.1652, reg=0.0408
+[4column_1110 epoch 6, it 3280, t 0.456] g_loss = 4.2576, d_loss = 0.1370, reg=0.0551
+[4column_1110 epoch 6, it 3290, t 0.445] g_loss = 3.4047, d_loss = 0.2678, reg=0.0676
+[4column_1110 epoch 6, it 3300, t 0.480] g_loss = 3.3438, d_loss = 0.0800, reg=0.0559
+[4column_1110 epoch 6, it 3310, t 0.446] g_loss = 2.7633, d_loss = 0.2042, reg=0.0698
+[4column_1110 epoch 6, it 3320, t 0.450] g_loss = 3.8800, d_loss = 0.1919, reg=0.0386
+[4column_1110 epoch 6, it 3330, t 0.481] g_loss = 2.8213, d_loss = 0.1095, reg=0.0412
+[4column_1110 epoch 6, it 3340, t 0.446] g_loss = 3.6796, d_loss = 0.1381, reg=0.0773
+[4column_1110 epoch 6, it 3350, t 0.446] g_loss = 3.1609, d_loss = 0.1222, reg=0.0646
+[4column_1110 epoch 6, it 3360, t 0.481] g_loss = 4.2038, d_loss = 0.1739, reg=0.0474
+[4column_1110 epoch 6, it 3370, t 0.444] g_loss = 3.9601, d_loss = 0.1077, reg=0.0470
+[4column_1110 epoch 6, it 3380, t 0.447] g_loss = 4.1115, d_loss = 0.4030, reg=0.0420
+[4column_1110 epoch 6, it 3390, t 0.479] g_loss = 4.1902, d_loss = 0.1672, reg=0.0530
+[4column_1110 epoch 6, it 3400, t 0.457] g_loss = 3.8831, d_loss = 0.1944, reg=0.0406
+[4column_1110 epoch 6, it 3410, t 0.443] g_loss = 3.2428, d_loss = 0.1364, reg=0.0550
+[4column_1110 epoch 6, it 3420, t 0.477] g_loss = 4.1450, d_loss = 0.1540, reg=0.0582
+[4column_1110 epoch 6, it 3430, t 0.449] g_loss = 4.0031, d_loss = 0.1762, reg=0.0773
+[4column_1110 epoch 6, it 3440, t 0.450] g_loss = 3.2237, d_loss = 0.1410, reg=0.0712
+[4column_1110 epoch 6, it 3450, t 0.478] g_loss = 3.4249, d_loss = 0.0761, reg=0.0581
+[4column_1110 epoch 6, it 3460, t 0.452] g_loss = 2.8992, d_loss = 0.1293, reg=0.0632
+[4column_1110 epoch 6, it 3470, t 0.657] g_loss = 3.4347, d_loss = 0.0898, reg=0.0537
+[4column_1110 epoch 6, it 3480, t 0.478] g_loss = 2.2810, d_loss = 0.2258, reg=0.0675
+[4column_1110 epoch 6, it 3490, t 0.446] g_loss = 3.2071, d_loss = 0.1166, reg=0.0652
+[4column_1110 epoch 6, it 3500, t 0.444] g_loss = 5.0037, d_loss = 0.4281, reg=0.0434
+[4column_1110 epoch 6, it 3510, t 0.476] g_loss = 3.1045, d_loss = 0.1852, reg=0.0773
+[4column_1110 epoch 6, it 3520, t 0.451] g_loss = 4.1579, d_loss = 0.1079, reg=0.0415
+[4column_1110 epoch 6, it 3530, t 0.446] g_loss = 3.9714, d_loss = 0.1378, reg=0.0506
+[4column_1110 epoch 6, it 3540, t 0.476] g_loss = 3.5835, d_loss = 0.0645, reg=0.0585
+[4column_1110 epoch 6, it 3550, t 0.444] g_loss = 4.7209, d_loss = 0.2583, reg=0.0602
+[4column_1110 epoch 6, it 3560, t 0.455] g_loss = 4.3317, d_loss = 0.3570, reg=0.0492
+[4column_1110 epoch 6, it 3570, t 0.482] g_loss = 4.0427, d_loss = 0.1292, reg=0.0558
+[4column_1110 epoch 6, it 3580, t 0.446] g_loss = 2.8988, d_loss = 0.3546, reg=0.0847
+[4column_1110 epoch 6, it 3590, t 0.445] g_loss = 3.1154, d_loss = 0.1649, reg=0.0810
+[4column_1110 epoch 6, it 3600, t 0.479] g_loss = 4.3269, d_loss = 0.2000, reg=0.0708
+[4column_1110 epoch 6, it 3610, t 0.449] g_loss = 4.0726, d_loss = 0.3173, reg=0.0390
+[4column_1110 epoch 6, it 3620, t 0.447] g_loss = 3.0835, d_loss = 0.1337, reg=0.0485
+[4column_1110 epoch 6, it 3630, t 0.478] g_loss = 2.0707, d_loss = 0.2633, reg=0.0765
+[4column_1110 epoch 6, it 3640, t 0.444] g_loss = 3.4994, d_loss = 0.0838, reg=0.0373
+[4column_1110 epoch 6, it 3650, t 0.442] g_loss = 3.5766, d_loss = 0.1366, reg=0.0587
+[4column_1110 epoch 6, it 3660, t 0.479] g_loss = 3.7060, d_loss = 0.1878, reg=0.0670
+[4column_1110 epoch 6, it 3670, t 0.444] g_loss = 3.8781, d_loss = 0.2865, reg=0.0672
+[4column_1110 epoch 6, it 3680, t 0.446] g_loss = 3.0813, d_loss = 0.1820, reg=0.0536
+[4column_1110 epoch 6, it 3690, t 0.479] g_loss = 3.6935, d_loss = 0.1525, reg=0.0623
+[4column_1110 epoch 6, it 3700, t 0.451] g_loss = 4.2311, d_loss = 0.1028, reg=0.0431
+[4column_1110 epoch 6, it 3710, t 0.444] g_loss = 3.4495, d_loss = 0.3306, reg=0.0552
+[4column_1110 epoch 6, it 3720, t 0.478] g_loss = 4.2475, d_loss = 0.1993, reg=0.0501
+[4column_1110 epoch 6, it 3730, t 0.451] g_loss = 4.2610, d_loss = 0.2302, reg=0.0402
+[4column_1110 epoch 6, it 3740, t 0.442] g_loss = 3.9216, d_loss = 0.2377, reg=0.0580
+[4column_1110 epoch 6, it 3750, t 0.477] g_loss = 4.6484, d_loss = 0.3551, reg=0.0454
+[4column_1110 epoch 6, it 3760, t 0.446] g_loss = 3.0023, d_loss = 0.1855, reg=0.0543
+[4column_1110 epoch 6, it 3770, t 0.444] g_loss = 3.8037, d_loss = 0.1616, reg=0.0677
+[4column_1110 epoch 6, it 3780, t 0.651] g_loss = 4.0398, d_loss = 0.1297, reg=0.0502
+Start epoch 7...
+[4column_1110 epoch 7, it 3790, t 0.671] g_loss = 4.5642, d_loss = 0.3986, reg=0.0399
+[4column_1110 epoch 7, it 3800, t 0.663] g_loss = 3.2919, d_loss = 0.1943, reg=0.0526
+[4column_1110 epoch 7, it 3810, t 0.537] g_loss = 3.8629, d_loss = 0.1096, reg=0.0462
+[4column_1110 epoch 7, it 3820, t 0.658] g_loss = 2.8527, d_loss = 0.0879, reg=0.0554
+[4column_1110 epoch 7, it 3830, t 0.669] g_loss = 3.2435, d_loss = 0.0901, reg=0.0612
+[4column_1110 epoch 7, it 3840, t 0.563] g_loss = 3.2601, d_loss = 0.1426, reg=0.0659
+[4column_1110 epoch 7, it 3850, t 0.664] g_loss = 3.6048, d_loss = 0.1932, reg=0.0615
+[4column_1110 epoch 7, it 3860, t 0.673] g_loss = 4.3902, d_loss = 0.1332, reg=0.0602
+[4column_1110 epoch 7, it 3870, t 0.589] g_loss = 3.0777, d_loss = 0.0772, reg=0.0594
+[4column_1110 epoch 7, it 3880, t 0.654] g_loss = 4.9179, d_loss = 0.1823, reg=0.0398
+[4column_1110 epoch 7, it 3890, t 0.658] g_loss = 3.6043, d_loss = 0.1980, reg=0.0666
+[4column_1110 epoch 7, it 3900, t 0.604] g_loss = 4.4921, d_loss = 1.1675, reg=0.0297
+[4column_1110 epoch 7, it 3910, t 0.667] g_loss = 2.8220, d_loss = 0.3219, reg=0.0708
+[4column_1110 epoch 7, it 3920, t 0.657] g_loss = 3.2265, d_loss = 0.1164, reg=0.0434
+[4column_1110 epoch 7, it 3930, t 0.660] g_loss = 4.3586, d_loss = 0.3771, reg=0.0618
+[4column_1110 epoch 7, it 3940, t 0.669] g_loss = 3.5868, d_loss = 0.3512, reg=0.0685
+[4column_1110 epoch 7, it 3950, t 0.546] g_loss = 4.4976, d_loss = 0.1734, reg=0.0672
+[4column_1110 epoch 7, it 3960, t 0.657] g_loss = 3.8650, d_loss = 0.2350, reg=0.0577
+[4column_1110 epoch 7, it 3970, t 0.660] g_loss = 2.6322, d_loss = 0.1581, reg=0.0692
+[4column_1110 epoch 7, it 3980, t 0.670] g_loss = 4.9805, d_loss = 0.3454, reg=0.0379
+[4column_1110 epoch 7, it 3990, t 0.661] g_loss = 4.7405, d_loss = 0.2002, reg=0.0336
+[4column_1110 epoch 7, it 4000, t 0.510] g_loss = 3.0663, d_loss = 0.2116, reg=0.0667
+[4column_1110 epoch 7, it 4010, t 0.666] g_loss = 2.8431, d_loss = 0.1412, reg=0.0674
+[4column_1110 epoch 7, it 4020, t 0.663] g_loss = 3.8271, d_loss = 0.1741, reg=0.0481
+[4column_1110 epoch 7, it 4030, t 0.510] g_loss = 3.1100, d_loss = 0.2680, reg=0.0716
+[4column_1110 epoch 7, it 4040, t 0.660] g_loss = 3.0853, d_loss = 0.2151, reg=0.0438
+[4column_1110 epoch 7, it 4050, t 0.265] g_loss = 2.5489, d_loss = 0.4048, reg=0.0552
+[4column_1110 epoch 7, it 4060, t 0.265] g_loss = 2.7979, d_loss = 0.1239, reg=0.0592
+[4column_1110 epoch 7, it 4070, t 0.265] g_loss = 2.7628, d_loss = 0.4523, reg=0.0546
+[4column_1110 epoch 7, it 4080, t 0.665] g_loss = 2.4230, d_loss = 0.4569, reg=0.0684
+[4column_1110 epoch 7, it 4090, t 0.656] g_loss = 2.4159, d_loss = 0.1748, reg=0.0520
+[4column_1110 epoch 7, it 4100, t 0.657] g_loss = 3.4500, d_loss = 0.1882, reg=0.0694
+[4column_1110 epoch 7, it 4110, t 0.667] g_loss = 3.1488, d_loss = 0.1331, reg=0.0424
+[4column_1110 epoch 7, it 4120, t 0.267] g_loss = 4.3138, d_loss = 0.1865, reg=0.0630
+[4column_1110 epoch 7, it 4130, t 0.655] g_loss = 3.2354, d_loss = 0.1129, reg=0.0606
+[4column_1110 epoch 7, it 4140, t 0.443] g_loss = 3.2593, d_loss = 0.0825, reg=0.0591
+[4column_1110 epoch 7, it 4150, t 0.446] g_loss = 3.9730, d_loss = 0.3839, reg=0.0475
+[4column_1110 epoch 7, it 4160, t 0.442] g_loss = 4.1766, d_loss = 0.1939, reg=0.0534
+[4column_1110 epoch 7, it 4170, t 0.477] g_loss = 2.8084, d_loss = 0.0927, reg=0.0582
+[4column_1110 epoch 7, it 4180, t 0.442] g_loss = 3.9371, d_loss = 0.3649, reg=0.0442
+[4column_1110 epoch 7, it 4190, t 0.438] g_loss = 4.1164, d_loss = 0.1399, reg=0.0500
+[4column_1110 epoch 7, it 4200, t 0.479] g_loss = 2.3051, d_loss = 0.2047, reg=0.0700
+[4column_1110 epoch 7, it 4210, t 0.448] g_loss = 3.1982, d_loss = 0.2437, reg=0.0873
+[4column_1110 epoch 7, it 4220, t 0.473] g_loss = 2.7676, d_loss = 0.1784, reg=0.0644
+[4column_1110 epoch 7, it 4230, t 0.440] g_loss = 4.2002, d_loss = 0.0878, reg=0.0650
+[4column_1110 epoch 7, it 4240, t 0.517] g_loss = 2.5735, d_loss = 0.1584, reg=0.0767
+[4column_1110 epoch 7, it 4250, t 0.440] g_loss = 3.3296, d_loss = 0.1944, reg=0.0732
+[4column_1110 epoch 7, it 4260, t 0.479] g_loss = 2.6117, d_loss = 0.2421, reg=0.0846
+[4column_1110 epoch 7, it 4270, t 0.455] g_loss = 1.8625, d_loss = 0.3087, reg=0.0741
+[4column_1110 epoch 7, it 4280, t 0.446] g_loss = 3.2337, d_loss = 0.1592, reg=0.0529
+[4column_1110 epoch 7, it 4290, t 0.475] g_loss = 2.5084, d_loss = 0.2023, reg=0.0674
+[4column_1110 epoch 7, it 4300, t 0.444] g_loss = 2.8126, d_loss = 0.2503, reg=0.0761
+[4column_1110 epoch 7, it 4310, t 0.452] g_loss = 4.3087, d_loss = 0.0718, reg=0.0440
+[4column_1110 epoch 7, it 4320, t 0.476] g_loss = 3.7148, d_loss = 0.1443, reg=0.0724
+Start epoch 8...
+[4column_1110 epoch 8, it 4330, t 0.452] g_loss = 2.6249, d_loss = 0.1312, reg=0.0571
+[4column_1110 epoch 8, it 4340, t 0.446] g_loss = 3.2594, d_loss = 0.1619, reg=0.0670
+[4column_1110 epoch 8, it 4350, t 0.477] g_loss = 3.9149, d_loss = 0.2019, reg=0.0674
+[4column_1110 epoch 8, it 4360, t 0.448] g_loss = 3.5051, d_loss = 0.0812, reg=0.0538
+[4column_1110 epoch 8, it 4370, t 0.446] g_loss = 3.0314, d_loss = 0.4537, reg=0.0622
+[4column_1110 epoch 8, it 4380, t 0.481] g_loss = 3.5234, d_loss = 0.1868, reg=0.0620
+[4column_1110 epoch 8, it 4390, t 0.455] g_loss = 3.2424, d_loss = 0.1254, reg=0.0683
+[4column_1110 epoch 8, it 4400, t 0.446] g_loss = 3.4783, d_loss = 0.1022, reg=0.0606
+[4column_1110 epoch 8, it 4410, t 0.476] g_loss = 3.4770, d_loss = 0.2285, reg=0.0829
+[4column_1110 epoch 8, it 4420, t 0.443] g_loss = 3.9722, d_loss = 0.1185, reg=0.0646
+[4column_1110 epoch 8, it 4430, t 0.444] g_loss = 3.7765, d_loss = 0.1055, reg=0.0691
+[4column_1110 epoch 8, it 4440, t 0.656] g_loss = 4.7211, d_loss = 0.7411, reg=0.0253
+[4column_1110 epoch 8, it 4450, t 0.481] g_loss = 3.5581, d_loss = 0.1660, reg=0.0580
+[4column_1110 epoch 8, it 4460, t 0.443] g_loss = 2.3457, d_loss = 0.1160, reg=0.0560
+[4column_1110 epoch 8, it 4470, t 0.441] g_loss = 4.7503, d_loss = 0.3098, reg=0.0480
+[4column_1110 epoch 8, it 4480, t 0.481] g_loss = 1.1323, d_loss = 1.2930, reg=0.0788
+[4column_1110 epoch 8, it 4490, t 0.451] g_loss = 3.5851, d_loss = 0.4712, reg=0.0428
+[4column_1110 epoch 8, it 4500, t 0.442] g_loss = 2.7342, d_loss = 0.3211, reg=0.0550
+[4column_1110 epoch 8, it 4510, t 0.457] g_loss = 3.8726, d_loss = 0.0752, reg=0.0443
+[4column_1110 epoch 8, it 4520, t 0.444] g_loss = 3.0876, d_loss = 0.2114, reg=0.0693
+[4column_1110 epoch 8, it 4530, t 0.475] g_loss = 3.6183, d_loss = 0.1576, reg=0.0379
+[4column_1110 epoch 8, it 4540, t 0.461] g_loss = 2.9406, d_loss = 0.1143, reg=0.0586
+[4column_1110 epoch 8, it 4550, t 0.443] g_loss = 2.1674, d_loss = 0.4307, reg=0.0855
+[4column_1110 epoch 8, it 4560, t 0.481] g_loss = 3.1019, d_loss = 0.2679, reg=0.0511
+Saving checkpoint...
+[4column_1110 epoch 8, it 4570, t 0.481] g_loss = 3.2413, d_loss = 0.2857, reg=0.0435
+[4column_1110 epoch 8, it 4580, t 0.462] g_loss = 2.4334, d_loss = 0.3648, reg=0.0629
+[4column_1110 epoch 8, it 4590, t 0.446] g_loss = 3.9063, d_loss = 0.0821, reg=0.0566
+[4column_1110 epoch 8, it 4600, t 0.478] g_loss = 3.3654, d_loss = 0.1136, reg=0.0603
+[4column_1110 epoch 8, it 4610, t 0.459] g_loss = 3.8820, d_loss = 0.2173, reg=0.0642
+[4column_1110 epoch 8, it 4620, t 0.450] g_loss = 3.0458, d_loss = 0.2350, reg=0.0761
+[4column_1110 epoch 8, it 4630, t 0.478] g_loss = 3.5547, d_loss = 0.2005, reg=0.0433
+[4column_1110 epoch 8, it 4640, t 0.466] g_loss = 3.3671, d_loss = 0.1933, reg=0.0603
+[4column_1110 epoch 8, it 4650, t 0.442] g_loss = 3.3062, d_loss = 0.2042, reg=0.0722
+[4column_1110 epoch 8, it 4660, t 0.478] g_loss = 3.3088, d_loss = 0.1380, reg=0.0569
+[4column_1110 epoch 8, it 4670, t 0.451] g_loss = 3.7966, d_loss = 0.2669, reg=0.0488
+[4column_1110 epoch 8, it 4680, t 0.444] g_loss = 3.3153, d_loss = 0.1113, reg=0.0643
+[4column_1110 epoch 8, it 4690, t 0.481] g_loss = 2.0419, d_loss = 0.3142, reg=0.0832
+[4column_1110 epoch 8, it 4700, t 0.445] g_loss = 1.8102, d_loss = 0.3899, reg=0.0932
+[4column_1110 epoch 8, it 4710, t 0.448] g_loss = 3.2292, d_loss = 0.1347, reg=0.0607
+[4column_1110 epoch 8, it 4720, t 0.476] g_loss = 3.4758, d_loss = 0.2004, reg=0.0772
+[4column_1110 epoch 8, it 4730, t 0.446] g_loss = 3.5808, d_loss = 0.2456, reg=0.0650
+[4column_1110 epoch 8, it 4740, t 0.665] g_loss = 2.8140, d_loss = 0.2343, reg=0.0883
+[4column_1110 epoch 8, it 4750, t 0.469] g_loss = 2.5784, d_loss = 0.2147, reg=0.0766
+[4column_1110 epoch 8, it 4760, t 0.450] g_loss = 1.7696, d_loss = 0.4680, reg=0.0821
+[4column_1110 epoch 8, it 4770, t 0.441] g_loss = 3.2853, d_loss = 0.1593, reg=0.0695
+[4column_1110 epoch 8, it 4780, t 0.474] g_loss = 2.8728, d_loss = 0.1148, reg=0.0554
+[4column_1110 epoch 8, it 4790, t 0.448] g_loss = 2.8633, d_loss = 0.6420, reg=0.0723
+[4column_1110 epoch 8, it 4800, t 0.445] g_loss = 3.7454, d_loss = 0.1692, reg=0.0491
+[4column_1110 epoch 8, it 4810, t 0.480] g_loss = 2.9866, d_loss = 0.2771, reg=0.0767
+[4column_1110 epoch 8, it 4820, t 0.471] g_loss = 3.9312, d_loss = 0.2541, reg=0.0524
+[4column_1110 epoch 8, it 4830, t 0.443] g_loss = 2.8099, d_loss = 0.3218, reg=0.0565
+[4column_1110 epoch 8, it 4840, t 0.475] g_loss = 3.8906, d_loss = 0.2893, reg=0.0374
+[4column_1110 epoch 8, it 4850, t 0.453] g_loss = 2.7769, d_loss = 0.2678, reg=0.0584
+[4column_1110 epoch 8, it 4860, t 0.439] g_loss = 3.0009, d_loss = 0.2774, reg=0.0742
+Start epoch 9...
+[4column_1110 epoch 9, it 4870, t 0.465] g_loss = 2.5212, d_loss = 0.1833, reg=0.0734
+[4column_1110 epoch 9, it 4880, t 0.451] g_loss = 4.4736, d_loss = 0.3481, reg=0.0579
+[4column_1110 epoch 9, it 4890, t 0.446] g_loss = 2.7170, d_loss = 0.1963, reg=0.0805
+[4column_1110 epoch 9, it 4900, t 0.439] g_loss = 2.7273, d_loss = 0.1925, reg=0.0746
+[4column_1110 epoch 9, it 4910, t 0.478] g_loss = 3.0521, d_loss = 0.1994, reg=0.0723
+[4column_1110 epoch 9, it 4920, t 0.454] g_loss = 2.5867, d_loss = 0.2441, reg=0.0663
+[4column_1110 epoch 9, it 4930, t 0.446] g_loss = 3.0840, d_loss = 0.5978, reg=0.0590
+[4column_1110 epoch 9, it 4940, t 0.481] g_loss = 3.3475, d_loss = 0.3580, reg=0.0654
+[4column_1110 epoch 9, it 4950, t 0.456] g_loss = 4.2445, d_loss = 0.2108, reg=0.0548
+[4column_1110 epoch 9, it 4960, t 0.448] g_loss = 3.8916, d_loss = 0.2018, reg=0.0528
+[4column_1110 epoch 9, it 4970, t 0.467] g_loss = 3.1390, d_loss = 0.1522, reg=0.0488
+[4column_1110 epoch 9, it 4980, t 0.446] g_loss = 2.7687, d_loss = 0.1743, reg=0.0772
+[4column_1110 epoch 9, it 4990, t 0.442] g_loss = 4.4436, d_loss = 0.2921, reg=0.0666
+[4column_1110 epoch 9, it 5000, t 0.481] g_loss = 3.0870, d_loss = 0.3406, reg=0.0654
+MMD:   0%|          | 0/100 [00:00<?, ?it/s]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   0%|          | 0/100 [00:00<?, ?it/s, mean=0.327]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   0%|          | 0/100 [00:00<?, ?it/s, mean=0.328]MMD:   2%|▏         | 2/100 [00:00<00:08, 11.22it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   2%|▏         | 2/100 [00:00<00:08, 11.22it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   2%|▏         | 2/100 [00:00<00:08, 11.22it/s, mean=0.328]MMD:   4%|▍         | 4/100 [00:00<00:08, 11.29it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   4%|▍         | 4/100 [00:00<00:08, 11.29it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   4%|▍         | 4/100 [00:00<00:08, 11.29it/s, mean=0.328]MMD:   6%|▌         | 6/100 [00:00<00:08, 11.34it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   6%|▌         | 6/100 [00:00<00:08, 11.34it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   6%|▌         | 6/100 [00:00<00:08, 11.34it/s, mean=0.328]MMD:   8%|▊         | 8/100 [00:00<00:08, 11.38it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   8%|▊         | 8/100 [00:00<00:08, 11.38it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   8%|▊         | 8/100 [00:00<00:08, 11.38it/s, mean=0.328]MMD:  10%|█         | 10/100 [00:00<00:07, 11.39it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  10%|█         | 10/100 [00:00<00:07, 11.39it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  10%|█         | 10/100 [00:01<00:07, 11.39it/s, mean=0.328]MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.41it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.41it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.41it/s, mean=0.328]MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.41it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.41it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.41it/s, mean=0.328]MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.43it/s, mean=0.328]MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.46it/s, mean=0.328]MMD:  20%|██        | 20/100 [00:01<00:06, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  20%|██        | 20/100 [00:01<00:06, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  20%|██        | 20/100 [00:01<00:06, 11.46it/s, mean=0.328]MMD:  22%|██▏       | 22/100 [00:01<00:06, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  22%|██▏       | 22/100 [00:02<00:06, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  22%|██▏       | 22/100 [00:02<00:06, 11.45it/s, mean=0.328]MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.42it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.42it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.42it/s, mean=0.328]MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.40it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.40it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.40it/s, mean=0.328]MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.42it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.42it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.42it/s, mean=0.328]MMD:  30%|███       | 30/100 [00:02<00:06, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  30%|███       | 30/100 [00:02<00:06, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  30%|███       | 30/100 [00:02<00:06, 11.44it/s, mean=0.328]MMD:  32%|███▏      | 32/100 [00:02<00:05, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  32%|███▏      | 32/100 [00:02<00:05, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  32%|███▏      | 32/100 [00:02<00:05, 11.43it/s, mean=0.328]MMD:  34%|███▍      | 34/100 [00:02<00:05, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  34%|███▍      | 34/100 [00:03<00:05, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  34%|███▍      | 34/100 [00:03<00:05, 11.44it/s, mean=0.328]MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.45it/s, mean=0.328]MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.46it/s, mean=0.328]MMD:  40%|████      | 40/100 [00:03<00:05, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  40%|████      | 40/100 [00:03<00:05, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  40%|████      | 40/100 [00:03<00:05, 11.45it/s, mean=0.328]MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.47it/s, mean=0.328]MMD:  44%|████▍     | 44/100 [00:03<00:04, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  44%|████▍     | 44/100 [00:03<00:04, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  44%|████▍     | 44/100 [00:04<00:04, 11.47it/s, mean=0.328]MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.46it/s, mean=0.328]MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.46it/s, mean=0.328]MMD:  50%|█████     | 50/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  50%|█████     | 50/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  50%|█████     | 50/100 [00:04<00:04, 11.45it/s, mean=0.328]MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.45it/s, mean=0.328]MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.45it/s, mean=0.328]MMD:  56%|█████▌    | 56/100 [00:04<00:03, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  56%|█████▌    | 56/100 [00:04<00:03, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  56%|█████▌    | 56/100 [00:05<00:03, 11.45it/s, mean=0.328]MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.43it/s, mean=0.328]MMD:  60%|██████    | 60/100 [00:05<00:03, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  60%|██████    | 60/100 [00:05<00:03, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  60%|██████    | 60/100 [00:05<00:03, 11.44it/s, mean=0.328]MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.46it/s, mean=0.328]MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.47it/s, mean=0.328]MMD:  66%|██████▌   | 66/100 [00:05<00:02, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  66%|██████▌   | 66/100 [00:05<00:02, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  66%|██████▌   | 66/100 [00:05<00:02, 11.47it/s, mean=0.328]MMD:  68%|██████▊   | 68/100 [00:05<00:02, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  68%|██████▊   | 68/100 [00:06<00:02, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  68%|██████▊   | 68/100 [00:06<00:02, 11.47it/s, mean=0.328]MMD:  70%|███████   | 70/100 [00:06<00:02, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  70%|███████   | 70/100 [00:06<00:02, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  70%|███████   | 70/100 [00:06<00:02, 11.46it/s, mean=0.328]MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.43it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.43it/s, mean=0.328]MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.44it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.44it/s, mean=0.328]MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.46it/s, mean=0.328]MMD:  78%|███████▊  | 78/100 [00:06<00:01, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  78%|███████▊  | 78/100 [00:06<00:01, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  78%|███████▊  | 78/100 [00:06<00:01, 11.46it/s, mean=0.328]MMD:  80%|████████  | 80/100 [00:06<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  80%|████████  | 80/100 [00:07<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  80%|████████  | 80/100 [00:07<00:01, 11.47it/s, mean=0.328]MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.45it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.45it/s, mean=0.328]MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.46it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.46it/s, mean=0.328]MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.47it/s, mean=0.328]MMD:  88%|████████▊ | 88/100 [00:07<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  88%|████████▊ | 88/100 [00:07<00:01, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  88%|████████▊ | 88/100 [00:07<00:01, 11.47it/s, mean=0.328]MMD:  90%|█████████ | 90/100 [00:07<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  90%|█████████ | 90/100 [00:07<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  90%|█████████ | 90/100 [00:08<00:00, 11.48it/s, mean=0.328]MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.48it/s, mean=0.328]MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.48it/s, mean=0.328]MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.48it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.48it/s, mean=0.328]MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.47it/s, mean=0.328]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.47it/s, mean=0.328]MMD: 100%|██████████| 100/100 [00:08<00:00, 11.46it/s, mean=0.328]MMD: 100%|██████████| 100/100 [00:08<00:00, 11.45it/s, mean=0.328]
+Saving best model...
+[4column_1110 epoch 9, it 5010, t 0.477] g_loss = 2.5795, d_loss = 0.2733, reg=0.0818
+[4column_1110 epoch 9, it 5020, t 0.446] g_loss = 5.0946, d_loss = 0.4633, reg=0.0686
+[4column_1110 epoch 9, it 5030, t 0.442] g_loss = 2.5395, d_loss = 0.1528, reg=0.0572
+[4column_1110 epoch 9, it 5040, t 0.478] g_loss = 3.1673, d_loss = 0.1052, reg=0.0622
+[4column_1110 epoch 9, it 5050, t 0.450] g_loss = 3.5282, d_loss = 0.2884, reg=0.0545
+[4column_1110 epoch 9, it 5060, t 0.441] g_loss = 5.7645, d_loss = 0.5354, reg=0.0467
+[4column_1110 epoch 9, it 5070, t 0.477] g_loss = 3.7225, d_loss = 0.3363, reg=0.0565
+[4column_1110 epoch 9, it 5080, t 0.670] g_loss = 3.0920, d_loss = 0.1315, reg=0.0729
+[4column_1110 epoch 9, it 5090, t 0.446] g_loss = 5.0700, d_loss = 0.3613, reg=0.0506
+[4column_1110 epoch 9, it 5100, t 0.464] g_loss = 2.8063, d_loss = 0.1975, reg=0.0884
+[4column_1110 epoch 9, it 5110, t 0.479] g_loss = 2.9290, d_loss = 0.3511, reg=0.0660
+[4column_1110 epoch 9, it 5120, t 0.429] g_loss = 3.7940, d_loss = 0.2526, reg=0.0704
+[4column_1110 epoch 9, it 5130, t 0.478] g_loss = 3.5110, d_loss = 0.3123, reg=0.0590
+[4column_1110 epoch 9, it 5140, t 0.447] g_loss = 3.0445, d_loss = 0.1508, reg=0.0528
+[4column_1110 epoch 9, it 5150, t 0.441] g_loss = 2.2386, d_loss = 0.1398, reg=0.0580
+[4column_1110 epoch 9, it 5160, t 0.457] g_loss = 3.1133, d_loss = 0.1723, reg=0.0755
+[4column_1110 epoch 9, it 5170, t 0.441] g_loss = 5.4774, d_loss = 0.3373, reg=0.0514
+[4column_1110 epoch 9, it 5180, t 0.475] g_loss = 3.1364, d_loss = 0.2198, reg=0.0550
+[4column_1110 epoch 9, it 5190, t 0.469] g_loss = 5.1554, d_loss = 0.2487, reg=0.0384
+[4column_1110 epoch 9, it 5200, t 0.441] g_loss = 4.3330, d_loss = 0.3049, reg=0.0532
+[4column_1110 epoch 9, it 5210, t 0.464] g_loss = 3.1352, d_loss = 0.1917, reg=0.0651
+[4column_1110 epoch 9, it 5220, t 0.465] g_loss = 2.5175, d_loss = 0.1980, reg=0.0721
+[4column_1110 epoch 9, it 5230, t 0.439] g_loss = 3.8214, d_loss = 0.1581, reg=0.0642
+[4column_1110 epoch 9, it 5240, t 0.464] g_loss = 3.2466, d_loss = 0.1578, reg=0.0593
+[4column_1110 epoch 9, it 5250, t 0.455] g_loss = 3.3651, d_loss = 0.2286, reg=0.0545
+[4column_1110 epoch 9, it 5260, t 0.442] g_loss = 3.2591, d_loss = 0.2143, reg=0.0566
+[4column_1110 epoch 9, it 5270, t 0.464] g_loss = 4.5244, d_loss = 0.2505, reg=0.0511
+[4column_1110 epoch 9, it 5280, t 0.472] g_loss = 3.9289, d_loss = 0.3558, reg=0.0604
+[4column_1110 epoch 9, it 5290, t 0.446] g_loss = 2.9031, d_loss = 0.3592, reg=0.0602
+[4column_1110 epoch 9, it 5300, t 0.466] g_loss = 3.3523, d_loss = 0.1427, reg=0.0800
+[4column_1110 epoch 9, it 5310, t 0.467] g_loss = 3.6680, d_loss = 0.1660, reg=0.0655
+[4column_1110 epoch 9, it 5320, t 0.444] g_loss = 2.4390, d_loss = 0.3148, reg=0.0999
+[4column_1110 epoch 9, it 5330, t 0.482] g_loss = 3.3715, d_loss = 0.1029, reg=0.0519
+[4column_1110 epoch 9, it 5340, t 0.471] g_loss = 2.5115, d_loss = 0.2332, reg=0.0769
+[4column_1110 epoch 9, it 5350, t 0.444] g_loss = 3.9920, d_loss = 0.2993, reg=0.0792
+[4column_1110 epoch 9, it 5360, t 0.464] g_loss = 1.4836, d_loss = 0.4473, reg=0.0958
+[4column_1110 epoch 9, it 5370, t 0.445] g_loss = 3.4690, d_loss = 0.3115, reg=0.0632
+[4column_1110 epoch 9, it 5380, t 0.438] g_loss = 2.7667, d_loss = 0.3863, reg=0.0763
+[4column_1110 epoch 9, it 5390, t 0.657] g_loss = 2.7024, d_loss = 0.1664, reg=0.0613
+[4column_1110 epoch 9, it 5400, t 0.475] g_loss = 3.1724, d_loss = 0.1345, reg=0.0564
+Start epoch 10...
+[4column_1110 epoch 10, it 5410, t 0.443] g_loss = 3.2119, d_loss = 0.1866, reg=0.0728
+[4column_1110 epoch 10, it 5420, t 0.441] g_loss = 3.8344, d_loss = 0.4419, reg=0.0530
+[4column_1110 epoch 10, it 5430, t 0.468] g_loss = 3.5201, d_loss = 0.2735, reg=0.0619
+[4column_1110 epoch 10, it 5440, t 0.457] g_loss = 2.1236, d_loss = 0.3536, reg=0.0880
+[4column_1110 epoch 10, it 5450, t 0.446] g_loss = 2.7193, d_loss = 0.1564, reg=0.0692
+[4column_1110 epoch 10, it 5460, t 0.477] g_loss = 4.2656, d_loss = 0.1658, reg=0.0528
+[4column_1110 epoch 10, it 5470, t 0.451] g_loss = 3.4649, d_loss = 0.2393, reg=0.0612
+[4column_1110 epoch 10, it 5480, t 0.441] g_loss = 2.9868, d_loss = 0.1569, reg=0.0726
+[4column_1110 epoch 10, it 5490, t 0.478] g_loss = 3.0703, d_loss = 0.3486, reg=0.0740
+[4column_1110 epoch 10, it 5500, t 0.459] g_loss = 2.4336, d_loss = 0.3799, reg=0.0829
+[4column_1110 epoch 10, it 5510, t 0.477] g_loss = 2.5506, d_loss = 0.3859, reg=0.0722
+[4column_1110 epoch 10, it 5520, t 0.467] g_loss = 2.7182, d_loss = 0.5614, reg=0.0756
+[4column_1110 epoch 10, it 5530, t 0.443] g_loss = 3.3463, d_loss = 0.2947, reg=0.0706
+[4column_1110 epoch 10, it 5540, t 0.468] g_loss = 2.7620, d_loss = 0.2339, reg=0.0582
+[4column_1110 epoch 10, it 5550, t 0.477] g_loss = 3.4599, d_loss = 0.2107, reg=0.0528
+[4column_1110 epoch 10, it 5560, t 0.447] g_loss = 3.7513, d_loss = 0.2661, reg=0.0568
+[4column_1110 epoch 10, it 5570, t 0.464] g_loss = 3.7659, d_loss = 0.5177, reg=0.0468
+[4column_1110 epoch 10, it 5580, t 0.457] g_loss = 2.7514, d_loss = 0.2297, reg=0.0499
+[4column_1110 epoch 10, it 5590, t 0.444] g_loss = 3.5404, d_loss = 0.2138, reg=0.0557
+[4column_1110 epoch 10, it 5600, t 0.476] g_loss = 2.5990, d_loss = 0.2749, reg=0.0741
+[4column_1110 epoch 10, it 5610, t 0.450] g_loss = 4.2495, d_loss = 0.2484, reg=0.0596
+[4column_1110 epoch 10, it 5620, t 0.445] g_loss = 3.2763, d_loss = 0.3692, reg=0.0610
+[4column_1110 epoch 10, it 5630, t 0.475] g_loss = 2.6629, d_loss = 0.2060, reg=0.0697
+[4column_1110 epoch 10, it 5640, t 0.457] g_loss = 2.5450, d_loss = 0.2499, reg=0.0726
+[4column_1110 epoch 10, it 5650, t 0.443] g_loss = 3.3132, d_loss = 0.2099, reg=0.0583
+[4column_1110 epoch 10, it 5660, t 0.477] g_loss = 3.5395, d_loss = 0.0964, reg=0.0614
+[4column_1110 epoch 10, it 5670, t 0.469] g_loss = 2.4288, d_loss = 0.3029, reg=0.0774
+[4column_1110 epoch 10, it 5680, t 0.441] g_loss = 3.9099, d_loss = 0.2288, reg=0.0714
+[4column_1110 epoch 10, it 5690, t 0.592] g_loss = 2.9980, d_loss = 0.1533, reg=0.0676
+[4column_1110 epoch 10, it 5700, t 0.455] g_loss = 4.0055, d_loss = 0.4119, reg=0.0718
+[4column_1110 epoch 10, it 5710, t 0.452] g_loss = 2.0257, d_loss = 0.4402, reg=0.0897
+[4column_1110 epoch 10, it 5720, t 0.476] g_loss = 1.3294, d_loss = 0.5675, reg=0.1111
+Saving checkpoint...
+[4column_1110 epoch 10, it 5730, t 0.475] g_loss = 3.8919, d_loss = 0.2347, reg=0.0516
+[4column_1110 epoch 10, it 5740, t 0.442] g_loss = 3.0000, d_loss = 0.5833, reg=0.0784
+[4column_1110 epoch 10, it 5750, t 0.446] g_loss = 4.1241, d_loss = 0.3601, reg=0.0676
+[4column_1110 epoch 10, it 5760, t 0.476] g_loss = 3.3527, d_loss = 0.3299, reg=0.0397
+[4column_1110 epoch 10, it 5770, t 0.437] g_loss = 2.9091, d_loss = 0.1889, reg=0.0655
+[4column_1110 epoch 10, it 5780, t 0.442] g_loss = 2.9425, d_loss = 0.1686, reg=0.0668
+[4column_1110 epoch 10, it 5790, t 0.478] g_loss = 3.8016, d_loss = 0.1600, reg=0.0606
+[4column_1110 epoch 10, it 5800, t 0.461] g_loss = 3.3331, d_loss = 0.3204, reg=0.0714
+[4column_1110 epoch 10, it 5810, t 0.441] g_loss = 3.5164, d_loss = 0.1752, reg=0.0534
+[4column_1110 epoch 10, it 5820, t 0.476] g_loss = 2.8833, d_loss = 0.1681, reg=0.0591
+[4column_1110 epoch 10, it 5830, t 0.443] g_loss = 3.1247, d_loss = 0.2255, reg=0.0529
+[4column_1110 epoch 10, it 5840, t 0.443] g_loss = 3.2335, d_loss = 0.2995, reg=0.0651
+[4column_1110 epoch 10, it 5850, t 0.481] g_loss = 3.7937, d_loss = 0.2069, reg=0.0479
+[4column_1110 epoch 10, it 5860, t 0.459] g_loss = 2.8280, d_loss = 0.2470, reg=0.0844
+[4column_1110 epoch 10, it 5870, t 0.443] g_loss = 3.3710, d_loss = 0.1289, reg=0.0559
+[4column_1110 epoch 10, it 5880, t 0.468] g_loss = 3.7410, d_loss = 0.1241, reg=0.0606
+[4column_1110 epoch 10, it 5890, t 0.467] g_loss = 3.1519, d_loss = 0.1430, reg=0.0648
+[4column_1110 epoch 10, it 5900, t 0.439] g_loss = 2.1710, d_loss = 0.3621, reg=0.0774
+[4column_1110 epoch 10, it 5910, t 0.467] g_loss = 4.2654, d_loss = 0.2923, reg=0.0597
+[4column_1110 epoch 10, it 5920, t 0.472] g_loss = 2.0865, d_loss = 0.5976, reg=0.0953
+[4column_1110 epoch 10, it 5930, t 0.439] g_loss = 2.1873, d_loss = 0.3041, reg=0.0738
+[4column_1110 epoch 10, it 5940, t 0.463] g_loss = 3.0715, d_loss = 0.2987, reg=0.0729
+Start epoch 11...
+[4column_1110 epoch 11, it 5950, t 0.462] g_loss = 3.7085, d_loss = 0.1767, reg=0.0488
+[4column_1110 epoch 11, it 5960, t 0.442] g_loss = 4.1853, d_loss = 0.3162, reg=0.0511
+[4column_1110 epoch 11, it 5970, t 0.463] g_loss = 4.2602, d_loss = 0.2786, reg=0.0422
+[4column_1110 epoch 11, it 5980, t 0.446] g_loss = 4.2585, d_loss = 0.1378, reg=0.0536
+[4column_1110 epoch 11, it 5990, t 0.441] g_loss = 2.5214, d_loss = 0.4162, reg=0.0793
+[4column_1110 epoch 11, it 6000, t 0.649] g_loss = 5.0533, d_loss = 0.3415, reg=0.0461
+[4column_1110 epoch 11, it 6010, t 0.481] g_loss = 3.4045, d_loss = 0.1312, reg=0.0576
+[4column_1110 epoch 11, it 6020, t 0.446] g_loss = 3.6084, d_loss = 0.2225, reg=0.0510
+[4column_1110 epoch 11, it 6030, t 0.445] g_loss = 3.2130, d_loss = 0.1527, reg=0.0645
+[4column_1110 epoch 11, it 6040, t 0.477] g_loss = 3.3641, d_loss = 0.2770, reg=0.0717
+[4column_1110 epoch 11, it 6050, t 0.455] g_loss = 2.1159, d_loss = 0.1962, reg=0.0787
+[4column_1110 epoch 11, it 6060, t 0.444] g_loss = 2.4585, d_loss = 0.2070, reg=0.0713
+[4column_1110 epoch 11, it 6070, t 0.481] g_loss = 3.2368, d_loss = 0.3581, reg=0.0691
+[4column_1110 epoch 11, it 6080, t 0.451] g_loss = 3.7095, d_loss = 0.2390, reg=0.0631
+[4column_1110 epoch 11, it 6090, t 0.431] g_loss = 3.4907, d_loss = 0.2018, reg=0.0697
+[4column_1110 epoch 11, it 6100, t 0.480] g_loss = 2.4645, d_loss = 0.1534, reg=0.0734
+[4column_1110 epoch 11, it 6110, t 0.447] g_loss = 3.5079, d_loss = 0.2835, reg=0.0504
+[4column_1110 epoch 11, it 6120, t 0.446] g_loss = 1.6697, d_loss = 0.2825, reg=0.0687
+[4column_1110 epoch 11, it 6130, t 0.475] g_loss = 2.9377, d_loss = 0.2460, reg=0.0632
+[4column_1110 epoch 11, it 6140, t 0.448] g_loss = 2.2561, d_loss = 0.4628, reg=0.0864
+[4column_1110 epoch 11, it 6150, t 0.446] g_loss = 2.8158, d_loss = 0.1623, reg=0.0738
+[4column_1110 epoch 11, it 6160, t 0.441] g_loss = 2.6296, d_loss = 0.2135, reg=0.0727
+[4column_1110 epoch 11, it 6170, t 0.468] g_loss = 2.1941, d_loss = 0.3850, reg=0.0653
+[4column_1110 epoch 11, it 6180, t 0.468] g_loss = 2.4719, d_loss = 0.1747, reg=0.0697
+[4column_1110 epoch 11, it 6190, t 0.449] g_loss = 3.8084, d_loss = 0.3424, reg=0.0668
+[4column_1110 epoch 11, it 6200, t 0.477] g_loss = 1.5904, d_loss = 0.3658, reg=0.0917
+[4column_1110 epoch 11, it 6210, t 0.456] g_loss = 3.5555, d_loss = 0.3027, reg=0.0365
+[4column_1110 epoch 11, it 6220, t 0.441] g_loss = 3.7752, d_loss = 0.1875, reg=0.0546
+[4column_1110 epoch 11, it 6230, t 0.469] g_loss = 3.7829, d_loss = 0.1718, reg=0.0708
+[4column_1110 epoch 11, it 6240, t 0.451] g_loss = 3.9272, d_loss = 0.3959, reg=0.0591
+[4column_1110 epoch 11, it 6250, t 0.437] g_loss = 4.1237, d_loss = 0.1586, reg=0.0766
+[4column_1110 epoch 11, it 6260, t 0.478] g_loss = 2.6643, d_loss = 0.2987, reg=0.0731
+[4column_1110 epoch 11, it 6270, t 0.445] g_loss = 3.3476, d_loss = 0.1912, reg=0.0622
+[4column_1110 epoch 11, it 6280, t 0.437] g_loss = 3.9004, d_loss = 0.2970, reg=0.0619
+[4column_1110 epoch 11, it 6290, t 0.464] g_loss = 2.4633, d_loss = 0.2817, reg=0.0769
+[4column_1110 epoch 11, it 6300, t 0.467] g_loss = 2.5775, d_loss = 0.2769, reg=0.0830
+[4column_1110 epoch 11, it 6310, t 0.652] g_loss = 3.3519, d_loss = 0.2728, reg=0.0589
+[4column_1110 epoch 11, it 6320, t 0.466] g_loss = 3.2740, d_loss = 0.2933, reg=0.0646
+[4column_1110 epoch 11, it 6330, t 0.454] g_loss = 3.2097, d_loss = 0.1494, reg=0.0676
+[4column_1110 epoch 11, it 6340, t 0.442] g_loss = 3.3813, d_loss = 0.1597, reg=0.0519
+[4column_1110 epoch 11, it 6350, t 0.476] g_loss = 2.4870, d_loss = 0.4005, reg=0.0895
+[4column_1110 epoch 11, it 6360, t 0.450] g_loss = 3.2031, d_loss = 0.2561, reg=0.0539
+[4column_1110 epoch 11, it 6370, t 0.444] g_loss = 2.5987, d_loss = 0.1341, reg=0.0721
+[4column_1110 epoch 11, it 6380, t 0.481] g_loss = 4.1523, d_loss = 0.2306, reg=0.0492
+[4column_1110 epoch 11, it 6390, t 0.464] g_loss = 3.6846, d_loss = 0.1786, reg=0.0636
+[4column_1110 epoch 11, it 6400, t 0.441] g_loss = 3.6354, d_loss = 0.2944, reg=0.0582
+[4column_1110 epoch 11, it 6410, t 0.478] g_loss = 2.3834, d_loss = 0.2466, reg=0.0855
+[4column_1110 epoch 11, it 6420, t 0.454] g_loss = 4.0032, d_loss = 0.3856, reg=0.0504
+[4column_1110 epoch 11, it 6430, t 0.438] g_loss = 3.4286, d_loss = 0.1758, reg=0.0582
+[4column_1110 epoch 11, it 6440, t 0.480] g_loss = 3.6162, d_loss = 0.3962, reg=0.0504
+[4column_1110 epoch 11, it 6450, t 0.468] g_loss = 3.0796, d_loss = 0.2605, reg=0.0765
+[4column_1110 epoch 11, it 6460, t 0.439] g_loss = 3.4802, d_loss = 0.1627, reg=0.0542
+[4column_1110 epoch 11, it 6470, t 0.477] g_loss = 3.3237, d_loss = 0.2547, reg=0.0651
+[4column_1110 epoch 11, it 6480, t 0.467] g_loss = 2.9053, d_loss = 0.3700, reg=0.0871
+Start epoch 12...
+[4column_1110 epoch 12, it 6490, t 0.440] g_loss = 2.7707, d_loss = 0.1820, reg=0.0535
+[4column_1110 epoch 12, it 6500, t 0.477] g_loss = 3.4364, d_loss = 0.1293, reg=0.0493
+[4column_1110 epoch 12, it 6510, t 0.455] g_loss = 2.8560, d_loss = 0.1859, reg=0.0696
+[4column_1110 epoch 12, it 6520, t 0.444] g_loss = 2.9539, d_loss = 0.1896, reg=0.0724
+[4column_1110 epoch 12, it 6530, t 0.479] g_loss = 2.1329, d_loss = 0.2001, reg=0.0650
+[4column_1110 epoch 12, it 6540, t 0.451] g_loss = 3.4997, d_loss = 0.3136, reg=0.0612
+[4column_1110 epoch 12, it 6550, t 0.441] g_loss = 2.8913, d_loss = 0.2042, reg=0.0712
+[4column_1110 epoch 12, it 6560, t 0.466] g_loss = 2.9842, d_loss = 0.1550, reg=0.0672
+[4column_1110 epoch 12, it 6570, t 0.444] g_loss = 3.5778, d_loss = 0.1771, reg=0.0602
+[4column_1110 epoch 12, it 6580, t 0.475] g_loss = 2.3360, d_loss = 0.4017, reg=0.0840
+[4column_1110 epoch 12, it 6590, t 0.465] g_loss = 3.2826, d_loss = 0.1289, reg=0.0498
+[4column_1110 epoch 12, it 6600, t 0.443] g_loss = 2.3174, d_loss = 0.2478, reg=0.0790
+[4column_1110 epoch 12, it 6610, t 0.467] g_loss = 4.2622, d_loss = 0.3409, reg=0.0557
+[4column_1110 epoch 12, it 6620, t 0.668] g_loss = 2.8123, d_loss = 0.2962, reg=0.0702
+[4column_1110 epoch 12, it 6630, t 0.439] g_loss = 3.6530, d_loss = 0.2542, reg=0.0607
+[4column_1110 epoch 12, it 6640, t 0.465] g_loss = 2.1903, d_loss = 0.3821, reg=0.0766
+[4column_1110 epoch 12, it 6650, t 0.470] g_loss = 4.3313, d_loss = 0.2228, reg=0.0393
+[4column_1110 epoch 12, it 6660, t 0.446] g_loss = 1.6767, d_loss = 0.2562, reg=0.0701
+[4column_1110 epoch 12, it 6670, t 0.478] g_loss = 2.2035, d_loss = 0.3365, reg=0.0794
+[4column_1110 epoch 12, it 6680, t 0.457] g_loss = 2.4044, d_loss = 0.2127, reg=0.0674
+[4column_1110 epoch 12, it 6690, t 0.445] g_loss = 3.0713, d_loss = 0.2815, reg=0.0611
+[4column_1110 epoch 12, it 6700, t 0.477] g_loss = 2.1184, d_loss = 0.3000, reg=0.0840
+[4column_1110 epoch 12, it 6710, t 0.455] g_loss = 3.2868, d_loss = 0.3148, reg=0.0562
+[4column_1110 epoch 12, it 6720, t 0.442] g_loss = 2.8653, d_loss = 0.2530, reg=0.0703
+[4column_1110 epoch 12, it 6730, t 0.473] g_loss = 2.3691, d_loss = 0.3818, reg=0.0907
+[4column_1110 epoch 12, it 6740, t 0.455] g_loss = 2.7605, d_loss = 0.1586, reg=0.0738
+[4column_1110 epoch 12, it 6750, t 0.442] g_loss = 2.8030, d_loss = 0.1468, reg=0.0762
+[4column_1110 epoch 12, it 6760, t 0.480] g_loss = 2.5255, d_loss = 0.2432, reg=0.0819
+[4column_1110 epoch 12, it 6770, t 0.443] g_loss = 3.5652, d_loss = 0.3546, reg=0.0498
+[4column_1110 epoch 12, it 6780, t 0.444] g_loss = 2.5363, d_loss = 0.3268, reg=0.0688
+[4column_1110 epoch 12, it 6790, t 0.477] g_loss = 3.6772, d_loss = 0.1575, reg=0.0601
+[4column_1110 epoch 12, it 6800, t 0.449] g_loss = 3.2401, d_loss = 0.2985, reg=0.0861
+[4column_1110 epoch 12, it 6810, t 0.441] g_loss = 2.5394, d_loss = 0.4784, reg=0.0934
+[4column_1110 epoch 12, it 6820, t 0.469] g_loss = 2.3767, d_loss = 0.1692, reg=0.0535
+[4column_1110 epoch 12, it 6830, t 0.458] g_loss = 2.6015, d_loss = 0.4495, reg=0.0637
+[4column_1110 epoch 12, it 6840, t 0.444] g_loss = 3.6120, d_loss = 0.2154, reg=0.0535
+[4column_1110 epoch 12, it 6850, t 0.477] g_loss = 3.4332, d_loss = 0.2709, reg=0.0633
+[4column_1110 epoch 12, it 6860, t 0.459] g_loss = 3.2392, d_loss = 0.2509, reg=0.0688
+[4column_1110 epoch 12, it 6870, t 0.444] g_loss = 3.5018, d_loss = 0.1748, reg=0.0580
+[4column_1110 epoch 12, it 6880, t 0.477] g_loss = 2.0744, d_loss = 0.2264, reg=0.0747
+[4column_1110 epoch 12, it 6890, t 0.462] g_loss = 3.2694, d_loss = 0.2595, reg=0.0624
+[4column_1110 epoch 12, it 6900, t 0.444] g_loss = 2.7649, d_loss = 0.2941, reg=0.0851
+[4column_1110 epoch 12, it 6910, t 0.465] g_loss = 2.3888, d_loss = 0.2245, reg=0.0756
+[4column_1110 epoch 12, it 6920, t 0.451] g_loss = 3.5071, d_loss = 0.3672, reg=0.0587
+[4column_1110 epoch 12, it 6930, t 0.609] g_loss = 4.3464, d_loss = 0.5179, reg=0.0382
+[4column_1110 epoch 12, it 6940, t 0.664] g_loss = 3.2295, d_loss = 0.2459, reg=0.0524
+[4column_1110 epoch 12, it 6950, t 0.657] g_loss = 2.9286, d_loss = 0.2220, reg=0.0540
+[4column_1110 epoch 12, it 6960, t 0.658] g_loss = 2.0742, d_loss = 0.4746, reg=0.0778
+[4column_1110 epoch 12, it 6970, t 0.669] g_loss = 3.2993, d_loss = 0.1357, reg=0.0513
+[4column_1110 epoch 12, it 6980, t 0.517] g_loss = 3.3342, d_loss = 0.1654, reg=0.0635
+[4column_1110 epoch 12, it 6990, t 0.668] g_loss = 1.6852, d_loss = 0.5276, reg=0.0890
+[4column_1110 epoch 12, it 7000, t 0.649] g_loss = 3.2151, d_loss = 0.1722, reg=0.0622
+[4column_1110 epoch 12, it 7010, t 0.654] g_loss = 2.7909, d_loss = 0.3875, reg=0.0730
+[4column_1110 epoch 12, it 7020, t 0.662] g_loss = 4.0120, d_loss = 0.4372, reg=0.0524
+Start epoch 13...
+[4column_1110 epoch 13, it 7030, t 0.668] g_loss = 3.7465, d_loss = 0.2821, reg=0.0604
+[4column_1110 epoch 13, it 7040, t 0.544] g_loss = 1.5375, d_loss = 0.5611, reg=0.0744
+[4column_1110 epoch 13, it 7050, t 0.658] g_loss = 3.2956, d_loss = 0.2443, reg=0.0600
+[4column_1110 epoch 13, it 7060, t 0.660] g_loss = 3.2859, d_loss = 0.4576, reg=0.0699
+[4column_1110 epoch 13, it 7070, t 0.691] g_loss = 3.2950, d_loss = 0.2770, reg=0.0657
+[4column_1110 epoch 13, it 7080, t 0.580] g_loss = 2.7168, d_loss = 0.3038, reg=0.0657
+[4column_1110 epoch 13, it 7090, t 0.673] g_loss = 1.4856, d_loss = 0.4276, reg=0.0769
+[4column_1110 epoch 13, it 7100, t 0.594] g_loss = 2.8401, d_loss = 0.3305, reg=0.0792
+[4column_1110 epoch 13, it 7110, t 0.699] g_loss = 3.3521, d_loss = 0.2983, reg=0.0528
+[4column_1110 epoch 13, it 7120, t 0.570] g_loss = 3.5856, d_loss = 0.2582, reg=0.0580
+[4column_1110 epoch 13, it 7130, t 0.685] g_loss = 2.4795, d_loss = 0.1849, reg=0.0823
+[4column_1110 epoch 13, it 7140, t 0.683] g_loss = 3.5232, d_loss = 0.2272, reg=0.0564
+[4column_1110 epoch 13, it 7150, t 0.680] g_loss = 2.8611, d_loss = 0.4381, reg=0.0568
+[4column_1110 epoch 13, it 7160, t 0.685] g_loss = 2.7455, d_loss = 0.2939, reg=0.0643
+[4column_1110 epoch 13, it 7170, t 0.704] g_loss = 3.1468, d_loss = 0.2221, reg=0.0621
+[4column_1110 epoch 13, it 7180, t 0.685] g_loss = 3.1334, d_loss = 0.1170, reg=0.0622
+[4column_1110 epoch 13, it 7190, t 0.660] g_loss = 2.7971, d_loss = 0.3154, reg=0.0581
+[4column_1110 epoch 13, it 7200, t 0.276] g_loss = 3.3691, d_loss = 0.2542, reg=0.0479
+[4column_1110 epoch 13, it 7210, t 0.278] g_loss = 2.5183, d_loss = 0.3059, reg=0.0725
+[4column_1110 epoch 13, it 7220, t 0.288] g_loss = 2.8796, d_loss = 0.2222, reg=0.0802
+[4column_1110 epoch 13, it 7230, t 0.278] g_loss = 2.9304, d_loss = 0.2236, reg=0.0497
+Saving checkpoint...
+[4column_1110 epoch 13, it 7240, t 0.810] g_loss = 2.5121, d_loss = 0.2414, reg=0.0796
+[4column_1110 epoch 13, it 7250, t 0.626] g_loss = 3.3559, d_loss = 0.2427, reg=0.0547
+[4column_1110 epoch 13, it 7260, t 0.622] g_loss = 3.5535, d_loss = 0.3584, reg=0.0740
+[4column_1110 epoch 13, it 7270, t 0.648] g_loss = 2.7155, d_loss = 0.2361, reg=0.0806
+[4column_1110 epoch 13, it 7280, t 0.628] g_loss = 1.6508, d_loss = 0.5374, reg=0.0801
+[4column_1110 epoch 13, it 7290, t 0.637] g_loss = 2.9973, d_loss = 0.2276, reg=0.0501
+[4column_1110 epoch 13, it 7300, t 0.580] g_loss = 2.7393, d_loss = 0.2164, reg=0.0783
+[4column_1110 epoch 13, it 7310, t 0.624] g_loss = 1.3736, d_loss = 0.4163, reg=0.0743
+[4column_1110 epoch 13, it 7320, t 0.641] g_loss = 2.8398, d_loss = 0.2848, reg=0.0694
+[4column_1110 epoch 13, it 7330, t 0.612] g_loss = 2.8946, d_loss = 0.4343, reg=0.0653
+[4column_1110 epoch 13, it 7340, t 0.781] g_loss = 3.2970, d_loss = 0.3923, reg=0.0672
+[4column_1110 epoch 13, it 7350, t 0.655] g_loss = 4.1854, d_loss = 0.3542, reg=0.0636
+[4column_1110 epoch 13, it 7360, t 0.654] g_loss = 2.4837, d_loss = 0.4435, reg=0.0699
+[4column_1110 epoch 13, it 7370, t 0.630] g_loss = 2.9403, d_loss = 0.1425, reg=0.0524
+[4column_1110 epoch 13, it 7380, t 0.644] g_loss = 1.4178, d_loss = 0.3584, reg=0.0697
+[4column_1110 epoch 13, it 7390, t 0.653] g_loss = 3.5146, d_loss = 0.1787, reg=0.0468
+[4column_1110 epoch 13, it 7400, t 0.644] g_loss = 3.0877, d_loss = 0.2437, reg=0.0561
+[4column_1110 epoch 13, it 7410, t 0.622] g_loss = 3.0910, d_loss = 0.1766, reg=0.0567
+[4column_1110 epoch 13, it 7420, t 0.616] g_loss = 2.6114, d_loss = 0.2500, reg=0.0809
+[4column_1110 epoch 13, it 7430, t 0.631] g_loss = 3.4003, d_loss = 0.2123, reg=0.0717
+[4column_1110 epoch 13, it 7440, t 0.635] g_loss = 2.5938, d_loss = 0.4729, reg=0.0958
+[4column_1110 epoch 13, it 7450, t 0.613] g_loss = 2.7396, d_loss = 0.2678, reg=0.0645
+[4column_1110 epoch 13, it 7460, t 0.630] g_loss = 3.8260, d_loss = 0.3183, reg=0.0654
+[4column_1110 epoch 13, it 7470, t 0.645] g_loss = 3.7119, d_loss = 0.1793, reg=0.0437
+[4column_1110 epoch 13, it 7480, t 0.648] g_loss = 3.5142, d_loss = 0.3102, reg=0.0574
+[4column_1110 epoch 13, it 7490, t 0.650] g_loss = 3.1326, d_loss = 0.3466, reg=0.0716
+[4column_1110 epoch 13, it 7500, t 0.616] g_loss = 2.8197, d_loss = 0.1960, reg=0.0728
+[4column_1110 epoch 13, it 7510, t 0.594] g_loss = 5.5790, d_loss = 0.4957, reg=0.0451
+[4column_1110 epoch 13, it 7520, t 0.645] g_loss = 3.6536, d_loss = 0.2464, reg=0.0544
+[4column_1110 epoch 13, it 7530, t 0.641] g_loss = 2.7615, d_loss = 0.3141, reg=0.0841
+[4column_1110 epoch 13, it 7540, t 0.628] g_loss = 3.3348, d_loss = 0.3215, reg=0.0562
+[4column_1110 epoch 13, it 7550, t 0.628] g_loss = 2.3928, d_loss = 0.5440, reg=0.0826
+[4column_1110 epoch 13, it 7560, t 0.623] g_loss = 6.2995, d_loss = 0.5750, reg=0.0423
+Start epoch 14...
+[4column_1110 epoch 14, it 7570, t 0.634] g_loss = 2.4083, d_loss = 0.3454, reg=0.0772
+[4column_1110 epoch 14, it 7580, t 0.655] g_loss = 2.9461, d_loss = 0.2339, reg=0.0656
+[4column_1110 epoch 14, it 7590, t 0.664] g_loss = 2.0122, d_loss = 0.5849, reg=0.0667
+[4column_1110 epoch 14, it 7600, t 0.631] g_loss = 3.1309, d_loss = 0.1992, reg=0.0617
+[4column_1110 epoch 14, it 7610, t 0.636] g_loss = 1.7387, d_loss = 0.3866, reg=0.0868
+[4column_1110 epoch 14, it 7620, t 0.608] g_loss = 3.9755, d_loss = 0.4536, reg=0.0519
+[4column_1110 epoch 14, it 7630, t 0.854] g_loss = 2.4746, d_loss = 0.2186, reg=0.0459
+[4column_1110 epoch 14, it 7640, t 0.635] g_loss = 2.8414, d_loss = 0.2106, reg=0.0564
+[4column_1110 epoch 14, it 7650, t 0.655] g_loss = 2.8079, d_loss = 0.2985, reg=0.0729
+[4column_1110 epoch 14, it 7660, t 0.646] g_loss = 3.1207, d_loss = 0.1895, reg=0.0716
+[4column_1110 epoch 14, it 7670, t 0.639] g_loss = 3.0562, d_loss = 0.2084, reg=0.0673
+[4column_1110 epoch 14, it 7680, t 0.644] g_loss = 3.3157, d_loss = 0.1349, reg=0.0769
+[4column_1110 epoch 14, it 7690, t 0.624] g_loss = 2.9106, d_loss = 0.1521, reg=0.0618
+[4column_1110 epoch 14, it 7700, t 0.642] g_loss = 3.3849, d_loss = 0.3650, reg=0.0775
+[4column_1110 epoch 14, it 7710, t 0.566] g_loss = 1.6076, d_loss = 0.6150, reg=0.0843
+[4column_1110 epoch 14, it 7720, t 0.621] g_loss = 2.6034, d_loss = 0.3865, reg=0.0740
+[4column_1110 epoch 14, it 7730, t 0.640] g_loss = 2.1689, d_loss = 0.2293, reg=0.0827
+[4column_1110 epoch 14, it 7740, t 0.600] g_loss = 3.6040, d_loss = 0.3085, reg=0.0664
+[4column_1110 epoch 14, it 7750, t 0.547] g_loss = 3.2723, d_loss = 0.2015, reg=0.0613
+[4column_1110 epoch 14, it 7760, t 0.645] g_loss = 2.5411, d_loss = 0.3634, reg=0.0689
+[4column_1110 epoch 14, it 7770, t 0.638] g_loss = 1.7198, d_loss = 0.4624, reg=0.0857
+[4column_1110 epoch 14, it 7780, t 0.646] g_loss = 3.2626, d_loss = 0.2622, reg=0.0619
+[4column_1110 epoch 14, it 7790, t 0.603] g_loss = 2.9727, d_loss = 0.2245, reg=0.0743
+[4column_1110 epoch 14, it 7800, t 0.626] g_loss = 2.5702, d_loss = 0.3895, reg=0.0770
+[4column_1110 epoch 14, it 7810, t 0.580] g_loss = 2.1737, d_loss = 0.2175, reg=0.0748
+[4column_1110 epoch 14, it 7820, t 0.590] g_loss = 3.6301, d_loss = 0.3039, reg=0.0651
+[4column_1110 epoch 14, it 7830, t 0.585] g_loss = 1.6588, d_loss = 0.5919, reg=0.0783
+[4column_1110 epoch 14, it 7840, t 0.606] g_loss = 2.8277, d_loss = 0.2726, reg=0.0695
+[4column_1110 epoch 14, it 7850, t 0.647] g_loss = 3.2567, d_loss = 0.2206, reg=0.0722
+[4column_1110 epoch 14, it 7860, t 0.628] g_loss = 2.3345, d_loss = 0.3072, reg=0.0715
+[4column_1110 epoch 14, it 7870, t 0.649] g_loss = 1.8790, d_loss = 0.4412, reg=0.0867
+[4column_1110 epoch 14, it 7880, t 0.614] g_loss = 1.6119, d_loss = 0.5099, reg=0.0943
+[4column_1110 epoch 14, it 7890, t 0.641] g_loss = 4.2404, d_loss = 0.4046, reg=0.0651
+[4column_1110 epoch 14, it 7900, t 0.587] g_loss = 3.0827, d_loss = 0.2102, reg=0.0644
+[4column_1110 epoch 14, it 7910, t 0.645] g_loss = 2.2186, d_loss = 0.5257, reg=0.0771
+[4column_1110 epoch 14, it 7920, t 0.636] g_loss = 3.3167, d_loss = 0.3836, reg=0.0777
+[4column_1110 epoch 14, it 7930, t 0.587] g_loss = 1.6296, d_loss = 0.4165, reg=0.0552
+[4column_1110 epoch 14, it 7940, t 0.649] g_loss = 3.6231, d_loss = 0.3670, reg=0.0567
+[4column_1110 epoch 14, it 7950, t 0.620] g_loss = 3.1980, d_loss = 0.3070, reg=0.0600
+[4column_1110 epoch 14, it 7960, t 0.579] g_loss = 2.4887, d_loss = 0.1453, reg=0.0493
+[4column_1110 epoch 14, it 7970, t 0.655] g_loss = 3.1894, d_loss = 0.3020, reg=0.0738
+[4column_1110 epoch 14, it 7980, t 0.654] g_loss = 2.8756, d_loss = 0.2200, reg=0.0606
+[4column_1110 epoch 14, it 7990, t 0.597] g_loss = 2.3975, d_loss = 0.2442, reg=0.0734
+[4column_1110 epoch 14, it 8000, t 0.624] g_loss = 3.5981, d_loss = 0.2762, reg=0.0677
+[4column_1110 epoch 14, it 8010, t 0.640] g_loss = 3.0759, d_loss = 0.1918, reg=0.0591
+[4column_1110 epoch 14, it 8020, t 0.644] g_loss = 2.0096, d_loss = 0.3887, reg=0.0726
+[4column_1110 epoch 14, it 8030, t 0.839] g_loss = 1.7937, d_loss = 0.4091, reg=0.0615
+[4column_1110 epoch 14, it 8040, t 0.632] g_loss = 2.4667, d_loss = 0.3667, reg=0.0666
+[4column_1110 epoch 14, it 8050, t 0.578] g_loss = 2.0417, d_loss = 0.3470, reg=0.0888
+[4column_1110 epoch 14, it 8060, t 0.678] g_loss = 3.2331, d_loss = 0.1788, reg=0.0559
+[4column_1110 epoch 14, it 8070, t 0.650] g_loss = 2.8723, d_loss = 0.3229, reg=0.0720
+[4column_1110 epoch 14, it 8080, t 0.651] g_loss = 2.9659, d_loss = 0.5208, reg=0.0628
+[4column_1110 epoch 14, it 8090, t 0.581] g_loss = 3.8366, d_loss = 0.1674, reg=0.0616
+[4column_1110 epoch 14, it 8100, t 0.653] g_loss = 2.5999, d_loss = 0.4718, reg=0.0573
+Start epoch 15...
+[4column_1110 epoch 15, it 8110, t 0.606] g_loss = 2.9157, d_loss = 0.1603, reg=0.0667
+[4column_1110 epoch 15, it 8120, t 0.565] g_loss = 2.0779, d_loss = 0.4359, reg=0.0755
+[4column_1110 epoch 15, it 8130, t 0.618] g_loss = 2.4510, d_loss = 0.1545, reg=0.0593
+[4column_1110 epoch 15, it 8140, t 0.627] g_loss = 3.6361, d_loss = 0.1339, reg=0.0647
+[4column_1110 epoch 15, it 8150, t 0.632] g_loss = 2.2947, d_loss = 0.2994, reg=0.0832
+[4column_1110 epoch 15, it 8160, t 0.637] g_loss = 3.7312, d_loss = 0.4322, reg=0.0537
+[4column_1110 epoch 15, it 8170, t 0.600] g_loss = 3.5336, d_loss = 0.2891, reg=0.0691
+[4column_1110 epoch 15, it 8180, t 0.621] g_loss = 2.1655, d_loss = 0.4459, reg=0.0822
+[4column_1110 epoch 15, it 8190, t 0.634] g_loss = 2.2836, d_loss = 0.4079, reg=0.0797
+[4column_1110 epoch 15, it 8200, t 0.613] g_loss = 3.0616, d_loss = 0.4994, reg=0.0781
+[4column_1110 epoch 15, it 8210, t 0.640] g_loss = 3.0320, d_loss = 0.2174, reg=0.0550
+[4column_1110 epoch 15, it 8220, t 0.627] g_loss = 2.6643, d_loss = 0.3340, reg=0.0642
+[4column_1110 epoch 15, it 8230, t 0.651] g_loss = 2.0242, d_loss = 0.4899, reg=0.1016
+[4column_1110 epoch 15, it 8240, t 0.646] g_loss = 2.1373, d_loss = 0.5429, reg=0.0784
+[4column_1110 epoch 15, it 8250, t 0.443] g_loss = 2.4540, d_loss = 0.3209, reg=0.0741
+[4column_1110 epoch 15, it 8260, t 0.650] g_loss = 2.6541, d_loss = 0.3014, reg=0.0621
+[4column_1110 epoch 15, it 8270, t 0.628] g_loss = 3.0677, d_loss = 0.3020, reg=0.0675
+[4column_1110 epoch 15, it 8280, t 0.623] g_loss = 2.7846, d_loss = 0.4275, reg=0.0788
+[4column_1110 epoch 15, it 8290, t 0.615] g_loss = 3.3494, d_loss = 0.2833, reg=0.0668
+[4column_1110 epoch 15, it 8300, t 0.616] g_loss = 3.0158, d_loss = 0.2254, reg=0.0759
+[4column_1110 epoch 15, it 8310, t 0.638] g_loss = 3.1802, d_loss = 0.2300, reg=0.0648
+[4column_1110 epoch 15, it 8320, t 0.650] g_loss = 1.8644, d_loss = 0.3686, reg=0.0838
+[4column_1110 epoch 15, it 8330, t 0.628] g_loss = 1.5810, d_loss = 0.6244, reg=0.0917
+[4column_1110 epoch 15, it 8340, t 0.599] g_loss = 1.9204, d_loss = 0.4606, reg=0.0863
+[4column_1110 epoch 15, it 8350, t 0.585] g_loss = 3.1226, d_loss = 0.1910, reg=0.0750
+[4column_1110 epoch 15, it 8360, t 0.627] g_loss = 1.2197, d_loss = 0.8474, reg=0.1149
+[4column_1110 epoch 15, it 8370, t 0.631] g_loss = 3.3807, d_loss = 0.2802, reg=0.0538
+[4column_1110 epoch 15, it 8380, t 0.609] g_loss = 2.7712, d_loss = 0.4504, reg=0.0741
+[4column_1110 epoch 15, it 8390, t 0.636] g_loss = 2.5238, d_loss = 0.3446, reg=0.0759
+[4column_1110 epoch 15, it 8400, t 0.635] g_loss = 1.6487, d_loss = 0.5492, reg=0.0758
+[4column_1110 epoch 15, it 8410, t 0.618] g_loss = 3.8792, d_loss = 0.2773, reg=0.0587
+[4column_1110 epoch 15, it 8420, t 0.852] g_loss = 2.8587, d_loss = 0.1854, reg=0.0715
+[4column_1110 epoch 15, it 8430, t 0.647] g_loss = 3.3028, d_loss = 0.2273, reg=0.0659
+[4column_1110 epoch 15, it 8440, t 0.647] g_loss = 3.0095, d_loss = 0.2794, reg=0.0948
+[4column_1110 epoch 15, it 8450, t 0.653] g_loss = 2.2196, d_loss = 0.2517, reg=0.0755
+Saving checkpoint...
+[4column_1110 epoch 15, it 8460, t 0.636] g_loss = 2.1558, d_loss = 0.2051, reg=0.0736
+[4column_1110 epoch 15, it 8470, t 0.638] g_loss = 2.7782, d_loss = 0.3283, reg=0.0764
+[4column_1110 epoch 15, it 8480, t 0.643] g_loss = 2.8917, d_loss = 0.1812, reg=0.0539
+[4column_1110 epoch 15, it 8490, t 0.589] g_loss = 2.2469, d_loss = 0.2321, reg=0.0664
+[4column_1110 epoch 15, it 8500, t 0.627] g_loss = 3.4716, d_loss = 0.3360, reg=0.0626
+[4column_1110 epoch 15, it 8510, t 0.629] g_loss = 1.4951, d_loss = 0.6105, reg=0.0809
+[4column_1110 epoch 15, it 8520, t 0.625] g_loss = 3.2712, d_loss = 0.4909, reg=0.0715
+[4column_1110 epoch 15, it 8530, t 0.580] g_loss = 2.1828, d_loss = 0.4780, reg=0.0828
+[4column_1110 epoch 15, it 8540, t 0.644] g_loss = 2.9436, d_loss = 0.2163, reg=0.0662
+[4column_1110 epoch 15, it 8550, t 0.656] g_loss = 4.3015, d_loss = 0.7247, reg=0.0597
+[4column_1110 epoch 15, it 8560, t 0.633] g_loss = 1.1585, d_loss = 0.4564, reg=0.0925
+[4column_1110 epoch 15, it 8570, t 0.610] g_loss = 2.1857, d_loss = 0.5097, reg=0.0928
+[4column_1110 epoch 15, it 8580, t 0.653] g_loss = 2.3739, d_loss = 0.4695, reg=0.0853
+[4column_1110 epoch 15, it 8590, t 0.620] g_loss = 2.3051, d_loss = 0.3142, reg=0.0796
+[4column_1110 epoch 15, it 8600, t 0.611] g_loss = 3.0415, d_loss = 0.2930, reg=0.0673
+[4column_1110 epoch 15, it 8610, t 0.646] g_loss = 3.6477, d_loss = 0.3047, reg=0.0647
+[4column_1110 epoch 15, it 8620, t 0.640] g_loss = 3.2114, d_loss = 0.2891, reg=0.0812
+[4column_1110 epoch 15, it 8630, t 0.605] g_loss = 2.9024, d_loss = 0.1716, reg=0.0619
+[4column_1110 epoch 15, it 8640, t 0.666] g_loss = 2.2762, d_loss = 0.3057, reg=0.0802
+Start epoch 16...
+[4column_1110 epoch 16, it 8650, t 0.621] g_loss = 1.9357, d_loss = 0.2732, reg=0.0832
+[4column_1110 epoch 16, it 8660, t 0.642] g_loss = 2.8728, d_loss = 0.2480, reg=0.0708
+[4column_1110 epoch 16, it 8670, t 0.656] g_loss = 2.0414, d_loss = 0.2990, reg=0.0784
+[4column_1110 epoch 16, it 8680, t 0.602] g_loss = 3.4972, d_loss = 0.4616, reg=0.0521
+[4column_1110 epoch 16, it 8690, t 0.649] g_loss = 2.1914, d_loss = 0.4919, reg=0.0908
+[4column_1110 epoch 16, it 8700, t 0.641] g_loss = 3.5762, d_loss = 0.3349, reg=0.0737
+[4column_1110 epoch 16, it 8710, t 0.599] g_loss = 3.7001, d_loss = 0.2126, reg=0.0734
+[4column_1110 epoch 16, it 8720, t 0.649] g_loss = 3.8251, d_loss = 0.4187, reg=0.0611
+[4column_1110 epoch 16, it 8730, t 0.650] g_loss = 3.5557, d_loss = 0.2860, reg=0.0659
+[4column_1110 epoch 16, it 8740, t 0.656] g_loss = 2.9626, d_loss = 0.3911, reg=0.0689
+[4column_1110 epoch 16, it 8750, t 0.497] g_loss = 3.0186, d_loss = 0.4278, reg=0.0685
+[4column_1110 epoch 16, it 8760, t 0.641] g_loss = 2.9492, d_loss = 0.2385, reg=0.0599
+[4column_1110 epoch 16, it 8770, t 0.636] g_loss = 2.3802, d_loss = 0.3030, reg=0.0736
+[4column_1110 epoch 16, it 8780, t 0.655] g_loss = 3.7812, d_loss = 0.3512, reg=0.0628
+[4column_1110 epoch 16, it 8790, t 0.618] g_loss = 3.5931, d_loss = 0.2302, reg=0.0598
+[4column_1110 epoch 16, it 8800, t 0.586] g_loss = 2.5976, d_loss = 0.3924, reg=0.0756
+[4column_1110 epoch 16, it 8810, t 0.742] g_loss = 2.0271, d_loss = 0.4642, reg=0.0790
+[4column_1110 epoch 16, it 8820, t 0.337] g_loss = 0.9116, d_loss = 0.7341, reg=0.0794
+[4column_1110 epoch 16, it 8830, t 0.663] g_loss = 3.1604, d_loss = 0.3335, reg=0.0673
+[4column_1110 epoch 16, it 8840, t 0.640] g_loss = 2.1671, d_loss = 0.6055, reg=0.0859
+[4column_1110 epoch 16, it 8850, t 0.643] g_loss = 1.8896, d_loss = 0.3608, reg=0.0699
+[4column_1110 epoch 16, it 8860, t 0.621] g_loss = 2.9915, d_loss = 0.1681, reg=0.0720
+[4column_1110 epoch 16, it 8870, t 0.634] g_loss = 3.0660, d_loss = 0.2417, reg=0.0714
+[4column_1110 epoch 16, it 8880, t 0.619] g_loss = 2.1326, d_loss = 0.3387, reg=0.0732
+[4column_1110 epoch 16, it 8890, t 0.604] g_loss = 3.0395, d_loss = 0.2354, reg=0.0688
+[4column_1110 epoch 16, it 8900, t 0.668] g_loss = 3.5673, d_loss = 0.5072, reg=0.0663
+[4column_1110 epoch 16, it 8910, t 0.580] g_loss = 3.0640, d_loss = 0.4565, reg=0.0680
+[4column_1110 epoch 16, it 8920, t 0.629] g_loss = 4.0621, d_loss = 0.4844, reg=0.0716
+[4column_1110 epoch 16, it 8930, t 0.654] g_loss = 2.2633, d_loss = 0.4724, reg=0.0737
+[4column_1110 epoch 16, it 8940, t 0.635] g_loss = 2.3884, d_loss = 0.4760, reg=0.0864
+[4column_1110 epoch 16, it 8950, t 0.622] g_loss = 3.0528, d_loss = 0.3148, reg=0.0601
+[4column_1110 epoch 16, it 8960, t 0.577] g_loss = 1.8814, d_loss = 0.3613, reg=0.0773
+[4column_1110 epoch 16, it 8970, t 0.618] g_loss = 2.9159, d_loss = 0.2334, reg=0.0619
+[4column_1110 epoch 16, it 8980, t 0.627] g_loss = 2.1795, d_loss = 0.2996, reg=0.0871
+[4column_1110 epoch 16, it 8990, t 0.649] g_loss = 3.2756, d_loss = 0.3727, reg=0.0844
+[4column_1110 epoch 16, it 9000, t 0.651] g_loss = 2.2978, d_loss = 0.2415, reg=0.0689
+[4column_1110 epoch 16, it 9010, t 0.641] g_loss = 2.2737, d_loss = 0.5312, reg=0.0704
+[4column_1110 epoch 16, it 9020, t 0.648] g_loss = 3.0796, d_loss = 0.1989, reg=0.0705
+[4column_1110 epoch 16, it 9030, t 0.627] g_loss = 3.7514, d_loss = 0.3388, reg=0.0814
+[4column_1110 epoch 16, it 9040, t 0.643] g_loss = 2.5804, d_loss = 0.3240, reg=0.0643
+[4column_1110 epoch 16, it 9050, t 0.608] g_loss = 2.9426, d_loss = 0.6195, reg=0.0866
+[4column_1110 epoch 16, it 9060, t 0.636] g_loss = 3.4208, d_loss = 0.4041, reg=0.0688
+[4column_1110 epoch 16, it 9070, t 0.572] g_loss = 2.4404, d_loss = 0.6141, reg=0.0771
+[4column_1110 epoch 16, it 9080, t 0.612] g_loss = 2.9738, d_loss = 0.2997, reg=0.0851
+[4column_1110 epoch 16, it 9090, t 0.583] g_loss = 2.1261, d_loss = 0.3570, reg=0.0830
+[4column_1110 epoch 16, it 9100, t 0.642] g_loss = 2.3602, d_loss = 0.6560, reg=0.0772
+[4column_1110 epoch 16, it 9110, t 0.601] g_loss = 2.7477, d_loss = 0.3388, reg=0.0685
+[4column_1110 epoch 16, it 9120, t 0.616] g_loss = 3.3149, d_loss = 0.1940, reg=0.0678
+[4column_1110 epoch 16, it 9130, t 0.617] g_loss = 2.6941, d_loss = 0.1348, reg=0.0678
+[4column_1110 epoch 16, it 9140, t 0.640] g_loss = 2.9112, d_loss = 0.1675, reg=0.0587
+[4column_1110 epoch 16, it 9150, t 0.573] g_loss = 3.3340, d_loss = 0.4159, reg=0.0695
+[4column_1110 epoch 16, it 9160, t 0.639] g_loss = 2.7788, d_loss = 0.2499, reg=0.0827
+[4column_1110 epoch 16, it 9170, t 0.630] g_loss = 3.7946, d_loss = 0.4619, reg=0.0737
+[4column_1110 epoch 16, it 9180, t 0.633] g_loss = 3.3259, d_loss = 0.2570, reg=0.0740
+Start epoch 17...
+[4column_1110 epoch 17, it 9190, t 0.638] g_loss = 3.8017, d_loss = 0.5812, reg=0.0766
+[4column_1110 epoch 17, it 9200, t 0.649] g_loss = 1.4744, d_loss = 0.3425, reg=0.0853
+[4column_1110 epoch 17, it 9210, t 0.611] g_loss = 2.1299, d_loss = 0.2990, reg=0.0763
+[4column_1110 epoch 17, it 9220, t 0.533] g_loss = 3.9232, d_loss = 0.5203, reg=0.0613
+[4column_1110 epoch 17, it 9230, t 0.638] g_loss = 3.0587, d_loss = 0.2622, reg=0.0543
+[4column_1110 epoch 17, it 9240, t 0.582] g_loss = 2.8449, d_loss = 0.1705, reg=0.0642
+[4column_1110 epoch 17, it 9250, t 0.454] g_loss = 3.0458, d_loss = 0.2334, reg=0.0683
+[4column_1110 epoch 17, it 9260, t 0.606] g_loss = 2.9734, d_loss = 0.3495, reg=0.0764
+[4column_1110 epoch 17, it 9270, t 0.638] g_loss = 3.1874, d_loss = 0.2971, reg=0.0720
+[4column_1110 epoch 17, it 9280, t 0.580] g_loss = 1.4757, d_loss = 0.5513, reg=0.0881
+[4column_1110 epoch 17, it 9290, t 0.612] g_loss = 2.5692, d_loss = 0.1848, reg=0.0621
+[4column_1110 epoch 17, it 9300, t 0.644] g_loss = 2.8985, d_loss = 0.4067, reg=0.0690
+[4column_1110 epoch 17, it 9310, t 0.576] g_loss = 3.3040, d_loss = 0.3106, reg=0.0599
+[4column_1110 epoch 17, it 9320, t 0.622] g_loss = 2.3227, d_loss = 0.3864, reg=0.0861
+[4column_1110 epoch 17, it 9330, t 0.619] g_loss = 3.5293, d_loss = 0.2511, reg=0.0660
+[4column_1110 epoch 17, it 9340, t 0.635] g_loss = 3.1667, d_loss = 0.5229, reg=0.0607
+[4column_1110 epoch 17, it 9350, t 0.570] g_loss = 3.0444, d_loss = 0.4523, reg=0.0702
+[4column_1110 epoch 17, it 9360, t 0.617] g_loss = 2.7851, d_loss = 0.3009, reg=0.0733
+[4column_1110 epoch 17, it 9370, t 0.653] g_loss = 2.9427, d_loss = 0.2260, reg=0.0662
+[4column_1110 epoch 17, it 9380, t 0.642] g_loss = 2.2523, d_loss = 0.5739, reg=0.0829
+[4column_1110 epoch 17, it 9390, t 0.607] g_loss = 3.0802, d_loss = 0.4913, reg=0.0798
+[4column_1110 epoch 17, it 9400, t 0.623] g_loss = 2.7765, d_loss = 0.4040, reg=0.0667
+[4column_1110 epoch 17, it 9410, t 0.648] g_loss = 4.1594, d_loss = 0.4626, reg=0.0716
+[4column_1110 epoch 17, it 9420, t 0.649] g_loss = 2.6030, d_loss = 0.3024, reg=0.0875
+[4column_1110 epoch 17, it 9430, t 0.623] g_loss = 2.3706, d_loss = 0.1758, reg=0.0626
+[4column_1110 epoch 17, it 9440, t 0.611] g_loss = 2.6838, d_loss = 0.1488, reg=0.0710
+[4column_1110 epoch 17, it 9450, t 0.628] g_loss = 4.3751, d_loss = 0.4203, reg=0.0691
+[4column_1110 epoch 17, it 9460, t 0.621] g_loss = 2.5786, d_loss = 0.3042, reg=0.0718
+[4column_1110 epoch 17, it 9470, t 0.624] g_loss = 3.4631, d_loss = 0.2164, reg=0.0540
+[4column_1110 epoch 17, it 9480, t 0.645] g_loss = 2.3324, d_loss = 0.2952, reg=0.0789
+[4column_1110 epoch 17, it 9490, t 0.595] g_loss = 3.1008, d_loss = 0.2128, reg=0.0663
+[4column_1110 epoch 17, it 9500, t 0.628] g_loss = 2.7757, d_loss = 0.3163, reg=0.0902
+[4column_1110 epoch 17, it 9510, t 0.639] g_loss = 1.4354, d_loss = 0.4247, reg=0.0815
+[4column_1110 epoch 17, it 9520, t 0.641] g_loss = 2.6581, d_loss = 0.3891, reg=0.0735
+[4column_1110 epoch 17, it 9530, t 0.654] g_loss = 2.1266, d_loss = 0.3157, reg=0.0841
+[4column_1110 epoch 17, it 9540, t 0.644] g_loss = 3.3009, d_loss = 0.2014, reg=0.0677
+[4column_1110 epoch 17, it 9550, t 0.574] g_loss = 3.1038, d_loss = 0.1403, reg=0.0752
+[4column_1110 epoch 17, it 9560, t 0.604] g_loss = 2.9775, d_loss = 0.3910, reg=0.0980
+[4column_1110 epoch 17, it 9570, t 0.618] g_loss = 2.6569, d_loss = 0.2220, reg=0.0662
+[4column_1110 epoch 17, it 9580, t 0.587] g_loss = 2.2586, d_loss = 0.2237, reg=0.0802
+[4column_1110 epoch 17, it 9590, t 0.606] g_loss = 2.7133, d_loss = 0.3651, reg=0.0725
+[4column_1110 epoch 17, it 9600, t 0.659] g_loss = 2.9202, d_loss = 0.4563, reg=0.0981
+[4column_1110 epoch 17, it 9610, t 0.587] g_loss = 2.9406, d_loss = 0.2202, reg=0.0648
+[4column_1110 epoch 17, it 9620, t 0.773] g_loss = 2.5245, d_loss = 0.4978, reg=0.0787
+[4column_1110 epoch 17, it 9630, t 0.652] g_loss = 3.2677, d_loss = 0.2460, reg=0.0717
+[4column_1110 epoch 17, it 9640, t 0.622] g_loss = 1.8792, d_loss = 0.2521, reg=0.0801
+[4column_1110 epoch 17, it 9650, t 0.624] g_loss = 1.3194, d_loss = 0.7201, reg=0.0858
+[4column_1110 epoch 17, it 9660, t 0.637] g_loss = 2.2011, d_loss = 0.2289, reg=0.0722
+[4column_1110 epoch 17, it 9670, t 0.589] g_loss = 2.4123, d_loss = 0.4993, reg=0.0874
+[4column_1110 epoch 17, it 9680, t 0.642] g_loss = 3.0151, d_loss = 0.2218, reg=0.0723
+Saving checkpoint...
+[4column_1110 epoch 17, it 9690, t 0.585] g_loss = 2.5623, d_loss = 0.4783, reg=0.0889
+[4column_1110 epoch 17, it 9700, t 0.628] g_loss = 2.0636, d_loss = 0.5753, reg=0.0816
+[4column_1110 epoch 17, it 9710, t 0.621] g_loss = 2.2708, d_loss = 0.3067, reg=0.0845
+[4column_1110 epoch 17, it 9720, t 0.633] g_loss = 2.9168, d_loss = 0.2207, reg=0.0745
+Start epoch 18...
+[4column_1110 epoch 18, it 9730, t 0.590] g_loss = 3.3027, d_loss = 0.2743, reg=0.0715
+[4column_1110 epoch 18, it 9740, t 0.624] g_loss = 2.0016, d_loss = 0.3356, reg=0.0699
+[4column_1110 epoch 18, it 9750, t 0.491] g_loss = 2.5742, d_loss = 0.4220, reg=0.0934
+[4column_1110 epoch 18, it 9760, t 0.600] g_loss = 1.5935, d_loss = 0.5127, reg=0.0774
+[4column_1110 epoch 18, it 9770, t 0.658] g_loss = 3.8079, d_loss = 0.7096, reg=0.0496
+[4column_1110 epoch 18, it 9780, t 0.642] g_loss = 2.5695, d_loss = 0.3196, reg=0.0695
+[4column_1110 epoch 18, it 9790, t 0.624] g_loss = 2.7436, d_loss = 0.2306, reg=0.0615
+[4column_1110 epoch 18, it 9800, t 0.628] g_loss = 3.3334, d_loss = 0.6032, reg=0.0657
+[4column_1110 epoch 18, it 9810, t 0.637] g_loss = 2.4200, d_loss = 0.2634, reg=0.0831
+[4column_1110 epoch 18, it 9820, t 0.574] g_loss = 3.9230, d_loss = 0.3340, reg=0.0706
+[4column_1110 epoch 18, it 9830, t 0.640] g_loss = 2.1415, d_loss = 0.4099, reg=0.0891
+[4column_1110 epoch 18, it 9840, t 0.655] g_loss = 3.1004, d_loss = 0.2651, reg=0.0748
+[4column_1110 epoch 18, it 9850, t 0.571] g_loss = 3.3527, d_loss = 0.2501, reg=0.0608
+[4column_1110 epoch 18, it 9860, t 0.636] g_loss = 2.9552, d_loss = 0.3801, reg=0.0765
+[4column_1110 epoch 18, it 9870, t 0.613] g_loss = 2.3175, d_loss = 0.2173, reg=0.0831
+[4column_1110 epoch 18, it 9880, t 0.633] g_loss = 3.8977, d_loss = 0.5494, reg=0.0765
+[4column_1110 epoch 18, it 9890, t 0.596] g_loss = 2.2994, d_loss = 0.2815, reg=0.0854
+[4column_1110 epoch 18, it 9900, t 0.611] g_loss = 2.9362, d_loss = 0.4798, reg=0.0779
+[4column_1110 epoch 18, it 9910, t 0.638] g_loss = 1.8235, d_loss = 0.5074, reg=0.0865
+[4column_1110 epoch 18, it 9920, t 0.664] g_loss = 2.9845, d_loss = 0.1860, reg=0.0769
+[4column_1110 epoch 18, it 9930, t 0.625] g_loss = 3.1999, d_loss = 0.2002, reg=0.0621
+[4column_1110 epoch 18, it 9940, t 0.626] g_loss = 2.0259, d_loss = 0.4964, reg=0.1064
+[4column_1110 epoch 18, it 9950, t 0.617] g_loss = 4.8346, d_loss = 0.5329, reg=0.0698
+[4column_1110 epoch 18, it 9960, t 0.643] g_loss = 3.2578, d_loss = 0.2505, reg=0.0592
+[4column_1110 epoch 18, it 9970, t 0.656] g_loss = 4.2436, d_loss = 0.3000, reg=0.0723
+[4column_1110 epoch 18, it 9980, t 0.543] g_loss = 2.4849, d_loss = 0.4286, reg=0.0855
+[4column_1110 epoch 18, it 9990, t 0.653] g_loss = 3.0762, d_loss = 0.3286, reg=0.0675
+[4column_1110 epoch 18, it 10000, t 0.613] g_loss = 3.3050, d_loss = 0.5341, reg=0.0737
+MMD:   0%|          | 0/100 [00:00<?, ?it/s]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   0%|          | 0/100 [00:00<?, ?it/s, mean=0.311]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   0%|          | 0/100 [00:00<?, ?it/s, mean=0.31] MMD:   2%|▏         | 2/100 [00:00<00:08, 10.95it/s, mean=0.31]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   2%|▏         | 2/100 [00:00<00:08, 10.95it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   2%|▏         | 2/100 [00:00<00:08, 10.95it/s, mean=0.309]MMD:   4%|▍         | 4/100 [00:00<00:08, 11.03it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   4%|▍         | 4/100 [00:00<00:08, 11.03it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   4%|▍         | 4/100 [00:00<00:08, 11.03it/s, mean=0.309]MMD:   6%|▌         | 6/100 [00:00<00:08, 11.10it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   6%|▌         | 6/100 [00:00<00:08, 11.10it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   6%|▌         | 6/100 [00:00<00:08, 11.10it/s, mean=0.309]MMD:   8%|▊         | 8/100 [00:00<00:08, 11.12it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   8%|▊         | 8/100 [00:00<00:08, 11.12it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:   8%|▊         | 8/100 [00:00<00:08, 11.12it/s, mean=0.309]MMD:  10%|█         | 10/100 [00:00<00:08, 11.15it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  10%|█         | 10/100 [00:00<00:08, 11.15it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  10%|█         | 10/100 [00:01<00:08, 11.15it/s, mean=0.309]MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.17it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.17it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  12%|█▏        | 12/100 [00:01<00:07, 11.17it/s, mean=0.309]MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.16it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.16it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  14%|█▍        | 14/100 [00:01<00:07, 11.16it/s, mean=0.309]MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.15it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.15it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  16%|█▌        | 16/100 [00:01<00:07, 11.15it/s, mean=0.309]MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.16it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.16it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  18%|█▊        | 18/100 [00:01<00:07, 11.16it/s, mean=0.309]MMD:  20%|██        | 20/100 [00:01<00:07, 11.19it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  20%|██        | 20/100 [00:01<00:07, 11.19it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  20%|██        | 20/100 [00:01<00:07, 11.19it/s, mean=0.309]MMD:  22%|██▏       | 22/100 [00:01<00:06, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  22%|██▏       | 22/100 [00:02<00:06, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  22%|██▏       | 22/100 [00:02<00:06, 11.20it/s, mean=0.309]MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  24%|██▍       | 24/100 [00:02<00:06, 11.22it/s, mean=0.309]MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  26%|██▌       | 26/100 [00:02<00:06, 11.25it/s, mean=0.309]MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  28%|██▊       | 28/100 [00:02<00:06, 11.24it/s, mean=0.309]MMD:  30%|███       | 30/100 [00:02<00:06, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  30%|███       | 30/100 [00:02<00:06, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  30%|███       | 30/100 [00:02<00:06, 11.23it/s, mean=0.309]MMD:  32%|███▏      | 32/100 [00:02<00:06, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  32%|███▏      | 32/100 [00:02<00:06, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  32%|███▏      | 32/100 [00:03<00:06, 11.24it/s, mean=0.309]MMD:  34%|███▍      | 34/100 [00:03<00:05, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  34%|███▍      | 34/100 [00:03<00:05, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  34%|███▍      | 34/100 [00:03<00:05, 11.25it/s, mean=0.309]MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  36%|███▌      | 36/100 [00:03<00:05, 11.23it/s, mean=0.309]MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  38%|███▊      | 38/100 [00:03<00:05, 11.23it/s, mean=0.309]MMD:  40%|████      | 40/100 [00:03<00:05, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  40%|████      | 40/100 [00:03<00:05, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  40%|████      | 40/100 [00:03<00:05, 11.22it/s, mean=0.309]MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  42%|████▏     | 42/100 [00:03<00:05, 11.24it/s, mean=0.309]MMD:  44%|████▍     | 44/100 [00:03<00:04, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  44%|████▍     | 44/100 [00:04<00:04, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  44%|████▍     | 44/100 [00:04<00:04, 11.23it/s, mean=0.309]MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.26it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.26it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  46%|████▌     | 46/100 [00:04<00:04, 11.26it/s, mean=0.309]MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.29it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.29it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  48%|████▊     | 48/100 [00:04<00:04, 11.29it/s, mean=0.309]MMD:  50%|█████     | 50/100 [00:04<00:04, 11.26it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  50%|█████     | 50/100 [00:04<00:04, 11.26it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  50%|█████     | 50/100 [00:04<00:04, 11.26it/s, mean=0.309]MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.31it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.31it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  52%|█████▏    | 52/100 [00:04<00:04, 11.31it/s, mean=0.309]MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.32it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.32it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  54%|█████▍    | 54/100 [00:04<00:04, 11.32it/s, mean=0.309]MMD:  56%|█████▌    | 56/100 [00:04<00:03, 11.31it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  56%|█████▌    | 56/100 [00:05<00:03, 11.31it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  56%|█████▌    | 56/100 [00:05<00:03, 11.31it/s, mean=0.309]MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.27it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.27it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  58%|█████▊    | 58/100 [00:05<00:03, 11.27it/s, mean=0.309]MMD:  60%|██████    | 60/100 [00:05<00:03, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  60%|██████    | 60/100 [00:05<00:03, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  60%|██████    | 60/100 [00:05<00:03, 11.25it/s, mean=0.309]MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.14it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.14it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  62%|██████▏   | 62/100 [00:05<00:03, 11.14it/s, mean=0.309]MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.08it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.08it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  64%|██████▍   | 64/100 [00:05<00:03, 11.08it/s, mean=0.309]MMD:  66%|██████▌   | 66/100 [00:05<00:03, 11.13it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  66%|██████▌   | 66/100 [00:05<00:03, 11.13it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  66%|██████▌   | 66/100 [00:06<00:03, 11.13it/s, mean=0.309]MMD:  68%|██████▊   | 68/100 [00:06<00:02, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  68%|██████▊   | 68/100 [00:06<00:02, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  68%|██████▊   | 68/100 [00:06<00:02, 11.22it/s, mean=0.309]MMD:  70%|███████   | 70/100 [00:06<00:02, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  70%|███████   | 70/100 [00:06<00:02, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  70%|███████   | 70/100 [00:06<00:02, 11.25it/s, mean=0.309]MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  72%|███████▏  | 72/100 [00:06<00:02, 11.23it/s, mean=0.309]MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  74%|███████▍  | 74/100 [00:06<00:02, 11.23it/s, mean=0.309]MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  76%|███████▌  | 76/100 [00:06<00:02, 11.22it/s, mean=0.309]MMD:  78%|███████▊  | 78/100 [00:06<00:01, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  78%|███████▊  | 78/100 [00:07<00:01, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  78%|███████▊  | 78/100 [00:07<00:01, 11.22it/s, mean=0.309]MMD:  80%|████████  | 80/100 [00:07<00:01, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  80%|████████  | 80/100 [00:07<00:01, 11.22it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  80%|████████  | 80/100 [00:07<00:01, 11.22it/s, mean=0.309]MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.21it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.21it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  82%|████████▏ | 82/100 [00:07<00:01, 11.21it/s, mean=0.309]MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  84%|████████▍ | 84/100 [00:07<00:01, 11.20it/s, mean=0.309]MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.19it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.19it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  86%|████████▌ | 86/100 [00:07<00:01, 11.19it/s, mean=0.309]MMD:  88%|████████▊ | 88/100 [00:07<00:01, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  88%|████████▊ | 88/100 [00:07<00:01, 11.20it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  88%|████████▊ | 88/100 [00:08<00:01, 11.20it/s, mean=0.309]MMD:  90%|█████████ | 90/100 [00:08<00:00, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  90%|█████████ | 90/100 [00:08<00:00, 11.23it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  90%|█████████ | 90/100 [00:08<00:00, 11.23it/s, mean=0.309]MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.24it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  92%|█████████▏| 92/100 [00:08<00:00, 11.24it/s, mean=0.309]MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.25it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  94%|█████████▍| 94/100 [00:08<00:00, 11.25it/s, mean=0.309]MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.28it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.28it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  96%|█████████▌| 96/100 [00:08<00:00, 11.28it/s, mean=0.309]MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.30it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.30it/s, mean=0.309]1000 (1000, 1000) (1000, 1000) (1000, 1000)
+MMD:  98%|█████████▊| 98/100 [00:08<00:00, 11.30it/s, mean=0.309]MMD: 100%|██████████| 100/100 [00:08<00:00, 11.27it/s, mean=0.309]MMD: 100%|██████████| 100/100 [00:08<00:00, 11.23it/s, mean=0.309]
+Saving best model...

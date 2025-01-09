@@ -1,0 +1,799 @@
+submodules/GAN_stability/gan_training/config.py:18: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg_special = yaml.load(f)
+submodules/GAN_stability/gan_training/config.py:29: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(f)
+/Data/home/vicky/.conda/envs/graftest/lib/python3.8/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2157.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/Data/home/vicky/.conda/envs/graftest/lib/python3.8/site-packages/torchvision/models/inception.py:81: FutureWarning: The default weight initialization of inception_v3 will be changed in future releases of torchvision. If you wish to keep the old behavior (which leads to long initialization times due to scipy/scipy#11299), please set init_weights=True.
+  warnings.warn('The default weight initialization of inception_v3 will be changed in future releases of '
+Compute statistics:   0%|          | 0/540 [00:00<?, ?it/s]Compute statistics:   0%|          | 1/540 [00:00<02:04,  4.33it/s]Compute statistics:   0%|          | 2/540 [00:00<01:57,  4.59it/s]Compute statistics:   1%|          | 3/540 [00:00<01:51,  4.80it/s]Compute statistics:   1%|          | 4/540 [00:00<01:47,  5.00it/s]Compute statistics:   1%|          | 5/540 [00:00<01:44,  5.12it/s]Compute statistics:   1%|          | 6/540 [00:01<01:42,  5.22it/s]Compute statistics:   1%|▏         | 7/540 [00:01<01:41,  5.26it/s]Compute statistics:   1%|▏         | 8/540 [00:01<01:41,  5.26it/s]Compute statistics:   2%|▏         | 9/540 [00:01<01:39,  5.35it/s]Compute statistics:   2%|▏         | 10/540 [00:01<01:42,  5.19it/s]Compute statistics:   2%|▏         | 11/540 [00:02<01:41,  5.19it/s]Compute statistics:   2%|▏         | 12/540 [00:02<01:41,  5.21it/s]Compute statistics:   2%|▏         | 13/540 [00:02<01:41,  5.21it/s]Compute statistics:   3%|▎         | 14/540 [00:02<01:40,  5.21it/s]Compute statistics:   3%|▎         | 15/540 [00:02<01:39,  5.25it/s]Compute statistics:   3%|▎         | 16/540 [00:03<01:40,  5.24it/s]Compute statistics:   3%|▎         | 17/540 [00:03<01:38,  5.29it/s]Compute statistics:   3%|▎         | 18/540 [00:03<01:39,  5.26it/s]Compute statistics:   4%|▎         | 19/540 [00:03<01:38,  5.28it/s]Compute statistics:   4%|▎         | 20/540 [00:03<01:38,  5.27it/s]Compute statistics:   4%|▍         | 21/540 [00:04<01:38,  5.24it/s]Compute statistics:   4%|▍         | 22/540 [00:04<01:37,  5.30it/s]Compute statistics:   4%|▍         | 23/540 [00:04<01:38,  5.25it/s]Compute statistics:   4%|▍         | 24/540 [00:04<01:38,  5.26it/s]Compute statistics:   5%|▍         | 25/540 [00:04<01:37,  5.27it/s]Compute statistics:   5%|▍         | 26/540 [00:04<01:37,  5.28it/s]Compute statistics:   5%|▌         | 27/540 [00:05<01:37,  5.28it/s]Compute statistics:   5%|▌         | 28/540 [00:05<01:36,  5.30it/s]Compute statistics:   5%|▌         | 29/540 [00:05<01:35,  5.34it/s]Compute statistics:   6%|▌         | 30/540 [00:05<01:35,  5.36it/s]Compute statistics:   6%|▌         | 31/540 [00:05<01:34,  5.41it/s]Compute statistics:   6%|▌         | 32/540 [00:06<01:34,  5.40it/s]Compute statistics:   6%|▌         | 33/540 [00:06<01:33,  5.41it/s]Compute statistics:   6%|▋         | 34/540 [00:06<01:33,  5.41it/s]Compute statistics:   6%|▋         | 35/540 [00:06<01:33,  5.42it/s]Compute statistics:   7%|▋         | 36/540 [00:06<01:32,  5.45it/s]Compute statistics:   7%|▋         | 37/540 [00:06<01:33,  5.37it/s]Compute statistics:   7%|▋         | 38/540 [00:07<01:32,  5.42it/s]Compute statistics:   7%|▋         | 39/540 [00:07<01:33,  5.36it/s]Compute statistics:   7%|▋         | 40/540 [00:07<01:33,  5.36it/s]Compute statistics:   8%|▊         | 41/540 [00:07<01:31,  5.43it/s]Compute statistics:   8%|▊         | 42/540 [00:07<01:32,  5.39it/s]Compute statistics:   8%|▊         | 43/540 [00:08<01:31,  5.44it/s]Compute statistics:   8%|▊         | 44/540 [00:08<01:31,  5.41it/s]Compute statistics:   8%|▊         | 45/540 [00:08<01:31,  5.40it/s]Compute statistics:   9%|▊         | 46/540 [00:08<01:30,  5.45it/s]Compute statistics:   9%|▊         | 47/540 [00:08<01:30,  5.44it/s]Compute statistics:   9%|▉         | 48/540 [00:09<01:29,  5.49it/s]Compute statistics:   9%|▉         | 49/540 [00:09<01:30,  5.43it/s]Compute statistics:   9%|▉         | 50/540 [00:09<01:30,  5.40it/s]Compute statistics:   9%|▉         | 51/540 [00:09<01:29,  5.47it/s]Compute statistics:  10%|▉         | 52/540 [00:09<01:29,  5.43it/s]Compute statistics:  10%|▉         | 53/540 [00:09<01:28,  5.47it/s]Compute statistics:  10%|█         | 54/540 [00:10<01:29,  5.45it/s]Compute statistics:  10%|█         | 55/540 [00:10<01:29,  5.44it/s]Compute statistics:  10%|█         | 56/540 [00:10<01:29,  5.42it/s]Compute statistics:  11%|█         | 57/540 [00:10<01:29,  5.40it/s]Compute statistics:  11%|█         | 58/540 [00:10<01:28,  5.44it/s]Compute statistics:  11%|█         | 59/540 [00:11<01:28,  5.41it/s]Compute statistics:  11%|█         | 60/540 [00:11<01:29,  5.39it/s]Compute statistics:  11%|█▏        | 61/540 [00:11<01:28,  5.42it/s]Compute statistics:  11%|█▏        | 62/540 [00:11<01:28,  5.40it/s]Compute statistics:  12%|█▏        | 63/540 [00:11<01:27,  5.43it/s]Compute statistics:  12%|█▏        | 64/540 [00:11<01:28,  5.38it/s]Compute statistics:  12%|█▏        | 65/540 [00:12<01:28,  5.37it/s]Compute statistics:  12%|█▏        | 66/540 [00:12<01:27,  5.43it/s]Compute statistics:  12%|█▏        | 67/540 [00:12<01:27,  5.42it/s]Compute statistics:  13%|█▎        | 68/540 [00:12<01:26,  5.45it/s]Compute statistics:  13%|█▎        | 69/540 [00:12<01:27,  5.41it/s]Compute statistics:  13%|█▎        | 70/540 [00:13<01:27,  5.38it/s]Compute statistics:  13%|█▎        | 71/540 [00:13<01:26,  5.43it/s]Compute statistics:  13%|█▎        | 72/540 [00:13<01:26,  5.41it/s]Compute statistics:  14%|█▎        | 73/540 [00:13<01:25,  5.45it/s]Compute statistics:  14%|█▎        | 74/540 [00:13<01:26,  5.40it/s]Compute statistics:  14%|█▍        | 75/540 [00:14<01:26,  5.38it/s]Compute statistics:  14%|█▍        | 76/540 [00:14<01:26,  5.36it/s]Compute statistics:  14%|█▍        | 77/540 [00:14<01:26,  5.34it/s]Compute statistics:  14%|█▍        | 78/540 [00:14<01:26,  5.33it/s]Compute statistics:  15%|█▍        | 79/540 [00:14<01:26,  5.30it/s]Compute statistics:  15%|█▍        | 80/540 [00:14<01:26,  5.31it/s]Compute statistics:  15%|█▌        | 81/540 [00:15<01:26,  5.29it/s]Compute statistics:  15%|█▌        | 82/540 [00:15<01:26,  5.30it/s]Compute statistics:  15%|█▌        | 83/540 [00:15<01:26,  5.28it/s]Compute statistics:  16%|█▌        | 84/540 [00:15<01:26,  5.27it/s]Compute statistics:  16%|█▌        | 85/540 [00:15<01:26,  5.28it/s]Compute statistics:  16%|█▌        | 86/540 [00:16<01:25,  5.29it/s]Compute statistics:  16%|█▌        | 87/540 [00:16<01:25,  5.30it/s]Compute statistics:  16%|█▋        | 88/540 [00:16<01:25,  5.31it/s]Compute statistics:  16%|█▋        | 89/540 [00:16<01:24,  5.31it/s]Compute statistics:  17%|█▋        | 90/540 [00:16<01:25,  5.29it/s]Compute statistics:  17%|█▋        | 91/540 [00:17<01:24,  5.29it/s]Compute statistics:  17%|█▋        | 92/540 [00:17<01:24,  5.30it/s]Compute statistics:  17%|█▋        | 93/540 [00:17<01:24,  5.31it/s]Compute statistics:  17%|█▋        | 94/540 [00:17<01:23,  5.37it/s]Compute statistics:  18%|█▊        | 95/540 [00:17<01:23,  5.35it/s]Compute statistics:  18%|█▊        | 96/540 [00:17<01:23,  5.32it/s]Compute statistics:  18%|█▊        | 97/540 [00:18<01:23,  5.32it/s]Compute statistics:  18%|█▊        | 98/540 [00:18<01:21,  5.43it/s]Compute statistics:  18%|█▊        | 99/540 [00:18<01:19,  5.53it/s]Compute statistics:  19%|█▊        | 100/540 [00:18<01:19,  5.54it/s]Compute statistics:  19%|█▊        | 101/540 [00:18<01:19,  5.53it/s]Compute statistics:  19%|█▉        | 102/540 [00:19<01:19,  5.49it/s]Compute statistics:  19%|█▉        | 103/540 [00:19<01:19,  5.47it/s]Compute statistics:  19%|█▉        | 104/540 [00:19<01:20,  5.43it/s]Compute statistics:  19%|█▉        | 105/540 [00:19<01:20,  5.42it/s]Compute statistics:  20%|█▉        | 106/540 [00:19<01:19,  5.43it/s]Compute statistics:  20%|█▉        | 107/540 [00:19<01:19,  5.42it/s]Compute statistics:  20%|██        | 108/540 [00:20<01:19,  5.42it/s]Compute statistics:  20%|██        | 109/540 [00:20<01:20,  5.38it/s]Compute statistics:  20%|██        | 110/540 [00:20<01:20,  5.37it/s]Compute statistics:  21%|██        | 111/540 [00:20<01:19,  5.41it/s]Compute statistics:  21%|██        | 112/540 [00:20<01:19,  5.38it/s]Compute statistics:  21%|██        | 113/540 [00:21<01:18,  5.41it/s]Compute statistics:  21%|██        | 114/540 [00:21<01:18,  5.39it/s]Compute statistics:  21%|██▏       | 115/540 [00:21<01:19,  5.38it/s]Compute statistics:  21%|██▏       | 116/540 [00:21<01:17,  5.44it/s]Compute statistics:  22%|██▏       | 117/540 [00:21<01:18,  5.41it/s]Compute statistics:  22%|██▏       | 118/540 [00:22<01:18,  5.38it/s]Compute statistics:  22%|██▏       | 119/540 [00:22<01:18,  5.37it/s]Compute statistics:  22%|██▏       | 120/540 [00:22<01:18,  5.35it/s]Compute statistics:  22%|██▏       | 121/540 [00:22<01:17,  5.42it/s]Compute statistics:  23%|██▎       | 122/540 [00:22<01:17,  5.40it/s]Compute statistics:  23%|██▎       | 123/540 [00:22<01:17,  5.41it/s]Compute statistics:  23%|██▎       | 124/540 [00:23<01:16,  5.41it/s]Compute statistics:  23%|██▎       | 125/540 [00:23<01:17,  5.39it/s]Compute statistics:  23%|██▎       | 126/540 [00:23<01:16,  5.42it/s]Compute statistics:  24%|██▎       | 127/540 [00:23<01:16,  5.41it/s]Compute statistics:  24%|██▎       | 128/540 [00:23<01:15,  5.44it/s]Compute statistics:  24%|██▍       | 129/540 [00:24<01:16,  5.39it/s]Compute statistics:  24%|██▍       | 130/540 [00:24<01:16,  5.39it/s]Compute statistics:  24%|██▍       | 131/540 [00:24<01:15,  5.43it/s]Compute statistics:  24%|██▍       | 132/540 [00:24<01:15,  5.41it/s]Compute statistics:  25%|██▍       | 133/540 [00:24<01:15,  5.39it/s]Compute statistics:  25%|██▍       | 134/540 [00:24<01:15,  5.40it/s]Compute statistics:  25%|██▌       | 135/540 [00:25<01:14,  5.40it/s]Compute statistics:  25%|██▌       | 136/540 [00:25<01:14,  5.44it/s]Compute statistics:  25%|██▌       | 137/540 [00:25<01:14,  5.43it/s]Compute statistics:  26%|██▌       | 138/540 [00:25<01:14,  5.41it/s]Compute statistics:  26%|██▌       | 139/540 [00:25<01:14,  5.40it/s]Compute statistics:  26%|██▌       | 140/540 [00:26<01:14,  5.38it/s]Compute statistics:  26%|██▌       | 141/540 [00:26<01:13,  5.43it/s]Compute statistics:  26%|██▋       | 142/540 [00:26<01:13,  5.41it/s]Compute statistics:  26%|██▋       | 143/540 [00:26<01:13,  5.44it/s]Compute statistics:  27%|██▋       | 144/540 [00:26<01:13,  5.41it/s]Compute statistics:  27%|██▋       | 145/540 [00:27<01:13,  5.39it/s]Compute statistics:  27%|██▋       | 146/540 [00:27<01:12,  5.40it/s]Compute statistics:  27%|██▋       | 147/540 [00:27<01:12,  5.41it/s]Compute statistics:  27%|██▋       | 148/540 [00:27<01:12,  5.41it/s]Compute statistics:  28%|██▊       | 149/540 [00:27<01:13,  5.36it/s]Compute statistics:  28%|██▊       | 150/540 [00:27<01:12,  5.37it/s]Compute statistics:  28%|██▊       | 151/540 [00:28<01:12,  5.39it/s]Compute statistics:  28%|██▊       | 152/540 [00:28<01:12,  5.36it/s]Compute statistics:  28%|██▊       | 153/540 [00:28<01:12,  5.37it/s]Compute statistics:  29%|██▊       | 154/540 [00:28<01:11,  5.39it/s]Compute statistics:  29%|██▊       | 155/540 [00:28<01:11,  5.38it/s]Compute statistics:  29%|██▉       | 156/540 [00:29<01:10,  5.43it/s]Compute statistics:  29%|██▉       | 157/540 [00:29<01:10,  5.40it/s]Compute statistics:  29%|██▉       | 158/540 [00:29<01:10,  5.42it/s]Compute statistics:  29%|██▉       | 159/540 [00:29<01:10,  5.40it/s]Compute statistics:  30%|██▉       | 160/540 [00:29<01:10,  5.38it/s]Compute statistics:  30%|██▉       | 161/540 [00:29<01:09,  5.42it/s]Compute statistics:  30%|███       | 162/540 [00:30<01:09,  5.41it/s]Compute statistics:  30%|███       | 163/540 [00:30<01:09,  5.43it/s]Compute statistics:  30%|███       | 164/540 [00:30<01:09,  5.41it/s]Compute statistics:  31%|███       | 165/540 [00:30<01:09,  5.39it/s]Compute statistics:  31%|███       | 166/540 [00:30<01:08,  5.43it/s]Compute statistics:  31%|███       | 167/540 [00:31<01:08,  5.43it/s]Compute statistics:  31%|███       | 168/540 [00:31<01:08,  5.41it/s]Compute statistics:  31%|███▏      | 169/540 [00:31<01:08,  5.39it/s]Compute statistics:  31%|███▏      | 170/540 [00:31<01:08,  5.39it/s]Compute statistics:  32%|███▏      | 171/540 [00:31<01:07,  5.43it/s]Compute statistics:  32%|███▏      | 172/540 [00:32<01:08,  5.39it/s]Compute statistics:  32%|███▏      | 173/540 [00:32<01:07,  5.40it/s]Compute statistics:  32%|███▏      | 174/540 [00:32<01:07,  5.41it/s]Compute statistics:  32%|███▏      | 175/540 [00:32<01:07,  5.41it/s]Compute statistics:  33%|███▎      | 176/540 [00:32<01:06,  5.45it/s]Compute statistics:  33%|███▎      | 177/540 [00:32<01:07,  5.41it/s]Compute statistics:  33%|███▎      | 178/540 [00:33<01:06,  5.41it/s]Compute statistics:  33%|███▎      | 179/540 [00:33<01:06,  5.41it/s]Compute statistics:  33%|███▎      | 180/540 [00:33<01:06,  5.39it/s]Compute statistics:  34%|███▎      | 181/540 [00:33<01:06,  5.42it/s]Compute statistics:  34%|███▎      | 182/540 [00:33<01:06,  5.40it/s]Compute statistics:  34%|███▍      | 183/540 [00:34<01:06,  5.41it/s]Compute statistics:  34%|███▍      | 184/540 [00:34<01:06,  5.39it/s]Compute statistics:  34%|███▍      | 185/540 [00:34<01:06,  5.37it/s]Compute statistics:  34%|███▍      | 186/540 [00:34<01:05,  5.42it/s]Compute statistics:  35%|███▍      | 187/540 [00:34<01:05,  5.42it/s]Compute statistics:  35%|███▍      | 188/540 [00:34<01:04,  5.42it/s]Compute statistics:  35%|███▌      | 189/540 [00:35<01:05,  5.40it/s]Compute statistics:  35%|███▌      | 190/540 [00:35<01:04,  5.39it/s]Compute statistics:  35%|███▌      | 191/540 [00:35<01:04,  5.43it/s]Compute statistics:  36%|███▌      | 192/540 [00:35<01:04,  5.41it/s]Compute statistics:  36%|███▌      | 193/540 [00:35<01:04,  5.41it/s]Compute statistics:  36%|███▌      | 194/540 [00:36<01:04,  5.39it/s]Compute statistics:  36%|███▌      | 195/540 [00:36<01:04,  5.37it/s]Compute statistics:  36%|███▋      | 196/540 [00:36<01:03,  5.43it/s]Compute statistics:  36%|███▋      | 197/540 [00:36<01:03,  5.41it/s]Compute statistics:  37%|███▋      | 198/540 [00:36<01:02,  5.43it/s]Compute statistics:  37%|███▋      | 199/540 [00:37<01:03,  5.39it/s]Compute statistics:  37%|███▋      | 200/540 [00:37<01:03,  5.37it/s]Compute statistics:  37%|███▋      | 201/540 [00:37<01:02,  5.42it/s]Compute statistics:  37%|███▋      | 202/540 [00:37<01:02,  5.37it/s]Compute statistics:  38%|███▊      | 203/540 [00:37<01:02,  5.36it/s]Compute statistics:  38%|███▊      | 204/540 [00:37<01:02,  5.42it/s]Compute statistics:  38%|███▊      | 205/540 [00:38<01:01,  5.42it/s]Compute statistics:  38%|███▊      | 206/540 [00:38<01:01,  5.43it/s]Compute statistics:  38%|███▊      | 207/540 [00:38<01:01,  5.40it/s]Compute statistics:  39%|███▊      | 208/540 [00:38<01:01,  5.42it/s]Compute statistics:  39%|███▊      | 209/540 [00:38<01:01,  5.39it/s]Compute statistics:  39%|███▉      | 210/540 [00:39<01:01,  5.37it/s]Compute statistics:  39%|███▉      | 211/540 [00:39<01:00,  5.41it/s]Compute statistics:  39%|███▉      | 212/540 [00:39<01:00,  5.40it/s]Compute statistics:  39%|███▉      | 213/540 [00:39<01:00,  5.38it/s]Compute statistics:  40%|███▉      | 214/540 [00:39<01:00,  5.39it/s]Compute statistics:  40%|███▉      | 215/540 [00:39<01:00,  5.39it/s]Compute statistics:  40%|████      | 216/540 [00:40<00:59,  5.42it/s]Compute statistics:  40%|████      | 217/540 [00:40<00:59,  5.42it/s]Compute statistics:  40%|████      | 218/540 [00:40<00:59,  5.44it/s]Compute statistics:  41%|████      | 219/540 [00:40<00:59,  5.39it/s]Compute statistics:  41%|████      | 220/540 [00:40<00:59,  5.37it/s]Compute statistics:  41%|████      | 221/540 [00:41<00:58,  5.41it/s]Compute statistics:  41%|████      | 222/540 [00:41<00:59,  5.38it/s]Compute statistics:  41%|████▏     | 223/540 [00:41<00:58,  5.40it/s]Compute statistics:  41%|████▏     | 224/540 [00:41<00:58,  5.38it/s]Compute statistics:  42%|████▏     | 225/540 [00:41<00:58,  5.39it/s]Compute statistics:  42%|████▏     | 226/540 [00:41<00:57,  5.43it/s]Compute statistics:  42%|████▏     | 227/540 [00:42<00:57,  5.42it/s]Compute statistics:  42%|████▏     | 228/540 [00:42<00:57,  5.44it/s]Compute statistics:  42%|████▏     | 229/540 [00:42<00:57,  5.41it/s]Compute statistics:  43%|████▎     | 230/540 [00:42<00:57,  5.38it/s]Compute statistics:  43%|████▎     | 231/540 [00:42<00:57,  5.41it/s]Compute statistics:  43%|████▎     | 232/540 [00:43<00:56,  5.42it/s]Compute statistics:  43%|████▎     | 233/540 [00:43<00:56,  5.42it/s]Compute statistics:  43%|████▎     | 234/540 [00:43<00:56,  5.39it/s]Compute statistics:  44%|████▎     | 235/540 [00:43<00:56,  5.39it/s]Compute statistics:  44%|████▎     | 236/540 [00:43<00:56,  5.40it/s]Compute statistics:  44%|████▍     | 237/540 [00:44<00:56,  5.40it/s]Compute statistics:  44%|████▍     | 238/540 [00:44<00:55,  5.41it/s]Compute statistics:  44%|████▍     | 239/540 [00:44<00:55,  5.39it/s]Compute statistics:  44%|████▍     | 240/540 [00:44<00:55,  5.39it/s]Compute statistics:  45%|████▍     | 241/540 [00:44<00:55,  5.40it/s]Compute statistics:  45%|████▍     | 242/540 [00:44<00:55,  5.40it/s]Compute statistics:  45%|████▌     | 243/540 [00:45<00:54,  5.41it/s]Compute statistics:  45%|████▌     | 244/540 [00:45<00:55,  5.38it/s]Compute statistics:  45%|████▌     | 245/540 [00:45<00:54,  5.37it/s]Compute statistics:  46%|████▌     | 246/540 [00:45<00:54,  5.40it/s]Compute statistics:  46%|████▌     | 247/540 [00:45<00:54,  5.38it/s]Compute statistics:  46%|████▌     | 248/540 [00:46<00:53,  5.41it/s]Compute statistics:  46%|████▌     | 249/540 [00:46<00:54,  5.39it/s]Compute statistics:  46%|████▋     | 250/540 [00:46<00:53,  5.39it/s]Compute statistics:  46%|████▋     | 251/540 [00:46<00:53,  5.40it/s]Compute statistics:  47%|████▋     | 252/540 [00:46<00:53,  5.38it/s]Compute statistics:  47%|████▋     | 253/540 [00:47<00:53,  5.39it/s]Compute statistics:  47%|████▋     | 254/540 [00:47<00:53,  5.40it/s]Compute statistics:  47%|████▋     | 255/540 [00:47<00:52,  5.41it/s]Compute statistics:  47%|████▋     | 256/540 [00:47<00:52,  5.40it/s]Compute statistics:  48%|████▊     | 257/540 [00:47<00:52,  5.40it/s]Compute statistics:  48%|████▊     | 258/540 [00:47<00:52,  5.40it/s]Compute statistics:  48%|████▊     | 259/540 [00:48<00:52,  5.40it/s]Compute statistics:  48%|████▊     | 260/540 [00:48<00:51,  5.39it/s]Compute statistics:  48%|████▊     | 261/540 [00:48<00:51,  5.39it/s]Compute statistics:  49%|████▊     | 262/540 [00:48<00:51,  5.39it/s]Compute statistics:  49%|████▊     | 263/540 [00:48<00:51,  5.38it/s]Compute statistics:  49%|████▉     | 264/540 [00:49<00:51,  5.39it/s]Compute statistics:  49%|████▉     | 265/540 [00:49<00:51,  5.39it/s]Compute statistics:  49%|████▉     | 266/540 [00:49<00:50,  5.40it/s]Compute statistics:  49%|████▉     | 267/540 [00:49<00:50,  5.36it/s]Compute statistics:  50%|████▉     | 268/540 [00:49<00:50,  5.40it/s]Compute statistics:  50%|████▉     | 269/540 [00:49<00:50,  5.36it/s]Compute statistics:  50%|█████     | 270/540 [00:50<00:50,  5.36it/s]Compute statistics:  50%|█████     | 271/540 [00:50<00:49,  5.41it/s]Compute statistics:  50%|█████     | 272/540 [00:50<00:49,  5.40it/s]Compute statistics:  51%|█████     | 273/540 [00:50<00:49,  5.41it/s]Compute statistics:  51%|█████     | 274/540 [00:50<00:49,  5.42it/s]Compute statistics:  51%|█████     | 275/540 [00:51<00:49,  5.40it/s]Compute statistics:  51%|█████     | 276/540 [00:51<00:48,  5.43it/s]Compute statistics:  51%|█████▏    | 277/540 [00:51<00:48,  5.41it/s]Compute statistics:  51%|█████▏    | 278/540 [00:51<00:48,  5.39it/s]Compute statistics:  52%|█████▏    | 279/540 [00:51<00:48,  5.38it/s]Compute statistics:  52%|█████▏    | 280/540 [00:52<00:48,  5.37it/s]Compute statistics:  52%|█████▏    | 281/540 [00:52<00:47,  5.42it/s]Compute statistics:  52%|█████▏    | 282/540 [00:52<00:47,  5.39it/s]Compute statistics:  52%|█████▏    | 283/540 [00:52<00:47,  5.38it/s]Compute statistics:  53%|█████▎    | 284/540 [00:52<00:47,  5.41it/s]Compute statistics:  53%|█████▎    | 285/540 [00:52<00:47,  5.39it/s]Compute statistics:  53%|█████▎    | 286/540 [00:53<00:46,  5.45it/s]Compute statistics:  53%|█████▎    | 287/540 [00:53<00:46,  5.40it/s]Compute statistics:  53%|█████▎    | 288/540 [00:53<00:46,  5.39it/s]Compute statistics:  54%|█████▎    | 289/540 [00:53<00:46,  5.41it/s]Compute statistics:  54%|█████▎    | 290/540 [00:53<00:46,  5.41it/s]Compute statistics:  54%|█████▍    | 291/540 [00:54<00:45,  5.43it/s]Compute statistics:  54%|█████▍    | 292/540 [00:54<00:45,  5.41it/s]Compute statistics:  54%|█████▍    | 293/540 [00:54<00:45,  5.41it/s]Compute statistics:  54%|█████▍    | 294/540 [00:54<00:45,  5.40it/s]Compute statistics:  55%|█████▍    | 295/540 [00:54<00:45,  5.38it/s]Compute statistics:  55%|█████▍    | 296/540 [00:54<00:44,  5.43it/s]Compute statistics:  55%|█████▌    | 297/540 [00:55<00:45,  5.38it/s]Compute statistics:  55%|█████▌    | 298/540 [00:55<00:45,  5.37it/s]Compute statistics:  55%|█████▌    | 299/540 [00:55<00:44,  5.40it/s]Compute statistics:  56%|█████▌    | 300/540 [00:55<00:44,  5.40it/s]Compute statistics:  56%|█████▌    | 301/540 [00:55<00:44,  5.41it/s]Compute statistics:  56%|█████▌    | 302/540 [00:56<00:44,  5.37it/s]Compute statistics:  56%|█████▌    | 303/540 [00:56<00:44,  5.35it/s]Compute statistics:  56%|█████▋    | 304/540 [00:56<00:43,  5.41it/s]Compute statistics:  56%|█████▋    | 305/540 [00:56<00:43,  5.39it/s]Compute statistics:  57%|█████▋    | 306/540 [00:56<00:43,  5.41it/s]Compute statistics:  57%|█████▋    | 307/540 [00:57<00:43,  5.37it/s]Compute statistics:  57%|█████▋    | 308/540 [00:57<00:43,  5.37it/s]Compute statistics:  57%|█████▋    | 309/540 [00:57<00:42,  5.42it/s]Compute statistics:  57%|█████▋    | 310/540 [00:57<00:42,  5.38it/s]Compute statistics:  58%|█████▊    | 311/540 [00:57<00:42,  5.41it/s]Compute statistics:  58%|█████▊    | 312/540 [00:57<00:42,  5.36it/s]Compute statistics:  58%|█████▊    | 313/540 [00:58<00:42,  5.36it/s]Compute statistics:  58%|█████▊    | 314/540 [00:58<00:41,  5.42it/s]Compute statistics:  58%|█████▊    | 315/540 [00:58<00:41,  5.40it/s]Compute statistics:  59%|█████▊    | 316/540 [00:58<00:41,  5.44it/s]Compute statistics:  59%|█████▊    | 317/540 [00:58<00:41,  5.42it/s]Compute statistics:  59%|█████▉    | 318/540 [00:59<00:41,  5.40it/s]Compute statistics:  59%|█████▉    | 319/540 [00:59<00:40,  5.45it/s]Compute statistics:  59%|█████▉    | 320/540 [00:59<00:40,  5.39it/s]Compute statistics:  59%|█████▉    | 321/540 [00:59<00:40,  5.44it/s]Compute statistics:  60%|█████▉    | 322/540 [00:59<00:40,  5.44it/s]Compute statistics:  60%|█████▉    | 323/540 [00:59<00:40,  5.39it/s]Compute statistics:  60%|██████    | 324/540 [01:00<00:39,  5.44it/s]Compute statistics:  60%|██████    | 325/540 [01:00<00:39,  5.39it/s]Compute statistics:  60%|██████    | 326/540 [01:00<00:39,  5.45it/s]Compute statistics:  61%|██████    | 327/540 [01:00<00:39,  5.42it/s]Compute statistics:  61%|██████    | 328/540 [01:00<00:39,  5.38it/s]Compute statistics:  61%|██████    | 329/540 [01:01<00:38,  5.44it/s]Compute statistics:  61%|██████    | 330/540 [01:01<00:38,  5.40it/s]Compute statistics:  61%|██████▏   | 331/540 [01:01<00:38,  5.44it/s]Compute statistics:  61%|██████▏   | 332/540 [01:01<00:38,  5.41it/s]Compute statistics:  62%|██████▏   | 333/540 [01:01<00:38,  5.41it/s]Compute statistics:  62%|██████▏   | 334/540 [01:01<00:37,  5.45it/s]Compute statistics:  62%|██████▏   | 335/540 [01:02<00:37,  5.41it/s]Compute statistics:  62%|██████▏   | 336/540 [01:02<00:37,  5.47it/s]Compute statistics:  62%|██████▏   | 337/540 [01:02<00:37,  5.44it/s]Compute statistics:  63%|██████▎   | 338/540 [01:02<00:37,  5.41it/s]Compute statistics:  63%|██████▎   | 339/540 [01:02<00:36,  5.45it/s]Compute statistics:  63%|██████▎   | 340/540 [01:03<00:36,  5.43it/s]Compute statistics:  63%|██████▎   | 341/540 [01:03<00:36,  5.43it/s]Compute statistics:  63%|██████▎   | 342/540 [01:03<00:36,  5.43it/s]Compute statistics:  64%|██████▎   | 343/540 [01:03<00:36,  5.40it/s]Compute statistics:  64%|██████▎   | 344/540 [01:03<00:35,  5.45it/s]Compute statistics:  64%|██████▍   | 345/540 [01:04<00:35,  5.42it/s]Compute statistics:  64%|██████▍   | 346/540 [01:04<00:35,  5.42it/s]Compute statistics:  64%|██████▍   | 347/540 [01:04<00:35,  5.40it/s]Compute statistics:  64%|██████▍   | 348/540 [01:04<00:35,  5.40it/s]Compute statistics:  65%|██████▍   | 349/540 [01:04<00:35,  5.43it/s]Compute statistics:  65%|██████▍   | 350/540 [01:04<00:35,  5.40it/s]Compute statistics:  65%|██████▌   | 351/540 [01:05<00:34,  5.42it/s]Compute statistics:  65%|██████▌   | 352/540 [01:05<00:34,  5.38it/s]Compute statistics:  65%|██████▌   | 353/540 [01:05<00:34,  5.35it/s]Compute statistics:  66%|██████▌   | 354/540 [01:05<00:34,  5.41it/s]Compute statistics:  66%|██████▌   | 355/540 [01:05<00:34,  5.39it/s]Compute statistics:  66%|██████▌   | 356/540 [01:06<00:33,  5.42it/s]Compute statistics:  66%|██████▌   | 357/540 [01:06<00:33,  5.39it/s]Compute statistics:  66%|██████▋   | 358/540 [01:06<00:33,  5.39it/s]Compute statistics:  66%|██████▋   | 359/540 [01:06<00:33,  5.44it/s]Compute statistics:  67%|██████▋   | 360/540 [01:06<00:33,  5.43it/s]Compute statistics:  67%|██████▋   | 361/540 [01:06<00:32,  5.47it/s]Compute statistics:  67%|██████▋   | 362/540 [01:07<00:32,  5.42it/s]Compute statistics:  67%|██████▋   | 363/540 [01:07<00:32,  5.40it/s]Compute statistics:  67%|██████▋   | 364/540 [01:07<00:32,  5.44it/s]Compute statistics:  68%|██████▊   | 365/540 [01:07<00:32,  5.41it/s]Compute statistics:  68%|██████▊   | 366/540 [01:07<00:32,  5.43it/s]Compute statistics:  68%|██████▊   | 367/540 [01:08<00:32,  5.38it/s]Compute statistics:  68%|██████▊   | 368/540 [01:08<00:32,  5.37it/s]Compute statistics:  68%|██████▊   | 369/540 [01:08<00:31,  5.42it/s]Compute statistics:  69%|██████▊   | 370/540 [01:08<00:31,  5.39it/s]Compute statistics:  69%|██████▊   | 371/540 [01:08<00:31,  5.42it/s]Compute statistics:  69%|██████▉   | 372/540 [01:09<00:31,  5.38it/s]Compute statistics:  69%|██████▉   | 373/540 [01:09<00:31,  5.33it/s]Compute statistics:  69%|██████▉   | 374/540 [01:09<00:30,  5.36it/s]Compute statistics:  69%|██████▉   | 375/540 [01:09<00:30,  5.33it/s]Compute statistics:  70%|██████▉   | 376/540 [01:09<00:30,  5.36it/s]Compute statistics:  70%|██████▉   | 377/540 [01:09<00:30,  5.32it/s]Compute statistics:  70%|███████   | 378/540 [01:10<00:30,  5.30it/s]Compute statistics:  70%|███████   | 379/540 [01:10<00:29,  5.39it/s]Compute statistics:  70%|███████   | 380/540 [01:10<00:29,  5.37it/s]Compute statistics:  71%|███████   | 381/540 [01:10<00:29,  5.45it/s]Compute statistics:  71%|███████   | 382/540 [01:10<00:29,  5.40it/s]Compute statistics:  71%|███████   | 383/540 [01:11<00:29,  5.40it/s]Compute statistics:  71%|███████   | 384/540 [01:11<00:28,  5.45it/s]Compute statistics:  71%|███████▏  | 385/540 [01:11<00:28,  5.42it/s]Compute statistics:  71%|███████▏  | 386/540 [01:11<00:28,  5.46it/s]Compute statistics:  72%|███████▏  | 387/540 [01:11<00:28,  5.41it/s]Compute statistics:  72%|███████▏  | 388/540 [01:11<00:28,  5.41it/s]Compute statistics:  72%|███████▏  | 389/540 [01:12<00:27,  5.45it/s]Compute statistics:  72%|███████▏  | 390/540 [01:12<00:27,  5.43it/s]Compute statistics:  72%|███████▏  | 391/540 [01:12<00:27,  5.45it/s]Compute statistics:  73%|███████▎  | 392/540 [01:12<00:27,  5.40it/s]Compute statistics:  73%|███████▎  | 393/540 [01:12<00:27,  5.39it/s]Compute statistics:  73%|███████▎  | 394/540 [01:13<00:26,  5.45it/s]Compute statistics:  73%|███████▎  | 395/540 [01:13<00:26,  5.41it/s]Compute statistics:  73%|███████▎  | 396/540 [01:13<00:26,  5.44it/s]Compute statistics:  74%|███████▎  | 397/540 [01:13<00:26,  5.41it/s]Compute statistics:  74%|███████▎  | 398/540 [01:13<00:26,  5.39it/s]Compute statistics:  74%|███████▍  | 399/540 [01:14<00:26,  5.42it/s]Compute statistics:  74%|███████▍  | 400/540 [01:14<00:26,  5.36it/s]Compute statistics:  74%|███████▍  | 401/540 [01:14<00:25,  5.40it/s]Compute statistics:  74%|███████▍  | 402/540 [01:14<00:25,  5.37it/s]Compute statistics:  75%|███████▍  | 403/540 [01:14<00:25,  5.35it/s]Compute statistics:  75%|███████▍  | 404/540 [01:14<00:25,  5.41it/s]Compute statistics:  75%|███████▌  | 405/540 [01:15<00:25,  5.36it/s]Compute statistics:  75%|███████▌  | 406/540 [01:15<00:24,  5.40it/s]Compute statistics:  75%|███████▌  | 407/540 [01:15<00:24,  5.37it/s]Compute statistics:  76%|███████▌  | 408/540 [01:15<00:24,  5.37it/s]Compute statistics:  76%|███████▌  | 409/540 [01:15<00:24,  5.42it/s]Compute statistics:  76%|███████▌  | 410/540 [01:16<00:24,  5.38it/s]Compute statistics:  76%|███████▌  | 411/540 [01:16<00:23,  5.42it/s]Compute statistics:  76%|███████▋  | 412/540 [01:16<00:23,  5.40it/s]Compute statistics:  76%|███████▋  | 413/540 [01:16<00:23,  5.36it/s]Compute statistics:  77%|███████▋  | 414/540 [01:16<00:23,  5.42it/s]Compute statistics:  77%|███████▋  | 415/540 [01:16<00:23,  5.39it/s]Compute statistics:  77%|███████▋  | 416/540 [01:17<00:22,  5.40it/s]Compute statistics:  77%|███████▋  | 417/540 [01:17<00:23,  5.32it/s]Compute statistics:  77%|███████▋  | 418/540 [01:17<00:23,  5.22it/s]Compute statistics:  78%|███████▊  | 419/540 [01:17<00:23,  5.19it/s]Compute statistics:  78%|███████▊  | 420/540 [01:17<00:23,  5.19it/s]Compute statistics:  78%|███████▊  | 421/540 [01:18<00:22,  5.18it/s]Compute statistics:  78%|███████▊  | 422/540 [01:18<00:22,  5.16it/s]Compute statistics:  78%|███████▊  | 423/540 [01:18<00:22,  5.17it/s]Compute statistics:  79%|███████▊  | 424/540 [01:18<00:22,  5.17it/s]Compute statistics:  79%|███████▊  | 425/540 [01:18<00:22,  5.20it/s]Compute statistics:  79%|███████▉  | 426/540 [01:19<00:21,  5.26it/s]Compute statistics:  79%|███████▉  | 427/540 [01:19<00:21,  5.26it/s]Compute statistics:  79%|███████▉  | 428/540 [01:19<00:21,  5.32it/s]Compute statistics:  79%|███████▉  | 429/540 [01:19<00:20,  5.30it/s]Compute statistics:  80%|███████▉  | 430/540 [01:19<00:20,  5.29it/s]Compute statistics:  80%|███████▉  | 431/540 [01:20<00:20,  5.24it/s]Compute statistics:  80%|████████  | 432/540 [01:20<00:20,  5.24it/s]Compute statistics:  80%|████████  | 433/540 [01:20<00:20,  5.24it/s]Compute statistics:  80%|████████  | 434/540 [01:20<00:19,  5.30it/s]Compute statistics:  81%|████████  | 435/540 [01:20<00:19,  5.31it/s]Compute statistics:  81%|████████  | 436/540 [01:21<00:19,  5.27it/s]Compute statistics:  81%|████████  | 437/540 [01:21<00:19,  5.29it/s]Compute statistics:  81%|████████  | 438/540 [01:21<00:19,  5.28it/s]Compute statistics:  81%|████████▏ | 439/540 [01:21<00:18,  5.34it/s]Compute statistics:  81%|████████▏ | 440/540 [01:21<00:18,  5.31it/s]Compute statistics:  82%|████████▏ | 441/540 [01:21<00:18,  5.31it/s]Compute statistics:  82%|████████▏ | 442/540 [01:22<00:18,  5.38it/s]Compute statistics:  82%|████████▏ | 443/540 [01:22<00:18,  5.33it/s]Compute statistics:  82%|████████▏ | 444/540 [01:22<00:17,  5.35it/s]Compute statistics:  82%|████████▏ | 445/540 [01:22<00:17,  5.32it/s]Compute statistics:  83%|████████▎ | 446/540 [01:22<00:17,  5.33it/s]Compute statistics:  83%|████████▎ | 447/540 [01:23<00:17,  5.29it/s]Compute statistics:  83%|████████▎ | 448/540 [01:23<00:17,  5.27it/s]Compute statistics:  83%|████████▎ | 449/540 [01:23<00:17,  5.25it/s]Compute statistics:  83%|████████▎ | 450/540 [01:23<00:17,  5.27it/s]Compute statistics:  84%|████████▎ | 451/540 [01:23<00:16,  5.24it/s]Compute statistics:  84%|████████▎ | 452/540 [01:24<00:16,  5.20it/s]Compute statistics:  84%|████████▍ | 453/540 [01:24<00:16,  5.17it/s]Compute statistics:  84%|████████▍ | 454/540 [01:24<00:16,  5.12it/s]Compute statistics:  84%|████████▍ | 455/540 [01:24<00:16,  5.17it/s]Compute statistics:  84%|████████▍ | 456/540 [01:24<00:16,  5.24it/s]Compute statistics:  85%|████████▍ | 457/540 [01:24<00:15,  5.24it/s]Compute statistics:  85%|████████▍ | 458/540 [01:25<00:15,  5.23it/s]Compute statistics:  85%|████████▌ | 459/540 [01:25<00:15,  5.29it/s]Compute statistics:  85%|████████▌ | 460/540 [01:25<00:15,  5.30it/s]Compute statistics:  85%|████████▌ | 461/540 [01:25<00:14,  5.33it/s]Compute statistics:  86%|████████▌ | 462/540 [01:25<00:14,  5.28it/s]Compute statistics:  86%|████████▌ | 463/540 [01:26<00:14,  5.33it/s]Compute statistics:  86%|████████▌ | 464/540 [01:26<00:14,  5.27it/s]Compute statistics:  86%|████████▌ | 465/540 [01:26<00:14,  5.22it/s]Compute statistics:  86%|████████▋ | 466/540 [01:26<00:14,  5.24it/s]Compute statistics:  86%|████████▋ | 467/540 [01:26<00:13,  5.30it/s]Compute statistics:  87%|████████▋ | 468/540 [01:27<00:13,  5.29it/s]Compute statistics:  87%|████████▋ | 469/540 [01:27<00:13,  5.24it/s]Compute statistics:  87%|████████▋ | 470/540 [01:27<00:13,  5.29it/s]Compute statistics:  87%|████████▋ | 471/540 [01:27<00:13,  5.27it/s]Compute statistics:  87%|████████▋ | 472/540 [01:27<00:12,  5.26it/s]Compute statistics:  88%|████████▊ | 473/540 [01:28<00:12,  5.27it/s]Compute statistics:  88%|████████▊ | 474/540 [01:28<00:12,  5.34it/s]Compute statistics:  88%|████████▊ | 475/540 [01:28<00:12,  5.32it/s]Compute statistics:  88%|████████▊ | 476/540 [01:28<00:12,  5.27it/s]Compute statistics:  88%|████████▊ | 477/540 [01:28<00:11,  5.27it/s]Compute statistics:  89%|████████▊ | 478/540 [01:28<00:11,  5.32it/s]Compute statistics:  89%|████████▊ | 479/540 [01:29<00:11,  5.30it/s]Compute statistics:  89%|████████▉ | 480/540 [01:29<00:11,  5.29it/s]Compute statistics:  89%|████████▉ | 481/540 [01:29<00:11,  5.32it/s]Compute statistics:  89%|████████▉ | 482/540 [01:29<00:10,  5.31it/s]Compute statistics:  89%|████████▉ | 483/540 [01:29<00:10,  5.37it/s]Compute statistics:  90%|████████▉ | 484/540 [01:30<00:10,  5.33it/s]Compute statistics:  90%|████████▉ | 485/540 [01:30<00:10,  5.29it/s]Compute statistics:  90%|█████████ | 486/540 [01:30<00:10,  5.26it/s]Compute statistics:  90%|█████████ | 487/540 [01:30<00:10,  5.24it/s]Compute statistics:  90%|█████████ | 488/540 [01:30<00:09,  5.23it/s]Compute statistics:  91%|█████████ | 489/540 [01:31<00:09,  5.30it/s]Compute statistics:  91%|█████████ | 490/540 [01:31<00:09,  5.28it/s]Compute statistics:  91%|█████████ | 491/540 [01:31<00:09,  5.32it/s]Compute statistics:  91%|█████████ | 492/540 [01:31<00:08,  5.35it/s]Compute statistics:  91%|█████████▏| 493/540 [01:31<00:08,  5.33it/s]Compute statistics:  91%|█████████▏| 494/540 [01:31<00:08,  5.40it/s]Compute statistics:  92%|█████████▏| 495/540 [01:32<00:08,  5.39it/s]Compute statistics:  92%|█████████▏| 496/540 [01:32<00:08,  5.40it/s]Compute statistics:  92%|█████████▏| 497/540 [01:32<00:08,  5.37it/s]Compute statistics:  92%|█████████▏| 498/540 [01:32<00:07,  5.37it/s]Compute statistics:  92%|█████████▏| 499/540 [01:32<00:07,  5.37it/s]Compute statistics:  93%|█████████▎| 500/540 [01:33<00:07,  5.41it/s]Compute statistics:  93%|█████████▎| 501/540 [01:33<00:07,  5.40it/s]Compute statistics:  93%|█████████▎| 502/540 [01:33<00:07,  5.34it/s]Compute statistics:  93%|█████████▎| 503/540 [01:33<00:06,  5.34it/s]Compute statistics:  93%|█████████▎| 504/540 [01:33<00:06,  5.34it/s]Compute statistics:  94%|█████████▎| 505/540 [01:34<00:06,  5.39it/s]Compute statistics:  94%|█████████▎| 506/540 [01:34<00:06,  5.39it/s]Compute statistics:  94%|█████████▍| 507/540 [01:34<00:06,  5.37it/s]Compute statistics:  94%|█████████▍| 508/540 [01:34<00:05,  5.36it/s]Compute statistics:  94%|█████████▍| 509/540 [01:34<00:05,  5.36it/s]Compute statistics:  94%|█████████▍| 510/540 [01:34<00:05,  5.41it/s]Compute statistics:  95%|█████████▍| 511/540 [01:35<00:05,  5.41it/s]Compute statistics:  95%|█████████▍| 512/540 [01:35<00:05,  5.36it/s]Compute statistics:  95%|█████████▌| 513/540 [01:35<00:05,  5.37it/s]Compute statistics:  95%|█████████▌| 514/540 [01:35<00:04,  5.37it/s]Compute statistics:  95%|█████████▌| 515/540 [01:35<00:04,  5.41it/s]Compute statistics:  96%|█████████▌| 516/540 [01:36<00:04,  5.39it/s]Compute statistics:  96%|█████████▌| 517/540 [01:36<00:04,  5.37it/s]Compute statistics:  96%|█████████▌| 518/540 [01:36<00:04,  5.34it/s]Compute statistics:  96%|█████████▌| 519/540 [01:36<00:03,  5.37it/s]Compute statistics:  96%|█████████▋| 520/540 [01:36<00:03,  5.34it/s]Compute statistics:  96%|█████████▋| 521/540 [01:36<00:03,  5.37it/s]Compute statistics:  97%|█████████▋| 522/540 [01:37<00:03,  5.36it/s]Compute statistics:  97%|█████████▋| 523/540 [01:37<00:03,  5.35it/s]Compute statistics:  97%|█████████▋| 524/540 [01:37<00:02,  5.41it/s]Compute statistics:  97%|█████████▋| 525/540 [01:37<00:02,  5.40it/s]Compute statistics:  97%|█████████▋| 526/540 [01:37<00:02,  5.43it/s]Compute statistics:  98%|█████████▊| 527/540 [01:38<00:02,  5.39it/s]Compute statistics:  98%|█████████▊| 528/540 [01:38<00:02,  5.38it/s]Compute statistics:  98%|█████████▊| 529/540 [01:38<00:02,  5.42it/s]Compute statistics:  98%|█████████▊| 530/540 [01:38<00:01,  5.38it/s]Compute statistics:  98%|█████████▊| 531/540 [01:38<00:01,  5.37it/s]Compute statistics:  99%|█████████▊| 532/540 [01:39<00:01,  5.42it/s]Compute statistics:  99%|█████████▊| 533/540 [01:39<00:01,  5.41it/s]Compute statistics:  99%|█████████▉| 534/540 [01:39<00:01,  5.43it/s]Compute statistics:  99%|█████████▉| 535/540 [01:39<00:00,  5.40it/s]Compute statistics:  99%|█████████▉| 536/540 [01:39<00:00,  5.36it/s]Compute statistics:  99%|█████████▉| 537/540 [01:39<00:00,  5.42it/s]Compute statistics: 100%|█████████▉| 538/540 [01:40<00:00,  5.42it/s]Compute statistics: 100%|█████████▉| 539/540 [01:40<00:00,  5.45it/s]Compute statistics: 100%|██████████| 540/540 [01:40<00:00,  5.41it/s]Compute statistics: 100%|██████████| 540/540 [01:40<00:00,  5.37it/s]
+/Data/home/vicky/test/graf/transforms.py:51: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  h = (select_inds // W) / float(H) - 0.5
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.81s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.81s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.24s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.24s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.80s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.80s/it]
+Compute statistics:   0%|          | 0/125 [00:00<?, ?it/s]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   1%|          | 1/125 [00:01<03:57,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:   2%|▏         | 2/125 [00:03<03:56,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:   2%|▏         | 3/125 [00:05<03:54,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   3%|▎         | 4/125 [00:07<03:51,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   4%|▍         | 5/125 [00:09<03:49,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:   5%|▍         | 6/125 [00:11<03:48,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:   6%|▌         | 7/125 [00:13<03:45,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   6%|▋         | 8/125 [00:15<03:43,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   7%|▋         | 9/125 [00:17<03:41,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:   8%|▊         | 10/125 [00:19<03:39,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:   9%|▉         | 11/125 [00:21<03:37,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  10%|▉         | 12/125 [00:22<03:36,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  10%|█         | 13/125 [00:24<03:34,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  11%|█         | 14/125 [00:26<03:32,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  12%|█▏        | 15/125 [00:28<03:30,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  13%|█▎        | 16/125 [00:30<03:28,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  14%|█▎        | 17/125 [00:32<03:27,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  14%|█▍        | 18/125 [00:34<03:25,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  15%|█▌        | 19/125 [00:36<03:22,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  16%|█▌        | 20/125 [00:38<03:20,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  17%|█▋        | 21/125 [00:40<03:19,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  18%|█▊        | 22/125 [00:42<03:16,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  18%|█▊        | 23/125 [00:44<03:14,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  19%|█▉        | 24/125 [00:45<03:13,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  20%|██        | 25/125 [00:47<03:11,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  21%|██        | 26/125 [00:49<03:09,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  22%|██▏       | 27/125 [00:52<03:27,  2.12s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Compute statistics:  22%|██▏       | 28/125 [00:54<03:40,  2.27s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Compute statistics:  23%|██▎       | 29/125 [00:57<03:47,  2.37s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.98s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.98s/it]
+Compute statistics:  24%|██▍       | 30/125 [00:59<03:35,  2.26s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  25%|██▍       | 31/125 [01:01<03:22,  2.16s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  26%|██▌       | 32/125 [01:03<03:13,  2.08s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  26%|██▋       | 33/125 [01:05<03:07,  2.03s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  27%|██▋       | 34/125 [01:07<03:01,  2.00s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  28%|██▊       | 35/125 [01:09<02:57,  1.97s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  29%|██▉       | 36/125 [01:11<02:54,  1.96s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  30%|██▉       | 37/125 [01:13<02:50,  1.94s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  30%|███       | 38/125 [01:14<02:48,  1.93s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  31%|███       | 39/125 [01:16<02:46,  1.93s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  32%|███▏      | 40/125 [01:18<02:44,  1.93s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  33%|███▎      | 41/125 [01:20<02:41,  1.93s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  34%|███▎      | 42/125 [01:22<02:40,  1.93s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  34%|███▍      | 43/125 [01:24<02:37,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  35%|███▌      | 44/125 [01:26<02:35,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  36%|███▌      | 45/125 [01:28<02:33,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  37%|███▋      | 46/125 [01:30<02:31,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  38%|███▊      | 47/125 [01:32<02:29,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  38%|███▊      | 48/125 [01:34<02:27,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  39%|███▉      | 49/125 [01:36<02:25,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  40%|████      | 50/125 [01:37<02:23,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  41%|████      | 51/125 [01:39<02:21,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  42%|████▏     | 52/125 [01:41<02:19,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  42%|████▏     | 53/125 [01:43<02:17,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  43%|████▎     | 54/125 [01:45<02:15,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  44%|████▍     | 55/125 [01:47<02:14,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  45%|████▍     | 56/125 [01:49<02:11,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  46%|████▌     | 57/125 [01:51<02:10,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  46%|████▋     | 58/125 [01:53<02:08,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  47%|████▋     | 59/125 [01:55<02:06,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  48%|████▊     | 60/125 [01:57<02:04,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  49%|████▉     | 61/125 [01:58<02:02,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  50%|████▉     | 62/125 [02:00<02:00,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  50%|█████     | 63/125 [02:02<01:58,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]
+Compute statistics:  51%|█████     | 64/125 [02:04<01:56,  1.90s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]
+Compute statistics:  52%|█████▏    | 65/125 [02:06<01:53,  1.90s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]
+Compute statistics:  53%|█████▎    | 66/125 [02:08<01:51,  1.90s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  54%|█████▎    | 67/125 [02:10<01:50,  1.90s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  54%|█████▍    | 68/125 [02:12<01:48,  1.90s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  55%|█████▌    | 69/125 [02:14<01:47,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  56%|█████▌    | 70/125 [02:16<01:45,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]
+Compute statistics:  57%|█████▋    | 71/125 [02:18<01:43,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  58%|█████▊    | 72/125 [02:19<01:41,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  58%|█████▊    | 73/125 [02:21<01:39,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  59%|█████▉    | 74/125 [02:23<01:37,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  60%|██████    | 75/125 [02:25<01:35,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  61%|██████    | 76/125 [02:27<01:33,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  62%|██████▏   | 77/125 [02:29<01:31,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  62%|██████▏   | 78/125 [02:31<01:29,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  63%|██████▎   | 79/125 [02:33<01:27,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  64%|██████▍   | 80/125 [02:35<01:26,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  65%|██████▍   | 81/125 [02:37<01:24,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  66%|██████▌   | 82/125 [02:39<01:22,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  66%|██████▋   | 83/125 [02:40<01:20,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  67%|██████▋   | 84/125 [02:42<01:18,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  68%|██████▊   | 85/125 [02:44<01:16,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  69%|██████▉   | 86/125 [02:46<01:14,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  70%|██████▉   | 87/125 [02:48<01:12,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  70%|███████   | 88/125 [02:50<01:10,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  71%|███████   | 89/125 [02:52<01:08,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  72%|███████▏  | 90/125 [02:54<01:06,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  73%|███████▎  | 91/125 [02:56<01:05,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  74%|███████▎  | 92/125 [02:58<01:03,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  74%|███████▍  | 93/125 [03:00<01:01,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  75%|███████▌  | 94/125 [03:02<00:59,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  76%|███████▌  | 95/125 [03:03<00:57,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.91s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.91s/it]
+Compute statistics:  77%|███████▋  | 96/125 [03:05<00:55,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  78%|███████▊  | 97/125 [03:07<00:53,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  78%|███████▊  | 98/125 [03:09<00:51,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  79%|███████▉  | 99/125 [03:11<00:49,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  80%|████████  | 100/125 [03:13<00:47,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  81%|████████  | 101/125 [03:15<00:45,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  82%|████████▏ | 102/125 [03:17<00:44,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  82%|████████▏ | 103/125 [03:19<00:42,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  83%|████████▎ | 104/125 [03:21<00:40,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  84%|████████▍ | 105/125 [03:23<00:38,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  85%|████████▍ | 106/125 [03:25<00:36,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  86%|████████▌ | 107/125 [03:26<00:34,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  86%|████████▋ | 108/125 [03:28<00:32,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  87%|████████▋ | 109/125 [03:30<00:30,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  88%|████████▊ | 110/125 [03:32<00:28,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  89%|████████▉ | 111/125 [03:34<00:26,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  90%|████████▉ | 112/125 [03:36<00:24,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  90%|█████████ | 113/125 [03:38<00:22,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  91%|█████████ | 114/125 [03:40<00:21,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  92%|█████████▏| 115/125 [03:42<00:19,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  93%|█████████▎| 116/125 [03:44<00:17,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  94%|█████████▎| 117/125 [03:46<00:15,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  94%|█████████▍| 118/125 [03:48<00:13,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  95%|█████████▌| 119/125 [03:49<00:11,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  96%|█████████▌| 120/125 [03:51<00:09,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.90s/it]
+Compute statistics:  97%|█████████▋| 121/125 [03:53<00:07,  1.92s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics:  98%|█████████▊| 122/125 [03:55<00:05,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics:  98%|█████████▊| 123/125 [03:57<00:03,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+Compute statistics:  99%|█████████▉| 124/125 [03:59<00:01,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.88s/it]
+Compute statistics: 100%|██████████| 125/125 [04:01<00:00,  1.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it][ACreate samples...: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+Compute statistics: 100%|██████████| 125/125 [04:03<00:00,  1.95s/it]
+/Data/home/vicky/test/graf/transforms.py:51: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  h = (select_inds // W) / float(H) - 0.5
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.83s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.82s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.82s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.49s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.49s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]Create samples...: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:   0%|          | 0/125 [00:00<?, ?it/s]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics:   1%|          | 1/125 [00:02<05:35,  2.71s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.60s/it]
+Compute statistics:   2%|▏         | 2/125 [00:05<05:30,  2.69s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it]
+Compute statistics:   2%|▏         | 3/125 [00:07<05:23,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:   3%|▎         | 4/125 [00:10<05:21,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:   4%|▍         | 5/125 [00:13<05:20,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:   5%|▍         | 6/125 [00:15<05:15,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:03<00:00,  3.30s/it][ACreate samples...: 100%|██████████| 1/1 [00:03<00:00,  3.30s/it]
+Compute statistics:   6%|▌         | 7/125 [00:19<05:37,  2.86s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:03<00:00,  3.34s/it][ACreate samples...: 100%|██████████| 1/1 [00:03<00:00,  3.34s/it]
+Compute statistics:   6%|▋         | 8/125 [00:22<05:52,  3.01s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:03<00:00,  3.36s/it][ACreate samples...: 100%|██████████| 1/1 [00:03<00:00,  3.36s/it]
+Compute statistics:   7%|▋         | 9/125 [00:25<06:02,  3.13s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.82s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.82s/it]
+Compute statistics:   8%|▊         | 10/125 [00:28<05:50,  3.05s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it]
+Compute statistics:   9%|▉         | 11/125 [00:31<05:31,  2.91s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.60s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.60s/it]
+Compute statistics:  10%|▉         | 12/125 [00:34<05:19,  2.82s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.60s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.60s/it]
+Compute statistics:  10%|█         | 13/125 [00:36<05:09,  2.77s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  11%|█         | 14/125 [00:39<05:01,  2.71s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  12%|█▏        | 15/125 [00:41<04:56,  2.69s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  13%|█▎        | 16/125 [00:44<04:51,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it]
+Compute statistics:  14%|█▎        | 17/125 [00:47<04:45,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  14%|█▍        | 18/125 [00:49<04:44,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]
+Compute statistics:  15%|█▌        | 19/125 [00:52<04:42,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  16%|█▌        | 20/125 [00:55<04:37,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  17%|█▋        | 21/125 [00:57<04:33,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it]
+Compute statistics:  18%|█▊        | 22/125 [01:00<04:34,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  18%|█▊        | 23/125 [01:03<04:28,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  19%|█▉        | 24/125 [01:05<04:25,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  20%|██        | 25/125 [01:08<04:24,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  21%|██        | 26/125 [01:10<04:19,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  22%|██▏       | 27/125 [01:13<04:16,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it]
+Compute statistics:  22%|██▏       | 28/125 [01:16<04:16,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it]
+Compute statistics:  23%|██▎       | 29/125 [01:18<04:11,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  24%|██▍       | 30/125 [01:21<04:09,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  25%|██▍       | 31/125 [01:24<04:08,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  26%|██▌       | 32/125 [01:26<04:06,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  26%|██▋       | 33/125 [01:29<04:02,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  27%|██▋       | 34/125 [01:31<04:00,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it]
+Compute statistics:  28%|██▊       | 35/125 [01:34<04:00,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]
+Compute statistics:  29%|██▉       | 36/125 [01:37<03:54,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  30%|██▉       | 37/125 [01:39<03:51,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics:  30%|███       | 38/125 [01:42<03:51,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.54s/it]
+Compute statistics:  31%|███       | 39/125 [01:45<03:46,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  32%|███▏      | 40/125 [01:47<03:43,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  33%|███▎      | 41/125 [01:50<03:42,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it]
+Compute statistics:  34%|███▎      | 42/125 [01:53<03:40,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  34%|███▍      | 43/125 [01:55<03:36,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  35%|███▌      | 44/125 [01:58<03:32,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.71s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.71s/it]
+Compute statistics:  36%|███▌      | 45/125 [02:01<03:33,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.51s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.51s/it]
+Compute statistics:  37%|███▋      | 46/125 [02:03<03:27,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  38%|███▊      | 47/125 [02:06<03:24,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it]
+Compute statistics:  38%|███▊      | 48/125 [02:08<03:23,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  39%|███▉      | 49/125 [02:11<03:19,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  40%|████      | 50/125 [02:14<03:16,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it]
+Compute statistics:  41%|████      | 51/125 [02:16<03:15,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it]
+Compute statistics:  42%|████▏     | 52/125 [02:19<03:11,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  42%|████▏     | 53/125 [02:22<03:08,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  43%|████▎     | 54/125 [02:24<03:07,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it]
+Compute statistics:  44%|████▍     | 55/125 [02:27<03:05,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  45%|████▍     | 56/125 [02:30<03:01,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  46%|████▌     | 57/125 [02:32<02:59,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.71s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.71s/it]
+Compute statistics:  46%|████▋     | 58/125 [02:35<02:58,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]
+Compute statistics:  47%|████▋     | 59/125 [02:37<02:53,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  48%|████▊     | 60/125 [02:40<02:51,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.66s/it]
+Compute statistics:  49%|████▉     | 61/125 [02:43<02:49,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  50%|████▉     | 62/125 [02:45<02:47,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  50%|█████     | 63/125 [02:48<02:43,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  51%|█████     | 64/125 [02:51<02:41,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  52%|█████▏    | 65/125 [02:53<02:38,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  53%|█████▎    | 66/125 [02:56<02:35,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  54%|█████▎    | 67/125 [02:59<02:32,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Compute statistics:  54%|█████▍    | 68/125 [03:01<02:29,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  55%|█████▌    | 69/125 [03:04<02:26,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]
+Compute statistics:  56%|█████▌    | 70/125 [03:06<02:24,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]
+Compute statistics:  57%|█████▋    | 71/125 [03:09<02:22,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  58%|█████▊    | 72/125 [03:12<02:19,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  58%|█████▊    | 73/125 [03:14<02:17,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it]
+Compute statistics:  59%|█████▉    | 74/125 [03:17<02:16,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]
+Compute statistics:  60%|██████    | 75/125 [03:20<02:11,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  61%|██████    | 76/125 [03:22<02:09,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  62%|██████▏   | 77/125 [03:25<02:07,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  62%|██████▏   | 78/125 [03:28<02:04,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  63%|██████▎   | 79/125 [03:30<02:01,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]
+Compute statistics:  64%|██████▍   | 80/125 [03:33<01:59,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  65%|██████▍   | 81/125 [03:36<01:56,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  66%|██████▌   | 82/125 [03:38<01:53,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  66%|██████▋   | 83/125 [03:41<01:50,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it]
+Compute statistics:  67%|██████▋   | 84/125 [03:44<01:48,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  68%|██████▊   | 85/125 [03:46<01:45,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  69%|██████▉   | 86/125 [03:49<01:42,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics:  70%|██████▉   | 87/125 [03:51<01:40,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  70%|███████   | 88/125 [03:54<01:37,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.43s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.43s/it]
+Compute statistics:  71%|███████   | 89/125 [03:56<01:32,  2.58s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics:  72%|███████▏  | 90/125 [03:59<01:31,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Compute statistics:  73%|███████▎  | 91/125 [04:02<01:28,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics:  74%|███████▎  | 92/125 [04:04<01:26,  2.61s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.92s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.92s/it]
+Compute statistics:  74%|███████▍  | 93/125 [04:07<01:26,  2.72s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.89s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.89s/it]
+Compute statistics:  75%|███████▌  | 94/125 [04:10<01:26,  2.78s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.51s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.51s/it]
+Compute statistics:  76%|███████▌  | 95/125 [04:13<01:21,  2.71s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  77%|███████▋  | 96/125 [04:15<01:17,  2.68s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.69s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.69s/it]
+Compute statistics:  78%|███████▊  | 97/125 [04:18<01:15,  2.69s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it]
+Compute statistics:  78%|███████▊  | 98/125 [04:21<01:11,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  79%|███████▉  | 99/125 [04:23<01:08,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics:  80%|████████  | 100/125 [04:26<01:06,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  81%|████████  | 101/125 [04:29<01:03,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  82%|████████▏ | 102/125 [04:31<01:00,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  82%|████████▏ | 103/125 [04:34<00:58,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  83%|████████▎ | 104/125 [04:36<00:55,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  84%|████████▍ | 105/125 [04:39<00:52,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  85%|████████▍ | 106/125 [04:42<00:50,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.52s/it]
+Compute statistics:  86%|████████▌ | 107/125 [04:44<00:47,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.61s/it]
+Compute statistics:  86%|████████▋ | 108/125 [04:47<00:44,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  87%|████████▋ | 109/125 [04:50<00:42,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  88%|████████▊ | 110/125 [04:52<00:39,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  89%|████████▉ | 111/125 [04:55<00:36,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  90%|████████▉ | 112/125 [04:58<00:34,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.70s/it]
+Compute statistics:  90%|█████████ | 113/125 [05:00<00:32,  2.67s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.50s/it]
+Compute statistics:  91%|█████████ | 114/125 [05:03<00:28,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  92%|█████████▏| 115/125 [05:06<00:26,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Compute statistics:  93%|█████████▎| 116/125 [05:08<00:23,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+Compute statistics:  94%|█████████▎| 117/125 [05:11<00:21,  2.65s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Compute statistics:  94%|█████████▍| 118/125 [05:13<00:18,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.62s/it]
+Compute statistics:  95%|█████████▌| 119/125 [05:16<00:15,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.64s/it]
+Compute statistics:  96%|█████████▌| 120/125 [05:19<00:13,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Compute statistics:  97%|█████████▋| 121/125 [05:21<00:10,  2.64s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Compute statistics:  98%|█████████▊| 122/125 [05:24<00:07,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.68s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.68s/it]
+Compute statistics:  98%|█████████▊| 123/125 [05:27<00:05,  2.66s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.53s/it]
+Compute statistics:  99%|█████████▉| 124/125 [05:29<00:02,  2.63s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Compute statistics: 100%|██████████| 125/125 [05:32<00:00,  2.62s/it]
+Create samples...:   0%|          | 0/1 [00:00<?, ?it/s][A
+Create samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it][ACreate samples...: 100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Compute statistics: 100%|██████████| 125/125 [05:35<00:00,  2.68s/it]
+Traceback (most recent call last):
+  File "train.py", line 349, in <module>
+    logger.add('validation', 'kid', kid, it=it)
+TypeError: make_video() got multiple values for argument 'as_gif'
