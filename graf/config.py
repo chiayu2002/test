@@ -9,7 +9,7 @@ from .utils import polar_to_cartesian, look_at, to_phi, to_theta
 
 import sys
 sys.path.append('submodules') 
-from GAN_stability.gan_training.train import toggle_grad
+from GAN_stability.gan_training.train_mod import toggle_grad
 from torch import optim
 import yaml
 

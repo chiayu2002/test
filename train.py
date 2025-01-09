@@ -127,7 +127,7 @@ if __name__ == '__main__':
 
     # Save for tests
     ntest = batch_size
-    x_real, x_label = get_nsamples(train_loader, ntest)
+    # x_real, x_label = get_nsamples(train_loader, ntest)
     #ytest = torch.zeros(ntest)
     ztest = zdist.sample((ntest,))
     ptest_list = []
@@ -149,7 +149,7 @@ if __name__ == '__main__':
     label_test = torch.tensor(label_list)
     print(f"labeltest:{label_test}")
 
-    save_images(x_real, path.join(out_dir, 'real.png'))
+    # save_images(x_real, path.join(out_dir, 'real.png'))
 
     # Test generator
     if config['training']['take_model_average']:
@@ -162,7 +162,7 @@ if __name__ == '__main__':
         generator_test = generator
 
     # Evaluator
-    evaluator = Evaluator(fid_every > 0, generator_test, None, None,
+    evaluator = Evaluator(fid_every > 0, generator_test, zdist, None,
                           batch_size=batch_size, device=device, inception_nsamples=33)
 
     # Initialize fid+kid evaluator
