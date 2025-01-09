@@ -21,7 +21,7 @@ class Generator(object):
         coords = torch.from_numpy(np.stack(np.meshgrid(np.arange(H), np.arange(W), indexing='ij'), -1))
         self.coords = coords.view(-1, 2)
 
-        self.ray_sampler = ray_sampler
+        self.ray_sampler = ray_sampler   #FlexGridRaySampler
         self.val_ray_sampler = FullRaySampler(orthographic=orthographic)
         self.render_kwargs_train = render_kwargs_train
         self.render_kwargs_test = render_kwargs_test

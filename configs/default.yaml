@@ -1,4 +1,4 @@
-expname: RS307_0_i2
+expname: 4column250108_moddloader
 data:
   datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
   far: 4.5
@@ -19,16 +19,13 @@ discriminator:
   hflip: false
   ndf: 64 #64 #128
 nerf:
-  N_importance: 0
   N_samples: 64
   decrease_noise: true
   i_embed: 0
   multires: 10
   multires_views: 4
   netdepth: 8
-  netdepth_fine: 8
   netwidth: 256
-  netwidth_fine: 256
   perturb: 1.0
   raw_noise_std: 1.0
   use_viewdirs: true
@@ -67,6 +64,5 @@ training:
   video_every: 10000
 z_dist:
   dim: 256
-  dim_appearance: 0
   num_class: 4
   type: gauss

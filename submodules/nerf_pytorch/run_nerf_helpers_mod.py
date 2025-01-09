@@ -101,7 +101,6 @@ class NeRF(nn.Module):
         input_pts, input_views = torch.split(x, [self.input_ch, self.input_ch_views], dim=-1) #torch.Size([65536, 191]),torch.Size([65536, 155])
         h = input_pts
         label = label.long().to(h.device)
-        # one_hot_label = torch.nn.functional.one_hot(label, self.numclasses).float()
         label_embedding = self.embedding(label)
         for i, l in enumerate(self.pts_linears):
             h = self.pts_linears[i](h)
@@ -173,17 +172,6 @@ def get_rays(H, W, focal, c2w):
     # Translate camera frame's origin to the world frame. It is the origin of all rays.
     rays_o = c2w[:3,-1].expand(rays_d.shape) #torch.Size([128, 128, 3])
     return rays_o, rays_d
-
-
-# def get_rays_np(H, W, focal, c2w):
-#     i, j = np.meshgrid(np.arange(W, dtype=np.float32), np.arange(H, dtype=np.float32), indexing='xy')
-#     dirs = np.stack([(i-W*.5)/focal, -(j-H*.5)/focal, -np.ones_like(i)], -1)
-#     # Rotate ray directions from camera frame to the world frame
-#     rays_d = np.sum(dirs[..., np.newaxis, :] * c2w[:3,:3], -1)  # dot product, equals to: [c2w.dot(dir) for dir in dirs]
-#     # Translate camera frame's origin to the world frame. It is the origin of all rays.
-#     rays_o = np.broadcast_to(c2w[:3,-1], np.shape(rays_d))
-#     return rays_o, rays_d
-
 
 def ndc_rays(H, W, focal, near, rays_o, rays_d):
     # Shift ray origins to near plane

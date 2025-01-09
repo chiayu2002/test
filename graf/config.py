@@ -27,27 +27,20 @@ def get_data(config):
         Lambda(to_tensor_and_normalize), #把值從[0,1]轉換成[-1,1]
     ])
 
-    label_file = None
-    if 'label_file' in config['data']:
-        label_file = config['data']['label_file']
-
     kwargs = {
         'data_dirs': config['data']['datadir'],
-        'transforms': transforms,
-        'label_file': label_file
+        'transforms': transforms
     }
 
     if dset_type == 'carla':
         dset = Carla(**kwargs)
     
     elif dset_type == 'RS307_0_i2':
-        #transforms.transforms.insert(0, CenterCrop(720))
         dset = RS307_0_i2(**kwargs)
 
 
     dset.H = dset.W = imsize
     dset.focal = W/2 * 1 / np.tan((.5 * fov * np.pi/180.))
-    #dset.focal = 22
     radius = config['data']['radius']
     render_radius = radius
     if isinstance(radius, str):
@@ -92,7 +85,6 @@ def build_models(config, disc=True):
     config_nerf.netchunk = config['training']['netchunk']
     config_nerf.white_bkgd = config['data']['white_bkgd']
     config_nerf.feat_dim = config['z_dist']['dim']
-    config_nerf.feat_dim_appearance = config['z_dist']['dim_appearance']
     config_nerf.num_class = config['discriminator']['num_classes']
 
     render_kwargs_train, render_kwargs_test, params, named_parameters = create_nerf(config_nerf)
