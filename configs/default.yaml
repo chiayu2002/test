@@ -2,11 +2,11 @@ expname: 4column250108_moddloader
 data:
   datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
   far: 4.5
-  fov: 32.4
+  fov: 25
   imsize: 128  
   near: 1.5
   orthographic: Faqalse
-  radius: 2.5
+  radius: 3
   type: RS307_0_i2
   umax: 1
   umin: 0
