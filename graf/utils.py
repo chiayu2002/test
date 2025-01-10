@@ -173,8 +173,8 @@ def to_theta(v):
 
 def sample_on_sphere(range_u=(0, 1), range_v=(0, 1)):  #從0-1範圍提取xy的值
     u = np.random.uniform(*range_u)
-    #v = np.random.uniform(*range_v)
-    v = range_v
+    v = np.random.uniform(*range_v)
+    # v = range_v
     #print(f"u: {u}, v: {v}")
     return to_sphere(u, v)
 

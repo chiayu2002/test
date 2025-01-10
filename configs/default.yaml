@@ -1,4 +1,4 @@
-expname: 4column250108_moddloader
+expname: 4column250110_modlabel
 data:
   datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
   far: 4.5
@@ -10,7 +10,7 @@ data:
   type: RS307_0_i2
   umax: 1
   umin: 0
-  vmax: 0.5
+  vmax: 0.499
   vmin: 0
   v: 0.4, 0.3, 0.1
   white_bkgd: true

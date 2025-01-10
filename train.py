@@ -71,9 +71,9 @@ if __name__ == '__main__':
         generator=torch.Generator(device='cuda:0')
     )
 
-    # with open('label_value0106.txt', 'w') as f:
-    #     for file_path, label in train_loader.dataset.labels.items():
-    #         f.write(f"文件路徑: {file_path}, label: {label}\n")
+    with open('label_value0110.txt', 'w') as f:
+        for file_path, label in train_loader.dataset.labels.items():
+            f.write(f"文件路徑: {file_path}, label: {label}\n")
     
     # Create models
     generator, discriminator = build_models(config)
@@ -130,31 +130,32 @@ if __name__ == '__main__':
     # x_real, x_label = get_nsamples(train_loader, ntest)
     #ytest = torch.zeros(ntest)
     ztest = zdist.sample((ntest,))
+    ptest = torch.stack([generator.sample_pose() for i in range(ntest)])
     ptest_list = []
     label_list = []
     label_vedio = []
-    third_value_map = {0: 359, 0.25: 89, 0.5: 179, 0.75: 269}
+    # third_value_map = {0: 359, 0.25: 89, 0.5: 179, 0.75: 269}
     for i in range(ntest):
         if i < 4:
-            y_value = 0.4
-            second_value = 0
+            # y_value = 0.4
+            first_value = 0
         else:
-            y_value = 0.3
-            second_value = 1
-        u_value = 0.25*(i%4)
-        third_value = third_value_map[u_value]
-        ptest_list.append(generator.sample_test_pose(u_value, y_value)) #generate pose
-        label_list.append([0, second_value, third_value])
-    ptest = torch.stack(ptest_list)
+            # y_value = 0.3
+            first_value = 1
+        # u_value = 0.25*(i%4)
+        # third_value = third_value_map[u_value]
+        # ptest_list.append(generator.sample_test_pose(u_value, y_value)) #generate pose
+        label_list.append([first_value])
+    # ptest = torch.stack(ptest_list)
     print(f"posetest:{ptest}")
     label_test = torch.tensor(label_list)
     print(f"labeltest:{label_test}")
 
-    u_map = {0: 359, 0.125: 44, 0.25: 89, 0.375: 134, 0.5: 179, 0.625: 224, 0.75: 269, 0.875: 314}
+    # u_map = {0: 359, 0.125: 44, 0.25: 89, 0.375: 134, 0.5: 179, 0.625: 224, 0.75: 269, 0.875: 314}
     for i in range(ntest):
-        u_value = 0.125*(i%8)
-        third_value = u_map[u_value]
-        label_vedio.append([0, 0, third_value])
+        # u_value = 0.125*(i%8)
+        # third_value = u_map[u_value]
+        label_vedio.append([0])
 
     # save_images(x_real, path.join(out_dir, 'real.png'))
 

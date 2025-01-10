@@ -1,9 +1,9 @@
 #!/bin/bash
 #PBS -l select=1:ncpus=1:gpu_id=1
 #PBS -l place=shared
-#PBS -o outputlabel.txt				
-#PBS -e errorlabel.txt				
-#PBS -N labelloc			
+#PBS -o outputmodlabel.txt				
+#PBS -e errormodlabel.txt				
+#PBS -N modlabel		
 
 cd ~/test												
 

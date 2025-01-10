@@ -15,7 +15,7 @@ class Generator(object):
         self.focal = focal
         self.radius = radius
         self.range_u = range_u
-        # self.range_v = range_v
+        self.range_v = range_v
         self.chunk = chunk
         self.v = v
         coords = torch.from_numpy(np.stack(np.meshgrid(np.arange(H), np.arange(W), indexing='ij'), -1))
@@ -43,24 +43,24 @@ class Generator(object):
         self.render = partial(render, H=self.H, W=self.W, focal=self.focal, chunk=self.chunk)
 
     def __call__(self, z, label, rays=None):
-        # bs = z.shape[0]
+        bs = z.shape[0]
         if rays is None:
-            # rays = torch.cat([self.sample_rays() for _ in range(bs)], dim=1)
-            all_rays = []
-            u_list = list(range(0, 360))
-            v_list = [float(x.strip()) for x in self.v.split(",")]
-            for i in range(label.size(0)):
-                second_value = label[i, 1].item()
-                index = int(label[i, 2].item())  # 得到第3個值
-                selected_u = (u_list[index])/359
-                if second_value == 0:
-                    rays = torch.cat([self.sample_rays(selected_u, v_list[0])], dim=1)
-                elif second_value == 1:
-                    rays = torch.cat([self.sample_rays(selected_u, v_list[1])], dim=1)
-                else:
-                    rays = torch.cat([self.sample_rays(selected_u, v_list[2])], dim=1)
-                all_rays.append(rays)
-            rays = torch.cat(all_rays, dim=1)
+            rays = torch.cat([self.sample_rays() for _ in range(bs)], dim=1)
+            # all_rays = []
+            # u_list = list(range(0, 360))
+            # v_list = [float(x.strip()) for x in self.v.split(",")]
+            # for i in range(label.size(0)):
+            #     second_value = label[i, 1].item()
+            #     index = int(label[i, 2].item())  # 得到第3個值
+            #     selected_u = (u_list[index])/359
+            #     if second_value == 0:
+            #         rays = torch.cat([self.sample_rays(selected_u, v_list[0])], dim=1)
+            #     elif second_value == 1:
+            #         rays = torch.cat([self.sample_rays(selected_u, v_list[1])], dim=1)
+            #     else:
+            #         rays = torch.cat([self.sample_rays(selected_u, v_list[2])], dim=1)
+            #     all_rays.append(rays)
+            # rays = torch.cat(all_rays, dim=1)
 
 
         render_kwargs = self.render_kwargs_test if self.use_test_kwargs else self.render_kwargs_train
@@ -86,10 +86,11 @@ class Generator(object):
             noise_std = self.initial_raw_noise_std - self.initial_raw_noise_std/end_it * it
             self.render_kwargs_train['raw_noise_std'] = noise_std
 
-    def sample_pose(self, u, v):   #計算旋轉矩陣(相機姿勢)  train
+    def sample_pose(self):   #計算旋轉矩陣(相機姿勢)  train
         # sample location on unit sphere
         #print("Type of self.v:", type(self.v))
-        loc = to_sphere(u, v)
+        loc = sample_on_sphere(self.range_u, self.range_v)
+        # loc = to_sphere(u, v)
         
         # sample radius if necessary
         radius = self.radius
@@ -103,23 +104,23 @@ class Generator(object):
         RT = torch.Tensor(RT.astype(np.float32))
         return RT
 
-    def sample_test_pose(self, u, v):   #計算旋轉矩陣(相機姿勢)
-        loc = to_sphere(u, v) #得到x y z座標 (值0-1之間)
+    # def sample_test_pose(self, u, v):   #計算旋轉矩陣(相機姿勢)
+    #     loc = to_sphere(u, v) #得到x y z座標 (值0-1之間)
         
-        # sample radius if necessary
-        radius = self.radius
-        if isinstance(radius, tuple):
-            radius = np.random.uniform(*radius)
+    #     # sample radius if necessary
+    #     radius = self.radius
+    #     if isinstance(radius, tuple):
+    #         radius = np.random.uniform(*radius)
 
-        loc = loc * radius
-        R = look_at(loc)[0] #計算從視點(相機位置)到目標點的視角轉換 輸出形狀為(3,3)
+    #     loc = loc * radius
+    #     R = look_at(loc)[0] #計算從視點(相機位置)到目標點的視角轉換 輸出形狀為(3,3)
 
-        RT = np.concatenate([R, loc.reshape(3, 1)], axis=1)
-        RT = torch.Tensor(RT.astype(np.float32))
-        return RT
+    #     RT = np.concatenate([R, loc.reshape(3, 1)], axis=1)
+    #     RT = torch.Tensor(RT.astype(np.float32))
+    #     return RT
     
-    def sample_rays(self, u, v):   #設train用的rays
-        pose = self.sample_pose(u, v)
+    def sample_rays(self):   #設train用的rays
+        pose = self.sample_pose()
         # print(f"`trainpose`:{pose}")
         sampler = self.val_ray_sampler if self.use_test_kwargs else self.ray_sampler 
         batch_rays, _, _ = sampler(self.H, self.W, self.focal, pose)

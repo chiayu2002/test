@@ -23,25 +23,32 @@ class ImageDataset(VisionDataset):
         VisionDataset.__init__(self, root=data_dirs, transform=transforms)
 
         self.filenames = []
-        root = []
+        # root = []
         self.labels = {}
 
-        category_map = {
-            "0.5_": 0,  
-            "1_": 1,  
-            "2_": 2   
-        }
+        # category_map = {
+        #     "0.5_": 0,  
+        #     "1_": 1,  
+        #     "2_": 2   
+        # }
+        # for dir_idx, ddir in enumerate(self.root):
+        #     filenames = self._get_files(ddir)
+        #     self.filenames.extend(filenames)
+
+        #     for filename in filenames:
+        #         for category_prefix, category_idx in category_map.items():
+        #             if filename.startswith(f"{ddir}/{category_prefix}"):
+        #                 file_idx = int(filename.split('/')[-1].replace(category_prefix, "").replace('.jpg', '').lstrip('0')) - 1
+        #                 self.labels[filename] = [dir_idx, category_idx, file_idx]
+        #                 break 
+        #     root.append(ddir)
         for dir_idx, ddir in enumerate(self.root):
             filenames = self._get_files(ddir)
             self.filenames.extend(filenames)
 
+            # 為每個資料夾分配單一標籤 [dir_idx]
             for filename in filenames:
-                for category_prefix, category_idx in category_map.items():
-                    if filename.startswith(f"{ddir}/{category_prefix}"):
-                        file_idx = int(filename.split('/')[-1].replace(category_prefix, "").replace('.jpg', '').lstrip('0')) - 1
-                        self.labels[filename] = [dir_idx, category_idx, file_idx]
-                        break 
-            root.append(ddir)
+                self.labels[filename] = [dir_idx]  # 僅保留資料夾索引作為標籤
 
     def __len__(self):
         return len(self.filenames)
