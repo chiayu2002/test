@@ -23,6 +23,7 @@ from GAN_stability.gan_training.train_mod import update_average
 
 import wandb
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '3'
 
 if __name__ == '__main__':
     # Arguments
@@ -98,7 +99,7 @@ if __name__ == '__main__':
         "d_optimizer": d_optimizer.__class__.__name__,
     })
 
-    wandb.init(project="graftest", entity="vicky20020808",name="onelabel256", allow_val_change=True, config=config)
+    wandb.init(project="graftest", entity="vicky20020808",name="discriminator change input", allow_val_change=True, config=config)
 
 
     model_checkpoint = "model_checkpoint.pth"

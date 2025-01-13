@@ -6,11 +6,10 @@ class Discriminator(nn.Module):
     def __init__(self, nc=3, ndf=64, imsize=64, hflip=False, num_classes=1, cond=True):
         super(Discriminator, self).__init__()
         self.nc = nc
-        assert(imsize==32 or imsize==64 or imsize==128)
+        # assert(imsize==32 or imsize==64 or imsize==128)
         self.imsize = imsize
         self.hflip = hflip
         self.num_classes = num_classes
-        self.n_feat = ndf * 8
 
         SN = torch.nn.utils.spectral_norm
         IN = lambda x : nn.InstanceNorm2d(x)
@@ -58,19 +57,19 @@ class Discriminator(nn.Module):
             IN(ndf * 4),
             nn.LeakyReLU(0.2, inplace=True),
             # state size. (ndf*4) x 8 x 8
-            SN(nn.Conv2d(ndf * 4, ndf * 8, 4, 2, 1, bias=False)),
-            #nn.BatchNorm2d(ndf * 8),
-            IN(ndf * 8),
-            nn.LeakyReLU(0.2, inplace=True),
+            # SN(nn.Conv2d(ndf * 4, ndf * 8, 4, 2, 1, bias=False)),
+            # #nn.BatchNorm2d(ndf * 8),
+            # IN(ndf * 8),
+            # nn.LeakyReLU(0.2, inplace=True),
             # state size. (ndf*8) x 4 x 4
             # SN(nn.Conv2d(ndf * 8, 1, 4, 1, 0, bias=False)),
             # nn.Sigmoid()
         ]
-        self.conv_out = SN(nn.Conv2d(ndf * 8, 1, 4, 1, 0, bias=False))
+        self.conv_out = SN(nn.Conv2d(ndf * 4, 1, 4, 1, 0, bias=False))
         blocks = [x for x in blocks if x]
         self.main = nn.Sequential(*blocks)
         if cond:
-            self.embedding = nn.Embedding(num_classes, self.n_feat)
+            self.embedding = nn.Embedding(num_classes, ndf * 4)
             nn.init.normal_(self.embedding.weight, 0.0, 0.05)
 
 

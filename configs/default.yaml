@@ -1,9 +1,9 @@
-expname: 4column250110_modlabel
+expname: 4column250113_dis16_256
 data:
   datadir: [data/RS307, data/RS315, data/RS330, data/RS615]
   far: 4.5
   fov: 25
-  imsize: 128  
+  imsize: 256  
   near: 1.5
   orthographic: Faqalse
   radius: 3
@@ -19,7 +19,7 @@ discriminator:
   hflip: false
   ndf: 64 #64 #128
 nerf:
-  N_samples: 64
+  N_samples: 256
   decrease_noise: true
   i_embed: 0
   multires: 10
@@ -30,7 +30,7 @@ nerf:
   raw_noise_std: 1.0
   use_viewdirs: true
 ray_sampler:
-  N_samples: 1024 #4096
+  N_samples: 256 #1024 #4096
   max_scale: 1.0
   min_scale: 0.25
   scale_anneal: 0.0025
