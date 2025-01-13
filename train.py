@@ -71,9 +71,9 @@ if __name__ == '__main__':
         generator=torch.Generator(device='cuda:0')
     )
 
-    with open('label_value0110.txt', 'w') as f:
-        for file_path, label in train_loader.dataset.labels.items():
-            f.write(f"文件路徑: {file_path}, label: {label}\n")
+    # with open('label_value0110.txt', 'w') as f:
+    #     for file_path, label in train_loader.dataset.labels.items():
+    #         f.write(f"文件路徑: {file_path}, label: {label}\n")
     
     # Create models
     generator, discriminator = build_models(config)
@@ -98,7 +98,7 @@ if __name__ == '__main__':
         "d_optimizer": d_optimizer.__class__.__name__,
     })
 
-    wandb.init(project="graftest", entity="vicky20020808", allow_val_change=True, config=config)
+    wandb.init(project="graftest", entity="vicky20020808",name="onelabel256", allow_val_change=True, config=config)
 
 
     model_checkpoint = "model_checkpoint.pth"
@@ -321,11 +321,12 @@ if __name__ == '__main__':
                     generator.save(f'0108_for_graf_{it + 1}epochs.h5')
 
             # (vi) Create video if necessary
-            if ((it+1) % config['training']['video_every']) == 0:
-                N_samples = 4
-                zvid = zdist.sample((N_samples,))
-                basename = os.path.join(out_dir, '{}_{:06d}_'.format(os.path.basename(config['expname']), it))
-                evaluator.make_video(basename, zvid, label_vedio, ptest, as_gif=False)
+            # if ((it+1) % config['training']['video_every']) == 0:
+            #     N_samples = 4
+            #     zvid = zdist.sample((N_samples,))
+            #     basename = os.path.join(out_dir, '{}_{:06d}_'.format(os.path.basename(config['expname']), it))
+            #     label_vedio = torch.tensor(label_vedio)
+            #     evaluator.make_video(basename, zvid, label_vedio, ptest, as_gif=False)
 
             # (i) Backup if necessary
             if ((it + 1) % backup_every) == 0:
